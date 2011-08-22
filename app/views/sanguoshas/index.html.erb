@@ -3,8 +3,8 @@
 	 </div>
      <div class="top">
 		<%= link_to '发起约约', new_sanguosha_path %>
-         <a  href="login.html">登录</a>
-         <a  href="logon.html">注册</a>     </div>
+		<%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
+         <%= link_to '注册', new_user_path %>     </div>
      <div class="ztfn">休闲.游戏.户外.运动<br />
                        电影.杀人.爬山.足球<br />
                       K歌.三国.旅游.篮球
