@@ -5,7 +5,7 @@
 	
    <div class="top">
       <%= link_to '发起约约', new_sanguosha_path %>
-      <a  href="login.html">登录</a>
+      <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
       <%= link_to '注册', new_user_path %>
    </div>
 
