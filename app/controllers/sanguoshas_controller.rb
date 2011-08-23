@@ -1,8 +1,26 @@
 class SanguoshasController < ApplicationController
   # GET /sanguoshas
   # GET /sanguoshas.xml
+  	before_filter :authorize, :only => [:create, :new, :join, :quit]
+  def join
+  	@user = User.find(session[:user_id])
+  	@sanguosha = Sanguosha.find(params[:id])  	
+  	@sanguosha.users << @user
+  	@sanguosha.save
+  	redirect_to (:action => :show)
+  end
+  
+  def quit
+  	@user = User.find(session[:user_id])
+  	@sanguosha = Sanguosha.find(params[:id])  	
+  	@sanguosha.users.delete @user
+  	@sanguosha.save
+  	redirect_to (:action => :show)
+  end
+  
   def index
     @sanguoshas = Sanguosha.all
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +32,9 @@ class SanguoshasController < ApplicationController
   # GET /sanguoshas/1.xml
   def show
     @sanguosha = Sanguosha.find(params[:id])
+    
+    @user = User.find(@sanguosha.yueyue_owner)
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +45,14 @@ class SanguoshasController < ApplicationController
   # GET /sanguoshas/new
   # GET /sanguoshas/new.xml
   def new
+  	user_id = session[:user_id]
+  	if user_id == nil
+          redirect_to(:controller => "users", :action => "login", :id=>'1')
+          return
+    end
+        
     @sanguosha = Sanguosha.new
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +69,7 @@ class SanguoshasController < ApplicationController
   # POST /sanguoshas.xml
   def create
     @sanguosha = Sanguosha.new(params[:sanguosha])
+    @sanguosha.yueyue_owner = session[:user_id]
 
     respond_to do |format|
       if @sanguosha.save

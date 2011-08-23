@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
+  
+    
   def index
     @users = User.find(:all)
 
@@ -97,7 +99,7 @@ class UsersController < ApplicationController
     def logout
       session[:user_id] = :logged_out
       flash[:notice] = "Logged out"
-      redirect_to(:action => "login")
+      redirect_to(:controller => "sanguoshas", :action => "index")
     end
   
     # GET /users/1

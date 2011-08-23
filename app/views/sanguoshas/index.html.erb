@@ -3,7 +3,12 @@
 	 </div>
      <div class="top">
 		<%= link_to '发起约约', new_sanguosha_path %>
-		<%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
+		  <% unless User.find_by_id(session[:user_id]) %>
+        <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
+  	 <% else %>
+  	    <%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
+    <% end %>    
+		
          <%= link_to '注册', new_user_path %>     </div>
      <div class="ztfn">休闲.游戏.户外.运动<br />
                        电影.杀人.爬山.足球<br />
@@ -21,7 +26,10 @@
       <div class="zt"><a href="date info.html">热门约约</a></div>
 
 	<% @sanguoshas.each do |sanguosha| %>
-		<div class="bt"><a href="date info.html">
+		<div class="bt">
+			<%= User.find(sanguosha.yueyue_owner).name %>：
+			<a href="date info.html">
+			 
 			<%= link_to sanguosha.description, sanguosha %> <span><%= sanguosha.yueyue_date %></span>
 		</div>
 
