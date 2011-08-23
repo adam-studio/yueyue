@@ -7,7 +7,7 @@ class SanguoshasController < ApplicationController
   	@sanguosha = Sanguosha.find(params[:id])  	
   	@sanguosha.users << @user
   	@sanguosha.save
-  	redirect_to (:action => :show)
+  	redirect_to :action => :show
   end
   
   def quit
@@ -15,7 +15,7 @@ class SanguoshasController < ApplicationController
   	@sanguosha = Sanguosha.find(params[:id])  	
   	@sanguosha.users.delete @user
   	@sanguosha.save
-  	redirect_to (:action => :show)
+  	redirect_to :action => :show
   end
   
   def index
@@ -33,7 +33,11 @@ class SanguoshasController < ApplicationController
   def show
     @sanguosha = Sanguosha.find(params[:id])
     
-    @user = User.find(@sanguosha.yueyue_owner)
+    if @sanguosha
+      if @sanguosha.yueyue_owner
+        @user = User.find(@sanguosha.yueyue_owner)
+      end
+    end
 
 
     respond_to do |format|

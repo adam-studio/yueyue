@@ -27,7 +27,13 @@
 
 	<% @sanguoshas.each do |sanguosha| %>
 		<div class="bt">
-			<%= User.find(sanguosha.yueyue_owner).name %>：
+			<%= 
+			if (sanguosha.yueyue_owner)
+			user = User.find(sanguosha.yueyue_owner)
+			if user
+				user.name
+			end
+			end%>
 			<a href="date info.html">
 			 
 			<%= link_to sanguosha.description, sanguosha %> <span><%= sanguosha.yueyue_date %></span>

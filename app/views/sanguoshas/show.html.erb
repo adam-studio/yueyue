@@ -17,7 +17,7 @@
 		
          <%= link_to '注册', new_user_path %>     </div>
 
-   <div>发起人：<%= @user.name %></div>
+   <div>发起人：<%= if @user then @user.name end %></div>
 
    <div>约约内容：<%= @sanguosha.description %></div>
    <div>时间：<%= @sanguosha.yueyue_date %></div>
