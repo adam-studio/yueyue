@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<title>发起约约</title>
+<script type="text/JavaScript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+</head>
+
+<body>
+     <div class="top">
+         <a  href="/">广场</a>
+         <a  href="/">我的首页</a>
+		 <a  href="my homepage.html">设置</a>
+	 </div>
+	
+	 <div class="bk">	
+	<%= form_for(@movie) do |f| %>
+	  <% if @movie.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+	      <ul>
+	      <% @movie.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <div class="field">
+	   <span> 约约内容</span><br/>
+	    <%= f.text_area :description, :cols=>"20", :rows=>"3" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :yueyue_date %><br />
+	    <%= f.datetime_select :yueyue_date, :order=>[:year, :month, :day, :hour] %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :place %><br />
+	    <%= f.text_field :place %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :movie_name %><br />
+	    <%= f.text_field :movie_name %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :ticket_fee %><br />
+	    <%= f.text_field :ticket_fee %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit "新增约约" %>
+	  </div>
+	<% end %>
+
+</div>	
+  
+  <div class="foot">
+        <a href="http://3g.sina.com.cn/3g/pro/index.php?sa=t271d6v147">加入我们</a>
+          |
+        <a href="http://3g.sina.com.cn/3g/pro/index.php?sa=t271d13v147 ">联系我们</a>
+          <br>
+        <a class="bl" href="http://3g.sina.com.cn">手机约约网</a>
+            -
+        <a class="bl" href="http://3g.sina.com.cn/3g/news/index.php?tid=124&did=13098&vid=84&pos=101">导航</a>
+            -
+        <a class="bl" href="http://3g.sina.com.cn/iask/?p=3g&pos=101">搜索</a>
+            <br>
+        yueyue.cn[11-08 10:16]
+    </div>
+
+   
+</body>
+</html>

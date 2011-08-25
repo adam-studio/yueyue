@@ -2,7 +2,7 @@
 	     <img src="images/yuey.gif" width="91" height="35" alt="约约" /> 
 	 </div>
      <div class="top">
-		<%= link_to '发起约约', new_sanguosha_path %>
+		<%= link_to '发起约约', new_movie_path %>
 		  <% unless User.find_by_id(session[:user_id]) %>
         <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
   	 <% else %>
@@ -12,9 +12,7 @@
          <%= link_to '注册', new_user_path %>     </div>
      <div class="ztfn">休闲.游戏.户外.运动<br />
                        电影.杀人.爬山.足球<br />
-                      <%= link_to "三国杀", {:controller => "sanguoshas", :action => "index"}%> 
-					  <%= link_to "看电影", {:controller => "movies", :action => "index"}%> 
-					  .三国.旅游.篮球
+                      K歌.三国.旅游.篮球
 	 </div>
      <div class="bt">
         <form id="form1" method="post" action="">
@@ -27,18 +25,18 @@
 
       <div class="zt"><a href="date info.html">热门约约</a></div>
 
-	<% @sanguoshas.each do |sanguosha| %>
+	<% @movies.each do |movie| %>
 		<div class="bt">
 			<%= 
-			if (sanguosha.yueyue_owner)
-			user = User.find(sanguosha.yueyue_owner)
+			if (movie.yueyue_owner)
+			user = User.find(movie.yueyue_owner)
 			if user
 				user.name
 			end
 			end%>
 			<a href="date info.html">
 			 
-			<%= link_to sanguosha.description, sanguosha %> <span><%= sanguosha.yueyue_date %></span>
+			<%= link_to movie.description, movie %> <span><%= movie.yueyue_date %></span>
 		</div>
 
 	<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 
+  yueyue_date: 2011-08-24 23:42:22
+  movie_name: MyString
+  place: MyString
+  ticket_fee: 1
+
+two:
+  name: 
+  yueyue_date: 2011-08-24 23:42:22
+  movie_name: MyString
+  place: MyString
+  ticket_fee: 1
