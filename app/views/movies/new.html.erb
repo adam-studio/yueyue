@@ -35,6 +35,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 	  <% end %>
 
 	  <div class="field">
+	   <span> 约约主题</span>
+		<select name="topic" onchange=window.location.href=this.options[selectedIndex].value>
+			<option value="/sanguoshas/new">三国杀</option>
+			<option value="/movies/new" selected>电影</option>
+		</select>
+	  </div>
+	
+	
+	  <div class="field">
 	   <span> 约约内容</span><br/>
 	    <%= f.text_area :description, :cols=>"20", :rows=>"3" %>
 	  </div>
