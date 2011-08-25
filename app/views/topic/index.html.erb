@@ -1,0 +1,83 @@
+ <div class="logo"> 
+	     <img src="images/yuey.gif" width="91" height="35" alt="约约" /> 
+	 </div>
+     <div class="top">
+		<%= link_to '发起约约', new_sanguosha_path %>
+		  <% unless User.find_by_id(session[:user_id]) %>
+        <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
+  	 <% else %>
+  	    <%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
+    <% end %>    
+		
+         <%= link_to '注册', new_user_path %>     </div>
+     <div class="ztfn">休闲.游戏.户外.运动<br />
+                       电影.杀人.爬山.足球<br />
+                      <%= link_to "三国杀", {:controller => "sanguoshas", :action => "index"}%> 
+					  <%= link_to "看电影", {:controller => "movies", :action => "index"}%> 
+					  .三国.旅游.篮球
+	 </div>
+     <div class="bt">
+        <form id="form1" method="post" action="">
+            <div>
+            <input type="text" size="12"  name="textfield" />
+            <input type="submit" value="收索" name="suser" />
+           </div>
+        </form>
+</div>
+
+      <div class="zt"><a href="date info.html">热门约约</a></div>
+
+	<%
+	
+	sanguoshas = @yueyues[:sanguoshas]
+	sanguoshas.each do |sanguosha|
+		%>
+		<div class="bt">
+		<%=
+		if (sanguosha.yueyue_owner)
+			user = User.find(sanguosha.yueyue_owner)
+			if user
+				user.name
+			end
+		end
+		%>
+		 
+		<%= link_to sanguosha.description, sanguosha %> <span><%= sanguosha.yueyue_date %></span>
+		</div>
+		<%
+		end
+		%>
+		<%
+		movies = @yueyues[:movies]
+		movies.each do |movie|
+			%>
+			<div class="bt">
+			<%=
+			if (movie.yueyue_owner)
+				user = User.find(movie.yueyue_owner)
+				if user
+					user.name
+				end
+			end
+			%>
+
+			<%= link_to movie.description, movie %> <span><%= movie.yueyue_date %></span>
+			</div>
+			<%
+			end
+	%>
+
+      <div class="foot">
+         <a href="http://3g.sina.com.cn/3g/pro/index.php?sa=t271d6v147">加入我们</a>
+         |<a href="http://3g.sina.com.cn/3g/pro/index.php?sa=t271d13v147 ">联系我们</a>
+				 <br>
+         <a class="bl" href="http://3g.sina.com.cn">手机约约网</a>
+            -
+         <a class="bl" href="http://3g.sina.com.cn/3g/news/index.php?tid=124&did=13098&vid=84&pos=101">导航</a>
+             -
+          <a class="bl" href="http://3g.sina.com.cn/iask/?p=3g&pos=101">搜索</a>
+            <br>
+           yueyue.cn[11-08 10:16]
+      </div>
+
+
