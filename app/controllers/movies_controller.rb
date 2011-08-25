@@ -19,9 +19,12 @@ class MoviesController < ApplicationController
   end
   
   def index
-    @movies = Movie.all
-    
-
+    if params[:search_str]
+      search_str = params[:search_str]
+      @movies = Movie.find(:all, :conditions=>["description like ?", "%" + params[:search_str] + "%"])
+    else
+      @movies = Movie.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @movies }

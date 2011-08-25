@@ -19,12 +19,10 @@
 						.旅游.篮球
 	 </div>
      <div class="bt">
-        <form id="form1" method="post" action="">
-            <div>
-            <input type="text" size="12"  name="textfield" />
-            <input type="submit" value="收索" name="suser" />
-           </div>
-        </form>
+		<% form_tag '', :method=>'GET' do %>
+					<input type="text" size="12"  name="search_str" />
+					<%= submit_tag "搜索" %>
+		<% end %>
 </div>
 
       <div class="zt"><a href="date info.html">热门约约</a></div>
