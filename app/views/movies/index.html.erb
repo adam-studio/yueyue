@@ -1,8 +1,10 @@
  <div class="logo"> 
 	     <img src="images/yuey.gif" width="91" height="35" alt="约约" /> 
 	 </div>
+	<h1>约约电影</h1>
      <div class="top">
 		<%= link_to '发起约约', new_movie_path %>
+		<%= link_to "约约广场", {:controller => "topic", :action => "index"}%> 
 		  <% unless User.find_by_id(session[:user_id]) %>
         <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
   	 <% else %>
@@ -12,7 +14,9 @@
          <%= link_to '注册', new_user_path %>     </div>
      <div class="ztfn">休闲.游戏.户外.运动<br />
                        电影.杀人.爬山.足球<br />
-                      K歌.三国.旅游.篮球
+                      <%= link_to "三国杀", {:controller => "sanguoshas", :action => "index"}%> 
+					  <%= link_to "看电影", {:controller => "movies", :action => "index"}%> 
+						.旅游.篮球
 	 </div>
      <div class="bt">
         <form id="form1" method="post" action="">

@@ -1,8 +1,10 @@
  <div class="logo"> 
 	     <img src="images/yuey.gif" width="91" height="35" alt="约约" /> 
 	 </div>
+	<h1>约约广场</h1>
      <div class="top">
 		<%= link_to '发起约约', new_sanguosha_path %>
+		<%= link_to "约约广场", {:controller => "topic", :action => "index"}%> 
 		  <% unless User.find_by_id(session[:user_id]) %>
         <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
   	 <% else %>
