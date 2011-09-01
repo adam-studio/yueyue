@@ -1,0 +1,42 @@
+<%= form_for(@yueyue_type_property) do |f| %>
+  <% if @yueyue_type_property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yueyue_type_property.errors.count, "error") %> prohibited this yueyue_type_property from being saved:</h2>
+
+      <ul>
+      <% @yueyue_type_property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :data_type %><br />
+    <%= f.text_field :data_type %>
+  </div>
+  <div class="field">
+    <%= f.label :max_size %><br />
+    <%= f.text_field :max_size %>
+  </div>
+  <div class="field">
+    <%= f.label :min_size %><br />
+    <%= f.text_field :min_size %>
+  </div>
+  <div class="field">
+    <%= f.label :null_able %><br />
+    <%= f.check_box :null_able %>
+  </div>
+  <div class="field">
+    <%= f.label :default_value %><br />
+    <%= f.text_field :default_value %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

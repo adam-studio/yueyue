@@ -1,4 +1,10 @@
 Yueyue::Application.routes.draw do
+  resources :yueyue_type_actions
+
+  resources :yueyue_type_properties
+
+  resources :yueyue_types
+
   resources :movies
 
   resources :users

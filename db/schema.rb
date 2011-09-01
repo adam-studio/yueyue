@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825145258) do
+ActiveRecord::Schema.define(:version => 20110901152924) do
 
   create_table "movies", :force => true do |t|
     t.string   "description"
@@ -50,6 +50,32 @@ ActiveRecord::Schema.define(:version => 20110825145258) do
     t.string   "name"
     t.string   "hashed_password"
     t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "yueyue_type_actions", :force => true do |t|
+    t.integer  "yueyue_type_id", :null => false
+    t.string   "name"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "yueyue_type_properties", :force => true do |t|
+    t.integer  "yueyue_type_id", :null => false
+    t.string   "name"
+    t.string   "data_type"
+    t.integer  "max_size"
+    t.integer  "min_size"
+    t.boolean  "null_able"
+    t.string   "default_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "yueyue_types", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

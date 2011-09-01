@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @yueyue_type_property.name %>
+</p>
+
+<p>
+  <b>Data type:</b>
+  <%= @yueyue_type_property.data_type %>
+</p>
+
+<p>
+  <b>Max size:</b>
+  <%= @yueyue_type_property.max_size %>
+</p>
+
+<p>
+  <b>Min size:</b>
+  <%= @yueyue_type_property.min_size %>
+</p>
+
+<p>
+  <b>Null able:</b>
+  <%= @yueyue_type_property.null_able %>
+</p>
+
+<p>
+  <b>Default value:</b>
+  <%= @yueyue_type_property.default_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_yueyue_type_property_path(@yueyue_type_property) %> |
+<%= link_to 'Back', yueyue_type_properties_path %>
