@@ -1,3 +1,5 @@
+require 'actions/user_actions'
+
 module YueyueObjectsHelper
   def edit_yueyue_properties
     html_str = ""
@@ -26,11 +28,15 @@ HTML
   end
   
   def render_yueyue_actions
+    UserActions.render_join(@yueyue_object.id, "chengbin")
     html_str = ""
     @yueyue_actions.each do |action|
-      html_str += <<HTML
-      <a href="/yueyue_objects/action/object_id=#{@yueyue_object.id}&action=#{action.name}">#{action.title}</a> |
-HTML
+      # 获取action类与方法
+      action_method_name, action_class_name = action.name.split('@')
+      render_method_name = "render_#{action_method_name}"
+      action_class = Object.const_get(action_class_name)
+      #TODO 加入真正的userid
+      html_str += action_class.send(render_method_name, @yueyue_object.id, "chengbin")
     end
     html_str
   end
