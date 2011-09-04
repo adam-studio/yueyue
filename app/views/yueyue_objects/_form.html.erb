@@ -1,0 +1,24 @@
+<%= form_for(@yueyue_object) do |f| %>
+  <% if @yueyue_object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yueyue_object.errors.count, "error") %> prohibited this yueyue_object from being saved:</h2>
+
+      <ul>
+      <% @yueyue_object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+  <%=edit_yueyue_properties.html_safe%>
+  <input type="hidden" id="yueyue_type_id" name="yueyue_object[yueyue_type_id]" value="<%=@yueyue_type.id%>">
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

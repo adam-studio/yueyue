@@ -1,0 +1,22 @@
+<%= form_for(@yueyue_object_property) do |f| %>
+  <% if @yueyue_object_property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yueyue_object_property.errors.count, "error") %> prohibited this yueyue_object_property from being saved:</h2>
+
+      <ul>
+      <% @yueyue_object_property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :yueyue_type_id %><br />
+    <%= f.text_field :yueyue_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

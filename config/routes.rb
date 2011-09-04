@@ -1,4 +1,8 @@
 Yueyue::Application.routes.draw do
+  resources :yueyue_object_properties
+
+  resources :yueyue_objects
+
   resources :yueyue_type_actions
 
   resources :yueyue_type_properties

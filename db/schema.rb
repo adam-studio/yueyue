@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110901152924) do
+ActiveRecord::Schema.define(:version => 20110901170136) do
 
   create_table "movies", :force => true do |t|
     t.string   "description"
@@ -50,6 +50,22 @@ ActiveRecord::Schema.define(:version => 20110901152924) do
     t.string   "name"
     t.string   "hashed_password"
     t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "yueyue_object_properties", :force => true do |t|
+    t.integer  "yueyue_object_id",        :null => false
+    t.integer  "yueyue_type_property_id", :null => false
+    t.string   "property_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "yueyue_objects", :force => true do |t|
+    t.integer  "yueyue_type_id", :null => false
+    t.string   "owner"
+    t.datetime "create_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
