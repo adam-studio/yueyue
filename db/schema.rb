@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110901170136) do
+ActiveRecord::Schema.define(:version => 20110904103523) do
 
   create_table "movies", :force => true do |t|
     t.string   "description"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20110901170136) do
     t.datetime "updated_at"
   end
 
+  create_table "users_yueyue_objects", :id => false, :force => true do |t|
+    t.integer  "yueyue_object_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "yueyue_object_properties", :force => true do |t|
     t.integer  "yueyue_object_id",        :null => false
     t.integer  "yueyue_type_property_id", :null => false
@@ -67,6 +74,13 @@ ActiveRecord::Schema.define(:version => 20110901170136) do
     t.string   "title"
     t.string   "owner"
     t.datetime "create_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "yueyue_objects_users", :id => false, :force => true do |t|
+    t.integer  "yueyue_object_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
