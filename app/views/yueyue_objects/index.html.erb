@@ -2,13 +2,15 @@
 
 <table>
   <tr>
-    <th></th>
+    <th>约约</th>
+	<th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @yueyue_objects.each do |yueyue_object| %>
   <tr>
+	<td><%= yueyue_object.title %></td>
     <td><%= link_to 'Show', yueyue_object %></td>
     <td><%= link_to 'Edit', edit_yueyue_object_path(yueyue_object) %></td>
     <td><%= link_to 'Destroy', yueyue_object, :confirm => 'Are you sure?', :method => :delete %></td>

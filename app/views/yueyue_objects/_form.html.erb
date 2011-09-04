@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
 	
   <%=edit_yueyue_properties.html_safe%>
   <input type="hidden" id="yueyue_type_id" name="yueyue_object[yueyue_type_id]" value="<%=@yueyue_type.id%>">

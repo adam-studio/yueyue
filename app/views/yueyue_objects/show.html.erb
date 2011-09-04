@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 
+<p>
+  <b>约约名称:</b>
+  <%= @yueyue_object.title %>
+</p>
+
+<p>
+  <b>主任:</b>
+  <%= @yueyue_object.owner %>
+</p>
+
+<p>
+  <b>创建时间:</b>
+  <%= @yueyue_object.create_date %>
+</p>
+
+<%=render_yueyue_properties.html_safe%>
+<%=render_yueyue_actions.html_safe%>
 <%= link_to 'Edit', edit_yueyue_object_path(@yueyue_object) %> |
 <%= link_to 'Back', yueyue_objects_path %>

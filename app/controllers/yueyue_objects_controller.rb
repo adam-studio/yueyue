@@ -14,6 +14,13 @@ class YueyueObjectsController < ApplicationController
   # GET /yueyue_objects/1.xml
   def show
     @yueyue_object = YueyueObject.find(params[:id])
+    @yueyue_type = @yueyue_object.yueyue_type
+    if (@yueyue_type)
+      @yueyue_actions = @yueyue_type.yueyue_type_actions
+      #TODO 增加对找不到约约type的异常处理
+    end
+    
+    @yueyue_properties = @yueyue_object.yueyue_object_properties
 
     respond_to do |format|
       format.html # show.html.erb

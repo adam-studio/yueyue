@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20110901170136) do
 
   create_table "yueyue_objects", :force => true do |t|
     t.integer  "yueyue_type_id", :null => false
+    t.string   "title"
     t.string   "owner"
     t.datetime "create_date"
     t.datetime "created_at"
