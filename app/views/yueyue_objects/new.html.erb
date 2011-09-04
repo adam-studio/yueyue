@@ -1,5 +1,21 @@
 <h1>New yueyue_object</h1>
 
+<select name="yueyue_object_type" onchange=window.location.href=this.options[selectedIndex].value>
+<%
+if (@yueyue_types)
+	@yueyue_types.each do |option_type|
+%>
+	<option value="/yueyue_objects/new/<%=option_type.id%>" <%
+	 if (@yueyue_type.id == option_type.id)
+		%> selected <%
+	end%>>
+	<%=option_type.name%>:<%=@yueyue_type.id%>:<%=option_type.id%></option>
+<%	
+	end
+end
+%>
+</select>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', yueyue_objects_path %>

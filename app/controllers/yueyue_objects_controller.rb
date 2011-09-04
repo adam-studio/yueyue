@@ -33,9 +33,14 @@ class YueyueObjectsController < ApplicationController
   def new
     @yueyue_object = YueyueObject.new
     @yueyue_types = YueyueType.all
+    
     #TODO 按照热门程度对约约主题进行排序
     if @yueyue_types && @yueyue_types.size > 0
-      @yueyue_type = @yueyue_types[0]
+      if params[:id]
+        @yueyue_type = YueyueType.find(params[:id])
+      else
+        @yueyue_type = @yueyue_types[0]
+      end
       @yueyue_properties = @yueyue_type.yueyue_type_properties
       @yueyue_actions = @yueyue_type.yueyue_type_actions
     end
