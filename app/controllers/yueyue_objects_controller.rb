@@ -124,7 +124,7 @@ class YueyueObjectsController < ApplicationController
     action_method_name, action_class_name = yueyue_action.name.split('@')
     process_method_name = "process_#{action_method_name}"
     action_class = Object.const_get(action_class_name)
-    action_class.send(process_method_name, :user_id=>"1", :yueyue_object_id=>yueyue_object_id)
+    action_class.send(process_method_name, :user_id=>session[:user_id], :yueyue_object_id=>yueyue_object_id)
     
     redirect_to(:action => "show", :id=>yueyue_object_id)
   end

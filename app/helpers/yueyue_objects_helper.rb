@@ -29,14 +29,13 @@ HTML
   
   # TODO 这段代码需要修改，后期需要把get方式改为post方式
   def render_yueyue_actions
-    UserActions.render_join(@yueyue_object.id, "chengbin")
     html_str = ""
     @yueyue_actions.each do |action|
       # 获取action类与方法
       action_method_name, action_class_name = action.name.split('@')
       render_method_name = "render_#{action_method_name}"
       action_class = Object.const_get(action_class_name)
-      html_str += action_class.send(render_method_name, @yueyue_object.id, action.id)
+      html_str += action_class.send(render_method_name, @yueyue_object.id, action.id, session[:user_id])
     end
     html_str
   end

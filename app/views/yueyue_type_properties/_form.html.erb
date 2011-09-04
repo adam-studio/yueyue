@@ -11,6 +11,19 @@
     </div>
   <% end %>
 
+<select name="yueyue_type">
+<%
+if (@yueyue_types)
+	@yueyue_types.each do |option_type|
+%>
+	<option value="<%=option_type.id%>">
+	<%=option_type.name%></option>
+<%	
+	end
+end
+%>
+</select>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

@@ -25,7 +25,8 @@ class YueyueTypeActionsController < ApplicationController
   # GET /yueyue_type_actions/new.xml
   def new
     @yueyue_type_action = YueyueTypeAction.new
-
+    @yueyue_types = YueyueType.all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @yueyue_type_action }
@@ -35,12 +36,15 @@ class YueyueTypeActionsController < ApplicationController
   # GET /yueyue_type_actions/1/edit
   def edit
     @yueyue_type_action = YueyueTypeAction.find(params[:id])
+    yueyue_types = YueyueType.all
   end
 
   # POST /yueyue_type_actions
   # POST /yueyue_type_actions.xml
   def create
     @yueyue_type_action = YueyueTypeAction.new(params[:yueyue_type_action])
+    yueyue_type = YueyueType.find(params[:yueyue_type])
+    @yueyue_type_action.yueyue_type = yueyue_type
 
     respond_to do |format|
       if @yueyue_type_action.save
