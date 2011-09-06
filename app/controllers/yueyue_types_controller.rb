@@ -43,14 +43,6 @@ class YueyueTypesController < ApplicationController
     @yueyue_type = YueyueType.new(params[:yueyue_type])
 
     respond_to do |format|
-      chifan = YueyueTypeAction.new
-      chifan.name = "chifan@My_ction"
-      chifan.title = "chi fan le"
-      
-      chifan_prop = YueyueTypeProperty.new
-      chifan_prop.name = "chifan@my_class"
-      @yueyue_type.yueyue_type_actions << chifan
-      @yueyue_type.yueyue_type_properties << chifan_prop
       if @yueyue_type.save
         format.html { redirect_to(@yueyue_type, :notice => 'Yueyue type was successfully created.') }
         format.xml  { render :xml => @yueyue_type, :status => :created, :location => @yueyue_type }
