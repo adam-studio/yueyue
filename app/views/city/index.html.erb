@@ -1,0 +1,20 @@
+<%= form_tag(:action => "search") do %> 
+ <p><%= label_tag(:q, "请输入城市名或者区号，如北京，010") %> </p>
+  <%= text_field_tag(:q) %>  
+  <%= submit_tag("切换") %>
+  <% end %> 
+		
+<% @cities.each do |city| %>
+    <td><%= link_to city.name, {:action => "change_city", :id => city} %></td>
+<% end %>
+
+<p></p>
+
+<% @Alphabet.each do |letter| %>
+  <%= link_to letter, {:action => "index_by_letter", :id => letter} %>
+<% end %>
+<br />
+
+<p></p>
+
+<%= link_to '返回', { :controller => "yueyue_objects", :action => "index" } %>

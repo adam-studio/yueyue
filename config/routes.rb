@@ -1,4 +1,12 @@
 Yueyue::Application.routes.draw do
+  get "city/index"
+
+  get "city/change_city"
+
+  get "city/index_by_letter"
+
+  get "city/search"
+
   resources :yueyue_object_properties
 
   resources :yueyue_objects

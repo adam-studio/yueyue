@@ -1,0 +1,2937 @@
+---
+cities_001:
+  id: 1
+  name: 阿城
+  area_code: '0450'
+  pinyin: acheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_002:
+  id: 2
+  name: 阿克苏
+  area_code: '0997'
+  pinyin: akesu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_003:
+  id: 3
+  name: 阿勒泰
+  area_code: '0906'
+  pinyin: aletai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_004:
+  id: 4
+  name: 安陆
+  area_code: '0712'
+  pinyin: anlu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_005:
+  id: 5
+  name: 安庆
+  area_code: '0556'
+  pinyin: anqing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_006:
+  id: 6
+  name: 鞍山
+  area_code: '0412'
+  pinyin: anshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_007:
+  id: 7
+  name: 安顺
+  area_code: '0853'
+  pinyin: anshun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_008:
+  id: 8
+  name: 安阳
+  area_code: '0372'
+  pinyin: anyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_009:
+  id: 9
+  name: 阿图什
+  area_code: '0908'
+  pinyin: atushi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_010:
+  id: 10
+  name: 白城
+  area_code: '0448'
+  pinyin: baicheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_011:
+  id: 11
+  name: 百色
+  area_code: '0776'
+  pinyin: baise
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_012:
+  id: 12
+  name: 白银
+  area_code: '0943'
+  pinyin: baiyin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_013:
+  id: 13
+  name: 蚌埠
+  area_code: '0552'
+  pinyin: bangbu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_014:
+  id: 14
+  name: 保定
+  area_code: '0312'
+  pinyin: baoding
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_015:
+  id: 15
+  name: 宝鸡
+  area_code: '0917'
+  pinyin: baoji
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_016:
+  id: 16
+  name: 宝山
+  area_code: '0875'
+  pinyin: baoshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_017:
+  id: 17
+  name: 包头
+  area_code: '0472'
+  pinyin: baotou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_018:
+  id: 18
+  name: 北安
+  area_code: '0456'
+  pinyin: beian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_019:
+  id: 19
+  name: 北海
+  area_code: '0779'
+  pinyin: beihai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_020:
+  id: 20
+  name: 北京
+  area_code: '010'
+  pinyin: beijing
+  rate: 805
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-07 15:15:38.343750'
+cities_021:
+  id: 21
+  name: 北票
+  area_code: '0421'
+  pinyin: beipiao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_022:
+  id: 22
+  name: 本溪
+  area_code: '0414'
+  pinyin: benxi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_023:
+  id: 23
+  name: 滨州
+  area_code: '0543'
+  pinyin: binzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_024:
+  id: 24
+  name: 彬州
+  area_code: '0735'
+  pinyin: binzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_025:
+  id: 25
+  name: 博乐
+  area_code: '0909'
+  pinyin: bole
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_026:
+  id: 26
+  name: 沧州
+  area_code: '0317'
+  pinyin: cangzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_027:
+  id: 27
+  name: 长春
+  area_code: '0431'
+  pinyin: changchun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_028:
+  id: 28
+  name: 常德
+  area_code: '0736'
+  pinyin: changde
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_029:
+  id: 29
+  name: 昌吉
+  area_code: '0994'
+  pinyin: changji
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_030:
+  id: 30
+  name: 长沙
+  area_code: '0731'
+  pinyin: changsha
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_031:
+  id: 31
+  name: 常熟
+  area_code: '0520'
+  pinyin: changshu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_032:
+  id: 32
+  name: 长治
+  area_code: '0355'
+  pinyin: changzhi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_033:
+  id: 33
+  name: 常州
+  area_code: '0519'
+  pinyin: changzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_034:
+  id: 34
+  name: 巢湖
+  area_code: '0565'
+  pinyin: chaohu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_035:
+  id: 35
+  name: 朝阳
+  area_code: '0421'
+  pinyin: chaoyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_036:
+  id: 36
+  name: 潮州
+  area_code: '0768'
+  pinyin: chaozhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_037:
+  id: 37
+  name: 承德
+  area_code: '0314'
+  pinyin: chengde
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_038:
+  id: 38
+  name: 成都
+  area_code: '028'
+  pinyin: chengdu
+  rate: 500
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_039:
+  id: 39
+  name: 赤峰
+  area_code: '0476'
+  pinyin: chifeng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_040:
+  id: 40
+  name: 重庆
+  area_code: '023'
+  pinyin: chongqing
+  rate: 451
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-07 13:22:48.046875'
+cities_041:
+  id: 41
+  name: 楚雄
+  area_code: '0878'
+  pinyin: chuxiong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_042:
+  id: 42
+  name: 滁州
+  area_code: '0550'
+  pinyin: chuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_043:
+  id: 43
+  name: 大理
+  area_code: '0872'
+  pinyin: dali
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_044:
+  id: 44
+  name: 大连
+  area_code: '0411'
+  pinyin: dalian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_045:
+  id: 45
+  name: 丹东
+  area_code: '0415'
+  pinyin: dandong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_046:
+  id: 46
+  name: 丹江口
+  area_code: '0719'
+  pinyin: danjiangkou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_047:
+  id: 47
+  name: 丹阳
+  area_code: '0511'
+  pinyin: danyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_048:
+  id: 48
+  name: 大庆
+  area_code: '0459'
+  pinyin: daqing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_049:
+  id: 49
+  name: 大同
+  area_code: '0352'
+  pinyin: datong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_050:
+  id: 50
+  name: 达县
+  area_code: '0818'
+  pinyin: daxian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_051:
+  id: 51
+  name: 大庸
+  area_code: '0744'
+  pinyin: dayong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_052:
+  id: 52
+  name: 德令哈
+  area_code: '0977'
+  pinyin: delingha
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_053:
+  id: 53
+  name: 得阳
+  area_code: '0838'
+  pinyin: deyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_054:
+  id: 54
+  name: 德州
+  area_code: '0534'
+  pinyin: dezhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_055:
+  id: 55
+  name: 桦甸
+  area_code: '0432'
+  pinyin: dian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_056:
+  id: 56
+  name: 东莞
+  area_code: '0769'
+  pinyin: dong
+  rate: 650
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_057:
+  id: 57
+  name: 东川
+  area_code: '0881'
+  pinyin: dongchuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_058:
+  id: 58
+  name: 东胜
+  area_code: '0477'
+  pinyin: dongsheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_059:
+  id: 59
+  name: 东台
+  area_code: '0515'
+  pinyin: dongtai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_060:
+  id: 60
+  name: 东阳
+  area_code: '0579'
+  pinyin: dongyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_061:
+  id: 61
+  name: 东营
+  area_code: '0546'
+  pinyin: dongying
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_062:
+  id: 62
+  name: 敦化
+  area_code: '0433'
+  pinyin: dunhua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_063:
+  id: 63
+  name: 都匀
+  area_code: '0854'
+  pinyin: duyun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_064:
+  id: 64
+  name: 恩施
+  area_code: '0718'
+  pinyin: enshi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_065:
+  id: 65
+  name: 二连浩特
+  area_code: '0479'
+  pinyin: erlianhaote
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_066:
+  id: 66
+  name: 鄂州
+  area_code: '0711'
+  pinyin: ezhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_067:
+  id: 67
+  name: 佛山
+  area_code: '0757'
+  pinyin: foshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_068:
+  id: 68
+  name: 涪陵
+  area_code: '0810'
+  pinyin: fuling
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_069:
+  id: 69
+  name: 抚顺
+  area_code: '0413'
+  pinyin: fushun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_070:
+  id: 70
+  name: 阜新
+  area_code: '0418'
+  pinyin: fuxin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_071:
+  id: 71
+  name: 阜阳
+  area_code: '0558'
+  pinyin: fuyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_072:
+  id: 72
+  name: 扶余
+  area_code: '0438'
+  pinyin: fuyu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_073:
+  id: 73
+  name: 福州
+  area_code: '0591'
+  pinyin: fuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_074:
+  id: 74
+  name: 抚州
+  area_code: '0794'
+  pinyin: fuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_075:
+  id: 75
+  name: 赣州
+  area_code: '0797'
+  pinyin: ganzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_076:
+  id: 76
+  name: 格尔木
+  area_code: '0979'
+  pinyin: geermu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_077:
+  id: 77
+  name: 个旧
+  area_code: '0873'
+  pinyin: gejiu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_078:
+  id: 78
+  name: 公主岭
+  area_code: '0434'
+  pinyin: gongzhuling
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_079:
+  id: 79
+  name: 广元
+  area_code: '0839'
+  pinyin: guangyuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_080:
+  id: 80
+  name: 广州
+  area_code: '020'
+  pinyin: guangzhou
+  rate: 901
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-07 13:22:30.875000'
+cities_081:
+  id: 81
+  name: 桂林
+  area_code: '0773'
+  pinyin: guilin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_082:
+  id: 82
+  name: 贵阳
+  area_code: '0851'
+  pinyin: guiyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_083:
+  id: 83
+  name: 哈尔滨
+  area_code: '0451'
+  pinyin: haerbin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_084:
+  id: 84
+  name: 海城
+  area_code: '0412'
+  pinyin: haicheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_085:
+  id: 85
+  name: 海口
+  area_code: '0898'
+  pinyin: haikou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_086:
+  id: 86
+  name: 海拉尔
+  area_code: '0470'
+  pinyin: hailaer
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_087:
+  id: 87
+  name: 海宁
+  area_code: '0573'
+  pinyin: haining
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_088:
+  id: 88
+  name: 哈密
+  area_code: '0902'
+  pinyin: hami
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_089:
+  id: 89
+  name: 韩城
+  area_code: '0913'
+  pinyin: hancheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_090:
+  id: 90
+  name: 邯郸
+  area_code: '0310'
+  pinyin: handan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_091:
+  id: 91
+  name: 杭州
+  area_code: '0571'
+  pinyin: hangzhou
+  rate: 702
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-07 14:51:51.562500'
+cities_092:
+  id: 92
+  name: 汉中
+  area_code: '0916'
+  pinyin: hanzhong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_093:
+  id: 93
+  name: 毫州
+  area_code: '0558'
+  pinyin: haozhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_094:
+  id: 94
+  name: 缧河
+  area_code: '0395'
+  pinyin: he
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_095:
+  id: 95
+  name: 鹤壁
+  area_code: '0392'
+  pinyin: hebi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_096:
+  id: 96
+  name: 河池
+  area_code: '0778'
+  pinyin: hechi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_097:
+  id: 97
+  name: 合肥
+  area_code: '0551'
+  pinyin: hefei
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_098:
+  id: 98
+  name: 鹤岗
+  area_code: '0454'
+  pinyin: hegang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_099:
+  id: 99
+  name: 黑河
+  area_code: '0456'
+  pinyin: heihe
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_100:
+  id: 100
+  name: 衡水
+  area_code: '0318'
+  pinyin: hengshui
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_101:
+  id: 101
+  name: 衡阳
+  area_code: '0734'
+  pinyin: hengyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_102:
+  id: 102
+  name: 和田
+  area_code: '0903'
+  pinyin: hetian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_103:
+  id: 103
+  name: 河源
+  area_code: '0762'
+  pinyin: heyuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_104:
+  id: 104
+  name: 荷泽
+  area_code: '0530'
+  pinyin: heze
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_105:
+  id: 105
+  name: 洪湖
+  area_code: '0728'
+  pinyin: honghu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_106:
+  id: 106
+  name: 洪江
+  area_code: '0745'
+  pinyin: hongjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_107:
+  id: 107
+  name: 侯马
+  area_code: '0357'
+  pinyin: houma
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_108:
+  id: 108
+  name: 淮安
+  area_code: '0517'
+  pinyin: huaian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_109:
+  id: 109
+  name: 淮北
+  area_code: '0561'
+  pinyin: huaibei
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_110:
+  id: 110
+  name: 怀化
+  area_code: '0745'
+  pinyin: huaihua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_111:
+  id: 111
+  name: 淮南
+  area_code: '0554'
+  pinyin: huainan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_112:
+  id: 112
+  name: 淮阴
+  area_code: '0517'
+  pinyin: huaiyin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_113:
+  id: 113
+  name: 华鉴
+  area_code: '0826'
+  pinyin: huajian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_114:
+  id: 114
+  name: 黄山
+  area_code: '0559'
+  pinyin: huangshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_115:
+  id: 115
+  name: 黄山
+  area_code: '0559'
+  pinyin: huangshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_116:
+  id: 116
+  name: 黄石
+  area_code: '0714'
+  pinyin: huangshi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_117:
+  id: 117
+  name: 呼和浩特
+  area_code: '0471'
+  pinyin: huhehaote
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_118:
+  id: 118
+  name: 惠州
+  area_code: '0752'
+  pinyin: huizhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_119:
+  id: 119
+  name: 浑江
+  area_code: '0439'
+  pinyin: hunjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_120:
+  id: 120
+  name: 霍林郭勒
+  area_code: '0475'
+  pinyin: huolinguole
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_121:
+  id: 121
+  name: 湖州
+  area_code: '0572'
+  pinyin: huzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_122:
+  id: 122
+  name: 佳木斯
+  area_code: '0454'
+  pinyin: jiamusi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_123:
+  id: 123
+  name: 集安
+  area_code: '0435'
+  pinyin: jian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_124:
+  id: 124
+  name: 吉安
+  area_code: '0796'
+  pinyin: jian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_125:
+  id: 125
+  name: 江门
+  area_code: '0750'
+  pinyin: jiangmen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_126:
+  id: 126
+  name: 江山
+  area_code: '0570'
+  pinyin: jiangshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_127:
+  id: 127
+  name: 江阴
+  area_code: '0510'
+  pinyin: jiangyin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_128:
+  id: 128
+  name: 椒江
+  area_code: '0576'
+  pinyin: jiaojiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_129:
+  id: 129
+  name: 焦作
+  area_code: '0391'
+  pinyin: jiaozuo
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_130:
+  id: 130
+  name: 嘉兴
+  area_code: '0573'
+  pinyin: jiaxing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_131:
+  id: 131
+  name: 嘉峪关
+  area_code: '0937'
+  pinyin: jiayuguan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_132:
+  id: 132
+  name: 吉林
+  area_code: '0432'
+  pinyin: jilin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_133:
+  id: 133
+  name: 津
+  area_code: '0736'
+  pinyin: jin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_134:
+  id: 134
+  name: 济南
+  area_code: '0531'
+  pinyin: jinan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_135:
+  id: 135
+  name: 金昌
+  area_code: '0935'
+  pinyin: jinchang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_136:
+  id: 136
+  name: 晋城
+  area_code: '0356'
+  pinyin: jincheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_137:
+  id: 137
+  name: 景德镇
+  area_code: '0798'
+  pinyin: jingdezhen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_138:
+  id: 138
+  name: 荆门
+  area_code: '0724'
+  pinyin: jingmen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_139:
+  id: 139
+  name: 金华
+  area_code: '0579'
+  pinyin: jinhua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_140:
+  id: 140
+  name: 济宁
+  area_code: '0537'
+  pinyin: jining
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_141:
+  id: 141
+  name: 集宁
+  area_code: '0474'
+  pinyin: jining
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_142:
+  id: 142
+  name: 锦西
+  area_code: '0429'
+  pinyin: jinxi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_143:
+  id: 143
+  name: 锦州
+  area_code: '0416'
+  pinyin: jinzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_144:
+  id: 144
+  name: 吉首
+  area_code: '0743'
+  pinyin: jishou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_145:
+  id: 145
+  name: 九江
+  area_code: '0792'
+  pinyin: jiujiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_146:
+  id: 146
+  name: 酒泉
+  area_code: '0937'
+  pinyin: jiuquan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_147:
+  id: 147
+  name: 鸡西
+  area_code: '0453'
+  pinyin: jixi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_148:
+  id: 148
+  name: 开封
+  area_code: '0378'
+  pinyin: kaifeng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_149:
+  id: 149
+  name: 凯里
+  area_code: '0855'
+  pinyin: kaili
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_150:
+  id: 150
+  name: 喀什
+  area_code: '0998'
+  pinyin: kashi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_151:
+  id: 151
+  name: 克拉玛依
+  area_code: '0990'
+  pinyin: kelamayi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_152:
+  id: 152
+  name: 库尔勒
+  area_code: '0996'
+  pinyin: kuerle
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_153:
+  id: 153
+  name: 奎屯
+  area_code: '0992'
+  pinyin: kuitun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_154:
+  id: 154
+  name: 昆明
+  area_code: '0871'
+  pinyin: kunming
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_155:
+  id: 155
+  name: 莱芜
+  area_code: '0634'
+  pinyin: laiwu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_156:
+  id: 156
+  name: 来阳
+  area_code: '0734'
+  pinyin: laiyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_157:
+  id: 157
+  name: 廊坊
+  area_code: '0316'
+  pinyin: langfang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_158:
+  id: 158
+  name: 兰溪
+  area_code: '0579'
+  pinyin: lanxi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_159:
+  id: 159
+  name: 兰州
+  area_code: '0931'
+  pinyin: lanzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_160:
+  id: 160
+  name: 老河口
+  area_code: '0710'
+  pinyin: laohekou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_161:
+  id: 161
+  name: 拉萨
+  area_code: '0891'
+  pinyin: lasa
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_162:
+  id: 162
+  name: 冷水江
+  area_code: '0738'
+  pinyin: lengshuijiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_163:
+  id: 163
+  name: 冷水滩
+  area_code: '0746'
+  pinyin: lengshuitan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_164:
+  id: 164
+  name: 乐山
+  area_code: '0833'
+  pinyin: leshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_165:
+  id: 165
+  name: 涟源
+  area_code: '0738'
+  pinyin: lianyuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_166:
+  id: 166
+  name: 连云港
+  area_code: '0518'
+  pinyin: lianyungang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_167:
+  id: 167
+  name: 聊城
+  area_code: '0635'
+  pinyin: liaocheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_168:
+  id: 168
+  name: 辽阳
+  area_code: '0419'
+  pinyin: liaoyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_169:
+  id: 169
+  name: 辽源
+  area_code: '0437'
+  pinyin: liaoyuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_170:
+  id: 170
+  name: 利川
+  area_code: '0718'
+  pinyin: lichuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_171:
+  id: 171
+  name: 临川
+  area_code: '0794'
+  pinyin: linchuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_172:
+  id: 172
+  name: 临汾
+  area_code: '0357'
+  pinyin: linfen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_173:
+  id: 173
+  name: 临海
+  area_code: '0576'
+  pinyin: linhai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_174:
+  id: 174
+  name: 临河
+  area_code: '0478'
+  pinyin: linhe
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_175:
+  id: 175
+  name: 临清
+  area_code: '0563'
+  pinyin: linqing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_176:
+  id: 176
+  name: 临夏
+  area_code: '0930'
+  pinyin: linxia
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_177:
+  id: 177
+  name: 临沂
+  area_code: '0539'
+  pinyin: linyi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_178:
+  id: 178
+  name: 丽水
+  area_code: '0578'
+  pinyin: lishui
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_179:
+  id: 179
+  name: 六盘水
+  area_code: '0858'
+  pinyin: liupanshui
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_180:
+  id: 180
+  name: 柳州
+  area_code: '0772'
+  pinyin: liuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_181:
+  id: 181
+  name: 龙井
+  area_code: '0433'
+  pinyin: longjing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_182:
+  id: 182
+  name: 龙岩
+  area_code: '0597'
+  pinyin: longyan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_183:
+  id: 183
+  name: 娄底
+  area_code: '0738'
+  pinyin: loudi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_184:
+  id: 184
+  name: 汨罗
+  area_code: '0730'
+  pinyin: luo
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_185:
+  id: 185
+  name: 洛阳
+  area_code: '0379'
+  pinyin: luoyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_186:
+  id: 186
+  name: 泸州
+  area_code: '0830'
+  pinyin: luzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_187:
+  id: 187
+  name: 马鞍山
+  area_code: '0555'
+  pinyin: maanshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_188:
+  id: 188
+  name: 麻城
+  area_code: '0713'
+  pinyin: macheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_189:
+  id: 189
+  name: 满洲里
+  area_code: '0470'
+  pinyin: manzhouli
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_190:
+  id: 190
+  name: 茂名
+  area_code: '0668'
+  pinyin: maoming
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_191:
+  id: 191
+  name: 梅河口
+  area_code: '0436'
+  pinyin: meihekou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_192:
+  id: 192
+  name: 梅州
+  area_code: '0753'
+  pinyin: meizhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_193:
+  id: 193
+  name: 绵阳
+  area_code: '0816'
+  pinyin: mianyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_194:
+  id: 194
+  name: 牡丹江
+  area_code: '0453'
+  pinyin: mudanjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_195:
+  id: 195
+  name: 洮南
+  area_code: '0436'
+  pinyin: nan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_196:
+  id: 196
+  name: 南昌
+  area_code: '0791'
+  pinyin: nanchang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_197:
+  id: 197
+  name: 南充
+  area_code: '0817'
+  pinyin: nanchong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_198:
+  id: 198
+  name: 南京
+  area_code: '025'
+  pinyin: nanjing
+  rate: 400
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_199:
+  id: 199
+  name: 南宁
+  area_code: '0771'
+  pinyin: nanning
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_200:
+  id: 200
+  name: 南平
+  area_code: '0599'
+  pinyin: nanping
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_201:
+  id: 201
+  name: 南阳
+  area_code: '0377'
+  pinyin: nanyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_202:
+  id: 202
+  name: 内江
+  area_code: '0832'
+  pinyin: neijiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_203:
+  id: 203
+  name: 宁波
+  area_code: '0574'
+  pinyin: ningbo
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_204:
+  id: 204
+  name: 盘锦
+  area_code: '0427'
+  pinyin: panjin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_205:
+  id: 205
+  name: 攀枝花
+  area_code: '0812'
+  pinyin: panzhihua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_206:
+  id: 206
+  name: 平顶山
+  area_code: '0375'
+  pinyin: pingdingshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_207:
+  id: 207
+  name: 平凉
+  area_code: '0933'
+  pinyin: pingliang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_208:
+  id: 208
+  name: 萍乡
+  area_code: '0799'
+  pinyin: pingxiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_209:
+  id: 209
+  name: 凭祥
+  area_code: '0771'
+  pinyin: pingxiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_210:
+  id: 210
+  name: 莆田
+  area_code: '0594'
+  pinyin: putian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_211:
+  id: 211
+  name: 蒲析
+  area_code: '0715'
+  pinyin: puxi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_212:
+  id: 212
+  name: 濮阳
+  area_code: '0393'
+  pinyin: puyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_213:
+  id: 213
+  name: 青岛
+  area_code: '0532'
+  pinyin: qingdao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_214:
+  id: 214
+  name: 青铜峡
+  area_code: '0953'
+  pinyin: qingtongxia
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_215:
+  id: 215
+  name: 清远
+  area_code: '0763'
+  pinyin: qingyuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_216:
+  id: 216
+  name: 青州
+  area_code: '0536'
+  pinyin: qingzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_217:
+  id: 217
+  name: 秦皇岛
+  area_code: '0335'
+  pinyin: qinhuangdao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_218:
+  id: 218
+  name: 钦州
+  area_code: '0777'
+  pinyin: qinzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_219:
+  id: 219
+  name: 齐齐哈尔
+  area_code: '0452'
+  pinyin: qiqihaer
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_220:
+  id: 220
+  name: 七台河
+  area_code: '0453'
+  pinyin: qitaihe
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_221:
+  id: 221
+  name: 泉州
+  area_code: '0595'
+  pinyin: quanzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_222:
+  id: 222
+  name: 曲阜
+  area_code: '0537'
+  pinyin: qufu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_223:
+  id: 223
+  name: 曲靖
+  area_code: '0874'
+  pinyin: qujing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_224:
+  id: 224
+  name: 日喀则
+  area_code: '0892'
+  pinyin: rikaze
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_225:
+  id: 225
+  name: 日照
+  area_code: '0633'
+  pinyin: rizhao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_226:
+  id: 226
+  name: 瑞安
+  area_code: '0577'
+  pinyin: ruian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_227:
+  id: 227
+  name: 三门峡
+  area_code: '0398'
+  pinyin: sanmenxia
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_228:
+  id: 228
+  name: 三明
+  area_code: '0598'
+  pinyin: sanming
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_229:
+  id: 229
+  name: 三亚
+  area_code: '0899'
+  pinyin: sanya
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_230:
+  id: 230
+  name: 沙
+  area_code: '0716'
+  pinyin: sha
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_231:
+  id: 231
+  name: 上海
+  area_code: '021'
+  pinyin: shanghai
+  rate: 851
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-07 13:21:36.890625'
+cities_232:
+  id: 232
+  name: 商丘
+  area_code: '0370'
+  pinyin: shangqiu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_233:
+  id: 233
+  name: 上饶
+  area_code: '0793'
+  pinyin: shangrao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_234:
+  id: 234
+  name: 汕头
+  area_code: '0754'
+  pinyin: shantou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_235:
+  id: 235
+  name: 汕尾
+  area_code: '0660'
+  pinyin: shanwei
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_236:
+  id: 236
+  name: 韶关
+  area_code: '0751'
+  pinyin: shaoguan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_237:
+  id: 237
+  name: 邵武
+  area_code: '0599'
+  pinyin: shaowu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_238:
+  id: 238
+  name: 绍兴
+  area_code: '0575'
+  pinyin: shaoxing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_239:
+  id: 239
+  name: 邵阳
+  area_code: '0739'
+  pinyin: shaoyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_240:
+  id: 240
+  name: 深圳
+  area_code: '0755'
+  pinyin: shenzhen
+  rate: 1000
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_241:
+  id: 241
+  name: 沈阳
+  area_code: '024'
+  pinyin: shenyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_242:
+  id: 242
+  name: 石河子
+  area_code: '0993'
+  pinyin: shihezi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_243:
+  id: 243
+  name: 石家庄
+  area_code: '0311'
+  pinyin: shijiazhuang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_244:
+  id: 244
+  name: 石狮
+  area_code: '0595'
+  pinyin: shishi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_245:
+  id: 245
+  name: 石首
+  area_code: '0716'
+  pinyin: shishou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_246:
+  id: 246
+  name: 十堰
+  area_code: '0719'
+  pinyin: shiyan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_247:
+  id: 247
+  name: 石嘴山
+  area_code: '0952'
+  pinyin: shizuishan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_248:
+  id: 248
+  name: 双鸭
+  area_code: '0454'
+  pinyin: shuangya
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_249:
+  id: 249
+  name: 四平
+  area_code: '0434'
+  pinyin: siping
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_250:
+  id: 250
+  name: 绥汾河
+  area_code: '0453'
+  pinyin: suifenhe
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_251:
+  id: 251
+  name: 绥化
+  area_code: '0455'
+  pinyin: suihua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_252:
+  id: 252
+  name: 遂宁
+  area_code: '0825'
+  pinyin: suining
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_253:
+  id: 253
+  name: 随州
+  area_code: '0722'
+  pinyin: suizhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_254:
+  id: 254
+  name: 宿迁
+  area_code: '0527'
+  pinyin: suqian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_255:
+  id: 255
+  name: 苏州
+  area_code: '0512'
+  pinyin: suzhou
+  rate: 751
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-07 13:51:55.812500'
+cities_256:
+  id: 256
+  name: 宿州
+  area_code: '0557'
+  pinyin: suzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_257:
+  id: 257
+  name: 塔城
+  area_code: '0901'
+  pinyin: tacheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_258:
+  id: 258
+  name: 泰安
+  area_code: '0538'
+  pinyin: taian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_259:
+  id: 259
+  name: 太原
+  area_code: '0351'
+  pinyin: taiyuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_260:
+  id: 260
+  name: 泰州
+  area_code: '0523'
+  pinyin: taizhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_261:
+  id: 261
+  name: 唐山
+  area_code: '0315'
+  pinyin: tangshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_262:
+  id: 262
+  name: 天津
+  area_code: '022'
+  pinyin: tianjin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_263:
+  id: 263
+  name: 天门
+  area_code: '0728'
+  pinyin: tianmen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_264:
+  id: 264
+  name: 天水
+  area_code: '0938'
+  pinyin: tianshui
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_265:
+  id: 265
+  name: 铁法
+  area_code: '0410'
+  pinyin: tiefa
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_266:
+  id: 266
+  name: 铁岭
+  area_code: '0410'
+  pinyin: tieling
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_267:
+  id: 267
+  name: 铜川
+  area_code: '0919'
+  pinyin: tongchuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_268:
+  id: 268
+  name: 通化
+  area_code: '0435'
+  pinyin: tonghua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_269:
+  id: 269
+  name: 同江
+  area_code: '0454'
+  pinyin: tongjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_270:
+  id: 270
+  name: 通辽
+  area_code: '0475'
+  pinyin: tongliao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_271:
+  id: 271
+  name: 铜陵
+  area_code: '0562'
+  pinyin: tongling
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_272:
+  id: 272
+  name: 铜仁
+  area_code: '0856'
+  pinyin: tongren
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_273:
+  id: 273
+  name: 通什
+  area_code: '0899'
+  pinyin: tongshi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_274:
+  id: 274
+  name: 吐鲁番
+  area_code: '0995'
+  pinyin: tulufan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_275:
+  id: 275
+  name: 瓦房店
+  area_code: '0411'
+  pinyin: wafangdian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_276:
+  id: 276
+  name: 潍坊
+  area_code: '0536'
+  pinyin: weifang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_277:
+  id: 277
+  name: 威海
+  area_code: '0631'
+  pinyin: weihai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_278:
+  id: 278
+  name: 渭南
+  area_code: '0913'
+  pinyin: weinan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_279:
+  id: 279
+  name: 温州
+  area_code: '0577'
+  pinyin: wenzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_280:
+  id: 280
+  name: 五大连池
+  area_code: '0456'
+  pinyin: wudalianchi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_281:
+  id: 281
+  name: 乌海
+  area_code: '0473'
+  pinyin: wuhai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_282:
+  id: 282
+  name: 武汉
+  area_code: '027'
+  pinyin: wuhan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_283:
+  id: 283
+  name: 芜湖
+  area_code: '0553'
+  pinyin: wuhu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_284:
+  id: 284
+  name: 乌兰浩特
+  area_code: '0482'
+  pinyin: wulanhaote
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_285:
+  id: 285
+  name: 乌鲁木齐
+  area_code: '0991'
+  pinyin: wulumuqi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_286:
+  id: 286
+  name: 武威
+  area_code: '0935'
+  pinyin: wuwei
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_287:
+  id: 287
+  name: 无锡
+  area_code: '0510'
+  pinyin: wuxi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_288:
+  id: 288
+  name: 武穴
+  area_code: '0713'
+  pinyin: wuxue
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_289:
+  id: 289
+  name: 吴忠
+  area_code: '0953'
+  pinyin: wuzhong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_290:
+  id: 290
+  name: 梧州
+  area_code: '0774'
+  pinyin: wuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_291:
+  id: 291
+  name: 厦门
+  area_code: '0592'
+  pinyin: xiamen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_292:
+  id: 292
+  name: 西安
+  area_code: '029'
+  pinyin: xian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_293:
+  id: 293
+  name: 襄樊
+  area_code: '0710'
+  pinyin: xiangfan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_294:
+  id: 294
+  name: 湘潭
+  area_code: '0732'
+  pinyin: xiangtan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_295:
+  id: 295
+  name: 湘乡
+  area_code: '0732'
+  pinyin: xiangxiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_296:
+  id: 296
+  name: 咸宁
+  area_code: '0715'
+  pinyin: xianning
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_297:
+  id: 297
+  name: 仙桃
+  area_code: '0728'
+  pinyin: xiantao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_298:
+  id: 298
+  name: 咸阳
+  area_code: '0910'
+  pinyin: xianyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_299:
+  id: 299
+  name: 孝感
+  area_code: '0712'
+  pinyin: xiaogan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_300:
+  id: 300
+  name: 萧山
+  area_code: '0571'
+  pinyin: xiaoshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_301:
+  id: 301
+  name: 西昌
+  area_code: '0834'
+  pinyin: xichang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_302:
+  id: 302
+  name: 西峰
+  area_code: '0934'
+  pinyin: xifeng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_303:
+  id: 303
+  name: 锡林浩特
+  area_code: '0479'
+  pinyin: xilinhaote
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_304:
+  id: 304
+  name: 兴城
+  area_code: '0429'
+  pinyin: xingcheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_305:
+  id: 305
+  name: 兴化
+  area_code: '0523'
+  pinyin: xinghua
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_306:
+  id: 306
+  name: 邢台
+  area_code: '0319'
+  pinyin: xingtai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_307:
+  id: 307
+  name: 兴义
+  area_code: '0859'
+  pinyin: xingyi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_308:
+  id: 308
+  name: 西宁
+  area_code: '0971'
+  pinyin: xining
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_309:
+  id: 309
+  name: 新泰
+  area_code: '0538'
+  pinyin: xintai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_310:
+  id: 310
+  name: 新乡
+  area_code: '0373'
+  pinyin: xinxiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_311:
+  id: 311
+  name: 信阳
+  area_code: '0376'
+  pinyin: xinyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_312:
+  id: 312
+  name: 新余
+  area_code: '0790'
+  pinyin: xinyu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_313:
+  id: 313
+  name: 忻州
+  area_code: '0350'
+  pinyin: xinzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_314:
+  id: 314
+  name: 宣州
+  area_code: '0563'
+  pinyin: xuanzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_315:
+  id: 315
+  name: 许昌
+  area_code: '0374'
+  pinyin: xuchang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_316:
+  id: 316
+  name: 徐州
+  area_code: '0516'
+  pinyin: xuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_317:
+  id: 317
+  name: 牙克石
+  area_code: '0470'
+  pinyin: yakeshi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_318:
+  id: 318
+  name: 延安
+  area_code: '0911'
+  pinyin: yanan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_319:
+  id: 319
+  name: 盐城
+  area_code: '0515'
+  pinyin: yancheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_320:
+  id: 320
+  name: 阳江
+  area_code: '0662'
+  pinyin: yangjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_321:
+  id: 321
+  name: 阳泉
+  area_code: '0353'
+  pinyin: yangquan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_322:
+  id: 322
+  name: 扬州
+  area_code: '0514'
+  pinyin: yangzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_323:
+  id: 323
+  name: 延吉
+  area_code: '0433'
+  pinyin: yanji
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_324:
+  id: 324
+  name: 烟台
+  area_code: '0535'
+  pinyin: yantai
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_325:
+  id: 325
+  name: 衙州
+  area_code: '0570'
+  pinyin: yazhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_326:
+  id: 326
+  name: 宜宾
+  area_code: '0831'
+  pinyin: yibin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_327:
+  id: 327
+  name: 宜昌
+  area_code: '0717'
+  pinyin: yichang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_328:
+  id: 328
+  name: 伊春
+  area_code: '0795'
+  pinyin: yichun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_329:
+  id: 329
+  name: 伊春
+  area_code: '0458'
+  pinyin: yichun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_330:
+  id: 330
+  name: 义马
+  area_code: '0398'
+  pinyin: yima
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_331:
+  id: 331
+  name: 银川
+  area_code: '0951'
+  pinyin: yinchuan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_332:
+  id: 332
+  name: 应城
+  area_code: '0712'
+  pinyin: yingcheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_333:
+  id: 333
+  name: 营口
+  area_code: '0417'
+  pinyin: yingkou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_334:
+  id: 334
+  name: 鹰潭
+  area_code: '0701'
+  pinyin: yingtan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_335:
+  id: 335
+  name: 伊宁
+  area_code: '0999'
+  pinyin: yining
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_336:
+  id: 336
+  name: 义乌
+  area_code: '0579'
+  pinyin: yiwu
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_337:
+  id: 337
+  name: 宜兴
+  area_code: '0510'
+  pinyin: yixing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_338:
+  id: 338
+  name: 益阳
+  area_code: '0737'
+  pinyin: yiyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_339:
+  id: 339
+  name: 仪征
+  area_code: '0514'
+  pinyin: yizheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_340:
+  id: 340
+  name: 永州
+  area_code: '0746'
+  pinyin: yongzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_341:
+  id: 341
+  name: 榆次
+  area_code: '0354'
+  pinyin: yuci
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_342:
+  id: 342
+  name: 岳阳
+  area_code: '0730'
+  pinyin: yueyang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_343:
+  id: 343
+  name: 玉林
+  area_code: '0775'
+  pinyin: yulin
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_344:
+  id: 344
+  name: 玉门
+  area_code: '0937'
+  pinyin: yumen
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_345:
+  id: 345
+  name: 运城
+  area_code: '0359'
+  pinyin: yuncheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_346:
+  id: 346
+  name: 余姚
+  area_code: '0574'
+  pinyin: yuyao
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_347:
+  id: 347
+  name: 枣庄
+  area_code: '0632'
+  pinyin: zaozhuang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_348:
+  id: 348
+  name: 扎兰屯
+  area_code: '0470'
+  pinyin: zhalantun
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_349:
+  id: 349
+  name: 张家口
+  area_code: '0313'
+  pinyin: zhangjiakou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_350:
+  id: 350
+  name: 张掖
+  area_code: '0936'
+  pinyin: zhangye
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_351:
+  id: 351
+  name: 漳州
+  area_code: '0596'
+  pinyin: zhangzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_352:
+  id: 352
+  name: 湛江
+  area_code: '0759'
+  pinyin: zhanjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_353:
+  id: 353
+  name: 肇东
+  area_code: '0451'
+  pinyin: zhaodong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_354:
+  id: 354
+  name: 肇庆
+  area_code: '0758'
+  pinyin: zhaoqing
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_355:
+  id: 355
+  name: 照通
+  area_code: '0870'
+  pinyin: zhaotong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_356:
+  id: 356
+  name: 郑州
+  area_code: '0371'
+  pinyin: zhengzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_357:
+  id: 357
+  name: 镇江
+  area_code: '0511'
+  pinyin: zhenjiang
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_358:
+  id: 358
+  name: 枝城
+  area_code: '0717'
+  pinyin: zhicheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_359:
+  id: 359
+  name: 中山
+  area_code: '0760'
+  pinyin: zhongshan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_360:
+  id: 360
+  name: 周口
+  area_code: '0394'
+  pinyin: zhoukou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_361:
+  id: 361
+  name: 舟山
+  area_code: '0580'
+  pinyin: zhoushan
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_362:
+  id: 362
+  name: 诸城
+  area_code: '0536'
+  pinyin: zhucheng
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_363:
+  id: 363
+  name: 驻马店
+  area_code: '0396'
+  pinyin: zhumadian
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_364:
+  id: 364
+  name: 株洲
+  area_code: '0733'
+  pinyin: zhuzhou
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_365:
+  id: 365
+  name: 淄博
+  area_code: '0533'
+  pinyin: zibo
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_366:
+  id: 366
+  name: 自贡
+  area_code: '0813'
+  pinyin: zigong
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'
+cities_367:
+  id: 367
+  name: 遵义
+  area_code: '0852'
+  pinyin: zunyi
+  rate: 50
+  created_at: '2011-09-04 05:13:58.687500'
+  updated_at: '2011-09-04 05:13:58.687500'

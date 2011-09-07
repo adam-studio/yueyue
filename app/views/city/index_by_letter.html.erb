@@ -1,0 +1,7 @@
+<% @cities.each do |city| %>
+    <td><%= link_to city.name, {:action => "change_city", :id => city} %></td>
+<% end %>
+
+<p></p>
+
+<%= link_to '返回', :action => "index" %>
