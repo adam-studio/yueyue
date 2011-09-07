@@ -11,7 +11,7 @@
 <body>
 <div class="logo"> 
 	<img src="/images/yueyue.gif" alt="约约" height="35" width="91"> 
-<b><%= session[:city].name %></b><%= link_to '[切换城市]', {:controller=> 'city', :action=>'index' }%>
+<b><%= session[:city].name %></b><%= link_to '[切换城市]', {:controller=> 'city', :action=>'index', :id => request.request_uri }%>
 </div>
 
  <div class="top">

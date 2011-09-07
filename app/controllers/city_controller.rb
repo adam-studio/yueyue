@@ -1,5 +1,6 @@
 class CityController < ApplicationController
   def index
+    session[:original_url] = params[:id]
     @cities = City.find(:all, :limit => 10, :order => "rate DESC")
     
     @Alphabet = ('A'..'Z')
@@ -17,7 +18,9 @@ class CityController < ApplicationController
       city.rate += 1
       city.save
     end
-    redirect_to :controller => 'yueyue_objects', :action => 'index' 
+    original_url = session[:original_url] || {:controller => 'yueyue_objects', :action => 'index' }
+    session[:original_url] = nil	
+  redirect_to original_url
   end
   
   def index_by_letter

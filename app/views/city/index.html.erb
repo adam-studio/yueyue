@@ -1,5 +1,5 @@
 <%= form_tag(:action => "search") do %> 
- <p><%= label_tag(:q, "请输入城市名或者区号，如北京，010") %> </p>
+ <p><%= label_tag(:q, "请输入区号或者城市名，如：010、北京") %> </p>
   <%= text_field_tag(:q) %>  
   <%= submit_tag("切换") %>
   <% end %> 
@@ -17,4 +17,8 @@
 
 <p></p>
 
-<%= link_to '返回', { :controller => "yueyue_objects", :action => "index" } %>
+<%= 
+    original_url = session[:original_url] || {:controller => 'yueyue_objects', :action => 'index' }
+    session[:original_url] = nil	
+  link_to '返回', original_url
+ %>
