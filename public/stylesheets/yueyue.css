@@ -1,0 +1,159 @@
+body {
+	background-color: #fff;
+	color: #333333;
+	font-family: "宋体";
+	font-size: 12px;
+	word-wrap: break-word;
+	width:100%;		
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   12px;
+  line-height: 18px;
+}
+
+
+
+
+
+a {
+	color: #333333;
+	text-decoration: none;
+	
+}
+.t1 {
+	font-family: "新宋体";
+	color: #3300CC;
+}
+
+
+a:hover {
+	color: #FF0000;
+	text-decoration: none;
+}
+.bt a:visited {
+	color: #3300CC;
+	
+	
+}
+.top,.zt {
+	background-color: #AFC2EB;
+	text-align: left;
+	vertical-align: middle;
+	padding-left: 3px;
+	font-weight: bold;
+	font-family: "新宋体";
+	border-top-width: 2px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #FF0000;
+	border-right-color: #FF0000;
+	border-bottom-color: #FF0000;
+	border-left-color: #FF0000;
+	padding-right: 3px;
+	font-size: 12px;
+
+}
+.kk1 {
+	
+	border: 0px solid #CAA56C;
+	margin-top: 1px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-left: 0px;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #DFDFE1;
+	height: auto;
+	
+}
+
+
+
+.foot {
+    background: none repeat scroll 0 0 #DFDFE1;
+	text-align: center;
+	margin-top: 10px;
+	clear: both;
+	
+}
+
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+span {
+	color: #666666;
+	font-size: 12px;
+	font-family: "新宋体";
+	
+}
+.bt {
+	text-align: left;
+	margin-top: 1px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-color: #DFDFE1;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-size: 12px;
+}
+.right {
+	float: none;
+	text-align: right;
+}
+
+
+.logo {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+#notice {
+  color: green;
+}
+#form1 {
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+
+
+
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.kuang {
+	border: 1px solid #AFC2EB;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}

@@ -89,7 +89,7 @@ class UsersController < ApplicationController
         user = User.authenticate(params[:name], params[:password])
         if user
           session[:user_id] = user.id
-          redirect_to(:controller=>'sanguoshas', :action => "index")
+          redirect_to(:controller=>'yueyue_objects', :action => "index")
         else
           flash.now[:notice] = "Invalid user/password combination"
         end
@@ -99,7 +99,7 @@ class UsersController < ApplicationController
     def logout
       session[:user_id] = :logged_out
       flash[:notice] = "Logged out"
-      redirect_to(:controller => "sanguoshas", :action => "index")
+      redirect_to(:controller => "yueyue_objects", :action => "index")
     end
   
     # GET /users/1

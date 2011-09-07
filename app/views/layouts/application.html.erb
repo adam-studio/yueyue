@@ -6,7 +6,18 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+<div class="logo"> 
+	<img src="/images/yueyue.gif" alt="约约" height="35" width="91"> 
+</div>
+ <div class="top">
+    <%= link_to '发起约约', new_yueyue_object_path %>
+    <%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%> 
+     <% unless User.find_by_id(session[:user_id]) %>
+        <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
+  	 <% else %>
+  	    <%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
+    <% end %>   
+</div>
 <%= yield %>
 
 </body>

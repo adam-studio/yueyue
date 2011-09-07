@@ -1,4 +1,27 @@
-<h1>Listing yueyue_objects</h1>
+<div class="kk1">
+	<div class="ztfn">
+		<% 
+		type_count = 0
+		@yueyue_types.each do |yueyue_type| %>
+			<%= link_to yueyue_type.name, {:action => "index", :type=>yueyue_type}%>.
+		<%
+			type_count += 1
+			if (type_count % 4 == 0)%>
+				<br />
+			<%
+			end
+		end
+		%>
+	</div>
+</div>
+
+<div class="kk2">
+	<% form_tag :url=>{:action=>'index'} do %>
+		<input type="text" size="12"  name="search_str" />
+		<%= submit_tag "搜约约" %>
+	<% end %>
+</div>
+
 
 <table>
   <tr>

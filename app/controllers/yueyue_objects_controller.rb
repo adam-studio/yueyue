@@ -1,9 +1,14 @@
 class YueyueObjectsController < ApplicationController
   # GET /yueyue_objects
   # GET /yueyue_objects.xml
+  before_filter :authorize, :except => [:index, :show]
   def index
-    @yueyue_objects = YueyueObject.all
-
+    if params[:type]
+    	@yueyue_objects = YueyueType.find(params[:type]).yueyue_objects
+	else
+  		@yueyue_objects = YueyueObject.all
+  	end
+	@yueyue_types = YueyueType.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @yueyue_objects }
@@ -60,6 +65,7 @@ class YueyueObjectsController < ApplicationController
   # POST /yueyue_objects.xml
   def create
     @yueyue_object = YueyueObject.new(params[:yueyue_object])
+    @yueyue_object.owner = session[:user_id]
     
     #process the properties
     yueyue_object_properties = []
