@@ -1,3 +1,5 @@
+#coding: utf-8
+
 class CityController < ApplicationController
   def index
     session[:original_url] = params[:id]
@@ -37,6 +39,7 @@ class CityController < ApplicationController
     if city != nil
       redirect_to :action => "change_city", :id => city
     else
+      session[:notice] = "对不起，没有找到该城市。"
       redirect_to :controller => "city", :action => "index"
     end
   end

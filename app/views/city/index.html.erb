@@ -3,6 +3,11 @@
   <%= text_field_tag(:q) %>  
   <%= submit_tag("切换") %>
   <% end %> 
+  
+<% if session[:notice] != nil %>
+      <p><%= session[:notice] %><p>
+      <% session[:notice] = nil %>
+<% end %>
 		
 <% @cities.each do |city| %>
     <td><%= link_to city.name, {:action => "change_city", :id => city} %></td>
