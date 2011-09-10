@@ -66,6 +66,7 @@ class YueyueObjectsController < ApplicationController
   def create
     @yueyue_object = YueyueObject.new(params[:yueyue_object])
     @yueyue_object.owner = User.find(session[:user_id])
+    @yueyue_object.create_date = Time.now
     
     #process the properties
     yueyue_object_properties = []

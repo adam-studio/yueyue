@@ -24,30 +24,10 @@
 	<%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%>
 </div>
 
+<% @yueyue_objects.each do |yueyue_object| %>
 <div class="kk2">
 	<div class="bt">
-		
+		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %>
 	</div>
 </div>
-
-<table>
-  <tr>
-    <th>约约</th>
-	<th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @yueyue_objects.each do |yueyue_object| %>
-  <tr>
-	<td><%= yueyue_object.title %></td>
-    <td><%= link_to 'Show', yueyue_object %></td>
-    <td><%= link_to 'Edit', edit_yueyue_object_path(yueyue_object) %></td>
-    <td><%= link_to 'Destroy', yueyue_object, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Yueyue object', new_yueyue_object_path %>
