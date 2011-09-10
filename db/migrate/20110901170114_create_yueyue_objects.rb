@@ -3,7 +3,7 @@ class CreateYueyueObjects < ActiveRecord::Migration
     create_table :yueyue_objects do |t|
       t.integer :yueyue_type_id,  :null => false, :options => "CONSTRAINT fk_yueyue_object_yueyue_types REFERENCES yueyue_types(id)"
       t.string :title
-      t.string :owner
+      t.string :owner_id
       t.datetime :create_date
       
       t.timestamps

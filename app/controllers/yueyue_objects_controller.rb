@@ -65,7 +65,7 @@ class YueyueObjectsController < ApplicationController
   # POST /yueyue_objects.xml
   def create
     @yueyue_object = YueyueObject.new(params[:yueyue_object])
-    @yueyue_object.owner = session[:user_id]
+    @yueyue_object.owner = User.find(session[:user_id])
     
     #process the properties
     yueyue_object_properties = []

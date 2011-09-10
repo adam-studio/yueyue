@@ -48,6 +48,8 @@ def lookupLocationByIP ip
       end  
   end
   return ""
+rescue SocketError
+  return ""
 end  
   
   
