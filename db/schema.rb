@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110907162024) do
+ActiveRecord::Schema.define(:version => 20110910154748) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20110907162024) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   create_table "users_yueyue_objects", :id => false, :force => true do |t|
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20110907162024) do
     t.integer  "yueyue_type_id", :null => false
     t.string   "title"
     t.string   "owner_id"
+    t.datetime "yueyue_date"
     t.datetime "create_date"
     t.datetime "created_at"
     t.datetime "updated_at"

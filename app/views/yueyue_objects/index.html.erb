@@ -14,20 +14,21 @@
 </div>
 
 <div class="kk2">
-	<% form_tag :url=>{:action=>'index'} do %>
+	<% form_tag '', :method=>'GET' do %>
 		<input type="text" size="12"  name="search_str" />
 		<%= submit_tag "搜约约" %>
 	<% end %>
 </div>
 
 <div class="zt">
-	<%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%>
+	<%= link_to "最新约约", {:controller => "yueyue_objects", :action => "index"}%>
 </div>
 
 <% @yueyue_objects.each do |yueyue_object| %>
 <div class="kk2">
 	<div class="bt">
-		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %>
+		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %> 
+		<%=yueyue_object.yueyue_date.strftime('%m-%d %H:%M')%>
 	</div>
 </div>
 <% end %>

@@ -17,11 +17,14 @@
  <div class="top">
     <%= link_to '发起约约', new_yueyue_object_path %>
     <%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%> 
-     <% unless User.find_by_id(session[:user_id]) %>
+     <% unless user = User.find_by_id(session[:user_id]) %>
         <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
   	 <% else %>
+		<% if user.role == "DEV"%>
+			<%= link_to "约约主题定制", {:controller => "yueyue_types"}%>
+		<% end %>
   	    <%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
-    <% end %>   
+    <% end %>
 </div>
 
 <%= yield %>
