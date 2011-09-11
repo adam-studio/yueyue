@@ -2,7 +2,9 @@
 
 class CityController < ApplicationController
   def index
-    session[:original_url] = params[:id]
+    if params[:id] != nil
+      session[:original_url] = params[:id]
+    end
     @cities = City.find(:all, :limit => 10, :order => "rate DESC")
     
     @Alphabet = ('A'..'Z')
