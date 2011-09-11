@@ -1,10 +1,8 @@
-
 body, p, ol, ul, input, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   12px;
   line-height: 18px;
 }
-
 
 a {
 	color: #333333;
@@ -23,8 +21,6 @@ a:hover {
 }
 .bt a:visited {
 	color: #3300CC;
-	
-	
 }
 .top,.zt {
 	background-color: #AFC2EB;

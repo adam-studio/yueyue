@@ -11,7 +11,7 @@
 <body>
 <div class="logo"> 
 	<img src="/images/yueyue.gif" alt="约约" height="35" width="91" /> 
-<b><%= session[:city].name %></b><%= link_to '[切换城市]', {:controller=> 'city', :action=>'index', :id => request.request_uri }%>
+<b><%= session[:city].name %></b><%= link_to '[切换城市]', {:controller=> 'city', :action=>'index' }%>
 </div>
 
  <div class="top">
@@ -31,8 +31,6 @@
 
    <div class="foot">
       <a href="mailto:adamstudio.cn@gmail.com ">联系我们</a>
-      <br/>
-           Adam Studio
-      </div>
+      <br/>亚当工作室</div>
 </body>
 </html>

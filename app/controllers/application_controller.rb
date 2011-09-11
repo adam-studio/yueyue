@@ -3,8 +3,13 @@ require 'net/http'
 class ApplicationController < ActionController::Base
  protect_from_forgery
   before_filter :select_city
+  after_filter :remember_url 
   
   protected
+    def remember_url
+      session[:original_url_before_change_city] = request.request_uri
+    end
+  
     def authorize
     	unless User.find_by_id(session[:user_id])
         flash[:notice] = "Please log in"

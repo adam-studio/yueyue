@@ -22,7 +22,4 @@
 
 <p></p>
 
-<%= 
-    original_url = session[:original_url] || {:controller => 'yueyue_objects', :action => 'index' }
-  link_to '返回', original_url
- %>
+<%= link_to '返回', @return_url %>

@@ -1,13 +1,13 @@
 #coding: utf-8
 
 class CityController < ApplicationController
+after_filter :remember_url, :only => []
   def index
-    if params[:id] != nil
-      session[:original_url] = params[:id]
-    end
     @cities = City.find(:all, :limit => 10, :order => "rate DESC")
     
     @Alphabet = ('A'..'Z')
+    
+    @return_url = session[:original_url_before_change_city] || {:controller => 'yueyue_objects', :action => 'index' }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,9 +22,8 @@ class CityController < ApplicationController
       city.rate += 1
       city.save
     end
-    original_url = session[:original_url] || {:controller => 'yueyue_objects', :action => 'index' }
-    session[:original_url] = nil	
-  redirect_to original_url
+    redirect_url = session[:original_url_before_change_city] || {:controller => 'yueyue_objects', :action => 'index' }
+  redirect_to redirect_url
   end
   
   def index_by_letter
