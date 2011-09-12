@@ -1,24 +1,29 @@
-<h1>Editing user</h1>
-
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
-  </p>
-  <p>
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+   <div>
+   <div>
+     用户名：<b><%= @user.name %></b>
+     </div>
+     <% if session[:notice] != nil %>
+     <div>
+       <%= session[:notice] %>
+       <% session[:notice] = nil %>
+     </div>
+     <% end %>
+   <% form_tag :method => :put, :action => "update" do %>
+           <div>
+           原始密码：<br/>
+          <%= text_field_tag :original_password, params[:original_password], :size => 30 %><br/>
+          </div>
+		</div>
+		   新密码<br/>
+          <%= password_field_tag :new_password, params[:new_password], :size => 30 %><br/>
+          </div>
+      
+          		  <div>
+		     确认密码<br/>
+		    <%= password_field_tag :new_password_confirmation, params[:new_password_confirmation], :size => 30 %><br/>
+		  </div>
+		  
+		  <%= submit_tag "修改" %>
+           </div>
+		 <% end %>
+   </div>

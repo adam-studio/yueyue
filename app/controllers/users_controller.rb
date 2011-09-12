@@ -54,9 +54,10 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-
+    @user.password = params[:new_password];
+    
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.save
         flash[:notice] = "User #{@user.name} was successfully updated."
         format.html { redirect_to(:action=>'index') }
         format.xml  { head :ok }

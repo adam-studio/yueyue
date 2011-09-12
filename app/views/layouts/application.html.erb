@@ -23,8 +23,10 @@
 		<% if user.role == "DEV"%>
 			<%= link_to "约约主题定制", {:controller => "yueyue_types"}%>
 		<% end %>
+		   <%= link_to "个人信息", { :controller => "users", :action => "edit", :id => session[:user_id] } %>
   	    <%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
     <% end %>
+    
 </div>
 
 <%= yield %>
