@@ -8,7 +8,7 @@
        <% session[:notice] = nil %>
      </div>
      <% end %>
-   <% form_tag :method => :put, :action => "update" do %>
+   <% form_tag("/users/#{@user}", :method => :put) do %>
            <div>
            原始密码：<br/>
           <%= text_field_tag :original_password, params[:original_password], :size => 30 %><br/>
