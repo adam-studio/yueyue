@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
@@ -54,16 +56,32 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-    @user.password = params[:new_password];
+    p @user
     
+    result = true
+    if @user.check_input_password(params[:original_password]) == false
+      flash[:notice] = "原始密码输入不正确"
+      result = false
+    end 
+    if (result && params[:new_password] != params[:new_password_confirmation])
+      flash[:notice] = "确认密码与新密码不一致。"
+      result = false
+    end
+    
+    if result
+      @user.password = params[:new_password];
+      result = @user.save
+    end
+      
     respond_to do |format|
-      if @user.save
-        flash[:notice] = "User #{@user.name} was successfully updated."
-        format.html { redirect_to(:action=>'index') }
+      if result
+        flash[:notice] = "用户信息修改成功。"
+        format.html { render :action => "edit" }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors,
+        format.xml  { flash[:notice] = flash[:notice] || flash[:notice]
+        	             render :xml => flash[:notice],
                              :status => :unprocessable_entity }
       end
     end

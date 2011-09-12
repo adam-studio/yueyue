@@ -41,6 +41,11 @@ class User < ActiveRecord::Base
     self.hashed_password = User.encrypted_password(self.password, self.salt)
   end
   
+  def check_input_password (pwd)
+    hashed_password = User.encrypted_password(pwd, self.salt)
+    result = (self.hashed_password == hashed_password)
+    return result
+  end
   
 
   
@@ -49,8 +54,9 @@ class User < ActiveRecord::Base
       raise "Can't delete last user"
     end
   end     
-  
 
+
+  
 private
 
   def password_non_blank
@@ -63,12 +69,12 @@ private
     self.salt = self.object_id.to_s + rand.to_s
   end
   
-  
-  
-  def self.encrypted_password(password, salt)
+    def self.encrypted_password(password, salt)
     string_to_hash = password + "wibble" + salt
     Digest::SHA1.hexdigest(string_to_hash)
   end
+  
+
   
 
 end

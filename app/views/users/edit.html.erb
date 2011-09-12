@@ -1,14 +1,15 @@
    <div>
+     <% if flash[:notice] != nil %>
+     <div>
+       <b><%= flash[:notice] %></b>
+     </div>
+     <% end %>
+     
    <div>
      用户名：<b><%= @user.name %></b>
      </div>
-     <% if session[:notice] != nil %>
-     <div>
-       <%= session[:notice] %>
-       <% session[:notice] = nil %>
-     </div>
-     <% end %>
-   <% form_tag("/users/#{@user}", :method => :put) do %>
+
+   <% form_tag("/users/#{@user.id}", :method => :put) do %>
            <div>
            原始密码：<br/>
           <%= text_field_tag :original_password, params[:original_password], :size => 30 %><br/>
