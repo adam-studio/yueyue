@@ -25,7 +25,7 @@ class YueyueTypePropertiesController < ApplicationController
   # GET /yueyue_type_properties/new.xml
   def new
     @yueyue_type_property = YueyueTypeProperty.new
-    @yueyue_types = YueyueType.all
+    @yueyue_type = YueyueType.find(params[:yueyue_type])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +43,7 @@ class YueyueTypePropertiesController < ApplicationController
   # POST /yueyue_type_properties.xml
   def create
     @yueyue_type_property = YueyueTypeProperty.new(params[:yueyue_type_property])
+
     yueyue_type = YueyueType.find(params[:yueyue_type])
     @yueyue_type_property.yueyue_type = yueyue_type
 
