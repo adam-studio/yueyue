@@ -14,6 +14,8 @@ class YueyueTypesController < ApplicationController
   # GET /yueyue_types/1.xml
   def show
     @yueyue_type = YueyueType.find(params[:id])
+    @yueyue_type_properties = @yueyue_type.yueyue_type_properties
+    @yueyue_type_actions = @yueyue_type.yueyue_type_actions
 
     respond_to do |format|
       format.html # show.html.erb
