@@ -1,4 +1,6 @@
 Yueyue::Application.routes.draw do
+  resources :groups
+
   get "city/index"
 
   get "city/change_city"

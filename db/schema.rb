@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110910154748) do
+ActiveRecord::Schema.define(:version => 20110912143729) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(:version => 20110910154748) do
     t.integer  "rate"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups_users", :id => false, :force => true do |t|
+    t.integer "group_id"
+    t.integer "user_id"
   end
 
   create_table "movies", :force => true do |t|
@@ -62,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20110910154748) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.string   "signature"
   end
 
   create_table "users_yueyue_objects", :id => false, :force => true do |t|
@@ -82,7 +94,8 @@ ActiveRecord::Schema.define(:version => 20110910154748) do
   create_table "yueyue_objects", :force => true do |t|
     t.integer  "yueyue_type_id", :null => false
     t.string   "title"
-    t.string   "owner"
+    t.string   "owner_id"
+    t.datetime "yueyue_date"
     t.datetime "create_date"
     t.datetime "created_at"
     t.datetime "updated_at"

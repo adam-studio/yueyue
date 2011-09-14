@@ -70,6 +70,7 @@ class UsersController < ApplicationController
     
     if result
       @user.password = params[:new_password];
+      @user.signature = params[:signature];
       result = @user.save
     end
       

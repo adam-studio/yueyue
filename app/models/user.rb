@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   	has_and_belongs_to_many :sanguoshas, :uniq => true
   	has_and_belongs_to_many :movies, :uniq => true
   	has_and_belongs_to_many :yueyue_objects, :uniq => true
+  	has_and_belongs_to_many :groups, :uniq => true
   	
   validates_presence_of     :name
   validates_uniqueness_of   :name

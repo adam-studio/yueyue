@@ -22,7 +22,7 @@
  <div class="top">
      <% if User.find_by_id(session[:user_id]) != nil%>
        <%= link_to "我的首页", {:controller => "yueyue_objects", :action => "index"}%>
-       <%= link_to "好友", {:controller => "yueyue_objects", :action => "index"}%>
+       <%= link_to "好友", {:controller => "groups", :action => "index"}%>
        <%= link_to "消息", {:controller => "yueyue_objects", :action => "index"}%>
        <%= link_to "设置", { :controller => "users", :action => "edit", :id => session[:user_id] } %>
        <br/>

@@ -10,6 +10,10 @@
      </div>
 
    <% form_tag("/users/#{@user.id}", :method => :put) do %>
+   <div>
+		  签名<br/>
+		  <%= text_field_tag :signature, params[:signature], :size=> 30 %> <br/>
+		  </div>
            <div>
            原始密码：<br/>
           <%= text_field_tag :original_password, params[:original_password], :size => 30 %><br/>
@@ -23,6 +27,8 @@
 		     确认密码<br/>
 		    <%= password_field_tag :new_password_confirmation, params[:new_password_confirmation], :size => 30 %><br/>
 		  </div>
+		  
+		  
 		  
 		  <%= submit_tag "修改" %>
            </div>
