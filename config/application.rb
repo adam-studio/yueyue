@@ -38,5 +38,8 @@ module Yueyue
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    config.time_zone = 'Beijing'
+    config.active_record.default_timezone = :Beijing
   end
 end

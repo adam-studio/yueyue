@@ -4,11 +4,11 @@ class YueyueObjectsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
   def index
     if params[:type]
-    	@yueyue_objects = YueyueType.find(params[:type]).yueyue_objects
-	else
-  		@yueyue_objects = YueyueObject.all
-  	end
-	@yueyue_types = YueyueType.all
+      @yueyue_objects = YueyueType.find(params[:type]).yueyue_objects
+    else
+      @yueyue_objects = YueyueObject.all
+    end
+    @yueyue_types = YueyueType.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @yueyue_objects }
@@ -24,7 +24,7 @@ class YueyueObjectsController < ApplicationController
       @yueyue_actions = @yueyue_type.yueyue_type_actions
       #TODO 增加对找不到约约type的异常处理
     end
-    
+
     @yueyue_properties = @yueyue_object.yueyue_object_properties
 
     respond_to do |format|
@@ -38,7 +38,7 @@ class YueyueObjectsController < ApplicationController
   def new
     @yueyue_object = YueyueObject.new
     @yueyue_types = YueyueType.all
-    
+
     #TODO 按照热门程度对约约主题进行排序
     if @yueyue_types && @yueyue_types.size > 0
       if params[:id]
@@ -67,7 +67,8 @@ class YueyueObjectsController < ApplicationController
     @yueyue_object = YueyueObject.new(params[:yueyue_object])
     @yueyue_object.owner = User.find(session[:user_id])
     @yueyue_object.create_date = Time.now
-    
+    @yueyue_year = "2011"
+
     #process the properties
     yueyue_object_properties = []
     yueyue_type = YueyueType.find(@yueyue_object.yueyue_type_id)
@@ -76,7 +77,7 @@ class YueyueObjectsController < ApplicationController
       if (properties)
         properties.each do |property|
           yueyue_object_properties << YueyueObjectProperty.new(#:yueyue_object_id=>yueyue_object.id,
-            :yueyue_type_property_id=>property.id, :property_value=>params[property.name])
+          :yueyue_type_property_id=>property.id, :property_value=>params[property.name])
         end
         @yueyue_object.yueyue_object_properties = yueyue_object_properties
       end
@@ -120,19 +121,19 @@ class YueyueObjectsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   # GET /yueyue_objects/action/yueyue_object_id&action_id
   def action
     yueyue_object_id, yueyue_action_id = params[:id].split('&')
     @yueyue_object = YueyueObject.find(yueyue_object_id)
     yueyue_action = YueyueTypeAction.find(yueyue_action_id)
-    
+
     # 调用action方法
     action_method_name, action_class_name = yueyue_action.name.split('@')
     process_method_name = "process_#{action_method_name}"
     action_class = Object.const_get(action_class_name)
     action_class.send(process_method_name, :user_id=>session[:user_id], :yueyue_object_id=>yueyue_object_id)
-    
+
     redirect_to(:action => "show", :id=>yueyue_object_id)
   end
 end

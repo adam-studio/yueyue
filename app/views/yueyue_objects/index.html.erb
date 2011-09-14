@@ -1,22 +1,22 @@
 <div class="kk1">
-		<% 
-		type_count = 0
-		@yueyue_types.each do |yueyue_type| %>
-			<%= link_to yueyue_type.name, {:action => "index", :type=>yueyue_type}%>.
-		<%
-			type_count += 1
-			if (type_count % 4 == 0)%>
-				<br />
-			<%
-			end
-		end
-		%>
+	<% 
+	type_count = 0
+	@yueyue_types.each do |yueyue_type| %>
+	<%= link_to yueyue_type.name, {:action => "index", :type=>yueyue_type}%>.
+	<%
+	type_count += 1
+	if (type_count % 4 == 0)%>
+	<br />
+	<%
+end
+end
+%>
 </div>
 
 <div class="kk2">
 	<% form_tag '', :method=>'GET' do %>
-		<input type="text" size="12"  name="search_str" />
-		<%= submit_tag "搜约约" %>
+	<input type="text" size="12"  name="search_str" />
+	<%= submit_tag "搜约约" %>
 	<% end %>
 </div>
 
@@ -28,7 +28,7 @@
 <div class="kk2">
 	<div class="bt">
 		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %> 
-		
+
 	</div>
 </div>
 <% end %>

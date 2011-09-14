@@ -25,7 +25,6 @@ class YueyueObjectPropertiesController < ApplicationController
   # GET /yueyue_object_properties/new.xml
   def new
     @yueyue_object_property = YueyueObjectProperty.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @yueyue_object_property }
