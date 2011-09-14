@@ -19,11 +19,7 @@ Yueyue::Application.routes.draw do
 
   resources :yueyue_types
 
-  resources :movies
-
   resources :users
-
-  resources :sanguoshas
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,24 +1,18 @@
-<h1>Listing yueyue_types</h1>
+<h1>约约主题</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @yueyue_types.each do |yueyue_type| %>
   <tr>
     <td><%= yueyue_type.name %>
 	</td>
-    <td><%= link_to 'Show', yueyue_type %></td>
-    <td><%= link_to 'Edit', edit_yueyue_type_path(yueyue_type) %></td>
-    <td><%= link_to 'Destroy', yueyue_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '查看', yueyue_type %></td>
+    <td><%= link_to '修改', edit_yueyue_type_path(yueyue_type) %></td>
+    <td><%= link_to '删除', yueyue_type, :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Yueyue type', new_yueyue_type_path %>
+<%= link_to '新增约约主题', new_yueyue_type_path %>

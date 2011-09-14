@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>约约主题:</b>
   <%= @yueyue_type.name %>
 </p>
 
@@ -10,18 +10,17 @@
 	<th>约约主题属性</th>
 	<th></th>
 	<th></th>
-	<th></th>
   </tr>
 
 <% @yueyue_type_properties.each do |yueyue_type_property| %>
   <tr>
 	<td><%= yueyue_type_property.name %></td>
-    <td><%= link_to 'Edit', edit_yueyue_type_property_path(yueyue_type_property) %></td>
-    <td><%= link_to 'Destroy', yueyue_type_property, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '修改属性', edit_yueyue_type_property_path(yueyue_type_property) %></td>
+    <td><%= link_to '删除属性', yueyue_type_property, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Edit', edit_yueyue_type_path(@yueyue_type) %> |
-<%= link_to 'New Yueyue type property', :controller=>"YueyueTypeProperties", :action=>"new", :yueyue_type=>@yueyue_type %> |
-<%= link_to 'Back', yueyue_types_path(:yueyue_type=>@yueyue_type) %>
+<%= link_to '修改约约主题', edit_yueyue_type_path(@yueyue_type) %> |
+<%= link_to '新增主题属性', :controller=>"YueyueTypeProperties", :action=>"new", :yueyue_type=>@yueyue_type %> |
+<%= link_to '返回', yueyue_types_path(:yueyue_type=>@yueyue_type) %>
