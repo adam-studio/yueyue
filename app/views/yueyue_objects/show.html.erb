@@ -7,13 +7,13 @@
 </p>
 
 <p>
-  <b>主任:</b>
-  <%= @yueyue_object.owner %>
+  <b>发起人:</b>
+  <%= @yueyue_object.owner.name %>
 </p>
 
 <p>
   <b>创建时间:</b>
-  <%= @yueyue_object.create_date %>
+  <%= @yueyue_object.create_date.strftime("%Y-%m-%d") %>
 </p>
 
 <%=render_yueyue_properties.html_safe%>
