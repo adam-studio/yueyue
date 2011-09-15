@@ -71,9 +71,11 @@ class YueyueObjectsController < ApplicationController
 
     #process the properties
     yueyue_object_properties = []
-    yueyue_type = YueyueType.find(@yueyue_object.yueyue_type_id)
+    yueyue_type = @yueyue_object.yueyue_type
     if (yueyue_type)
       properties = yueyue_type.yueyue_type_properties
+      p "==================="
+      p properties
       if (properties)
         properties.each do |property|
           yueyue_object_properties << YueyueObjectProperty.new(#:yueyue_object_id=>yueyue_object.id,
