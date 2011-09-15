@@ -59,6 +59,9 @@ class YueyueObjectsController < ApplicationController
   # GET /yueyue_objects/1/edit
   def edit
     @yueyue_object = YueyueObject.find(params[:id])
+    @yueyue_type = @yueyue_object.yueyue_type
+    @yueyue_properties = @yueyue_type.yueyue_type_properties
+    @yueyue_object_properties = @yueyue_object.yueyue_object_properties
   end
 
   # POST /yueyue_objects
@@ -74,12 +77,10 @@ class YueyueObjectsController < ApplicationController
     yueyue_type = @yueyue_object.yueyue_type
     if (yueyue_type)
       properties = yueyue_type.yueyue_type_properties
-      p "==================="
-      p properties
       if (properties)
         properties.each do |property|
-          yueyue_object_properties << YueyueObjectProperty.new(#:yueyue_object_id=>yueyue_object.id,
-          :yueyue_type_property_id=>property.id, :property_value=>params[property.name])
+          yueyue_object_properties << YueyueObjectProperty.new(:yueyue_object_id=>@yueyue_object.id,
+          :yueyue_type_property_id=>property.id, :property_value=>params["yueyue_property_#{property.id}"])
         end
         @yueyue_object.yueyue_object_properties = yueyue_object_properties
       end
@@ -87,7 +88,7 @@ class YueyueObjectsController < ApplicationController
 
     respond_to do |format|
       if @yueyue_object.save
-        format.html { redirect_to(@yueyue_object, :notice => 'Yueyue object was successfully created.') }
+        format.html { redirect_to(@yueyue_object, :notice => I18n.t('yueyue_objects.created')) }
         format.xml  { render :xml => @yueyue_object, :status => :created, :location => @yueyue_object }
       else
         format.html { render :action => "new" }
@@ -103,7 +104,7 @@ class YueyueObjectsController < ApplicationController
 
     respond_to do |format|
       if @yueyue_object.update_attributes(params[:yueyue_object])
-        format.html { redirect_to(@yueyue_object, :notice => 'Yueyue object was successfully updated.') }
+        format.html { redirect_to(@yueyue_object, :notice => I18n.t('yueyue_objects.updated')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

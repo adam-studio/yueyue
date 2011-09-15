@@ -13,10 +13,17 @@
 
 <p>
   <b>创建时间:</b>
-  <%= @yueyue_object.create_date.strftime("%Y-%m-%d") %>
+  <%= @yueyue_object.created_at.strftime("%Y-%m-%d") %>
+</p>
+
+<p>
+  <b>约约时间:</b>
+  <%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %>
 </p>
 
 <%=render_yueyue_properties.html_safe%>
 <%=render_yueyue_actions.html_safe%>
+<% if session[:user_id] == @yueyue_object.owner.id %>
 <%= link_to 'Edit', edit_yueyue_object_path(@yueyue_object) %> |
+<% end %>
 <%= link_to 'Back', yueyue_objects_path %>
