@@ -22,6 +22,16 @@ class YueyueObjectsController < ApplicationController
     @yueyue_objects = YueyueObject.paginate(:page=>params[:page], :per_page=>20, :order=>params[:order], :conditions=>"created_at >= date('now')")
   end
 
+  #GET /yueyue_objects/home
+  #GET /yueyue_objects/home.xml
+  def home
+    @created_yueyue_objects = YueyueObject.find(:all, :order=>:created_at, 
+      :limit=>10, :conditions=>["created_at >= date('now') and owner_id = ?", session[:user_id]])
+    
+    user = User.find(session[:user_id])
+    @joined_yueyue_objects = user.unfinished_yueyue_objects
+  end
+
   # GET /yueyue_objects/1
   # GET /yueyue_objects/1.xml
   def show

@@ -11,6 +11,8 @@ Yueyue::Application.routes.draw do
   
   get "yueyue_objects/list"
 
+  get "yueyue_objects/home"
+
   resources :yueyue_object_properties
 
   resources :yueyue_objects
