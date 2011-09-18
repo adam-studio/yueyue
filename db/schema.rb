@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110912143729) do
+ActiveRecord::Schema.define(:version => 20110918035523) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -43,10 +43,25 @@ ActiveRecord::Schema.define(:version => 20110912143729) do
     t.datetime "updated_at"
   end
 
+  create_table "movies_users", :id => false, :force => true do |t|
+    t.integer  "movie_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sanguoshas", :force => true do |t|
     t.string   "description"
     t.datetime "yueyue_date"
     t.string   "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "yueyue_owner"
+  end
+
+  create_table "sanguoshas_users", :id => false, :force => true do |t|
+    t.integer  "sanguosha_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,7 +104,6 @@ ActiveRecord::Schema.define(:version => 20110912143729) do
   create_table "yueyue_type_actions", :force => true do |t|
     t.integer  "yueyue_type_id", :null => false
     t.string   "name"
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

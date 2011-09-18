@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>动作（method@class）:</b>
   <%= @yueyue_type_action.name %>
 </p>
-<p>
-  <b>Title:</b>
-  <%= @yueyue_type_action.name %>
-</p>
-<%= link_to 'Edit', edit_yueyue_type_action_path(@yueyue_type_action) %> |
-<%= link_to 'Back', yueyue_type_actions_path %>
+<%= link_to '修改', edit_yueyue_type_action_path(@yueyue_type_action) %> |
+<%= link_to '返回', yueyue_type_path(@yueyue_type_action.yueyue_type) %>

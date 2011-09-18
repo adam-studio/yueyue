@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Title</th>
     <th></th>
     <th></th>
 	<th></th>
@@ -12,7 +11,6 @@
 <% @yueyue_type_actions.each do |yueyue_type_action| %>
   <tr>
 	<td><%= yueyue_type_action.name %></td>
-	<td><%= yueyue_type_action.title %></td>
     <td><%= link_to 'Show', yueyue_type_action %></td>
     <td><%= link_to 'Edit', edit_yueyue_type_action_path(yueyue_type_action) %></td>
     <td><%= link_to 'Destroy', yueyue_type_action, :confirm => 'Are you sure?', :method => :delete %></td>

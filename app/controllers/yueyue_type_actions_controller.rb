@@ -25,7 +25,7 @@ class YueyueTypeActionsController < ApplicationController
   # GET /yueyue_type_actions/new.xml
   def new
     @yueyue_type_action = YueyueTypeAction.new
-    @yueyue_types = YueyueType.all
+    @yueyue_type = YueyueType.find(params[:yueyue_type])
     
     respond_to do |format|
       format.html # new.html.erb
