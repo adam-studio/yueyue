@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110918035523) do
+ActiveRecord::Schema.define(:version => 20110918051947) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -30,40 +30,6 @@ ActiveRecord::Schema.define(:version => 20110918035523) do
   create_table "groups_users", :id => false, :force => true do |t|
     t.integer "group_id"
     t.integer "user_id"
-  end
-
-  create_table "movies", :force => true do |t|
-    t.string   "description"
-    t.datetime "yueyue_date"
-    t.string   "movie_name"
-    t.string   "place"
-    t.integer  "ticket_fee"
-    t.string   "yueyue_owner"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "movies_users", :id => false, :force => true do |t|
-    t.integer  "movie_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sanguoshas", :force => true do |t|
-    t.string   "description"
-    t.datetime "yueyue_date"
-    t.string   "place"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "yueyue_owner"
-  end
-
-  create_table "sanguoshas_users", :id => false, :force => true do |t|
-    t.integer  "sanguosha_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
