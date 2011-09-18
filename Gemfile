@@ -29,3 +29,5 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'will_paginate', '~> 3.0.0'

@@ -8,8 +8,8 @@
 	if (type_count % 4 == 0)%>
 	<br />
 	<%
-end
-end
+	end
+	end
 %>
 </div>
 
@@ -21,7 +21,7 @@ end
 </div>
 
 <div class="zt">
-	<%= link_to "最新约约", {:controller => "yueyue_objects", :action => "index"}%>
+	<%= link_to "最新约约", {:controller => "yueyue_objects", :action => "list", :order => 'created_at', :page=>1}%>
 </div>
 
 <% @yueyue_objects.each do |yueyue_object| %>
@@ -31,4 +31,19 @@ end
 
 	</div>
 </div>
+<% end %>
+
+<% if @hot_yueyue_objects %>
+<div class="zt">
+	<%= link_to "热门约约", {:controller => "yueyue_objects", :action => "list", :order=>'rate desc', :page=>1}%>
+</div>
+
+<% @hot_yueyue_objects.each do |yueyue_object| %>
+<div class="kk2">
+	<div class="bt">
+		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %> 
+
+	</div>
+</div>
+<% end %>
 <% end %>

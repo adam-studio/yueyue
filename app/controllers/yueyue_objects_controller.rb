@@ -4,9 +4,10 @@ class YueyueObjectsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
   def index
     if params[:type]
-      @yueyue_objects = YueyueType.find(params[:type]).yueyue_objects
+      @yueyue_objects = YueyueObject.find(:all, :order=>:yueyue_date, :limit=>20, :conditions=>"created_at >= date('now')")
     else
-      @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>10)
+      @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>10, :conditions=>"created_at >= date('now')")
+      @hot_yueyue_objects = YueyueObject.find(:all, :order=>"rate desc", :limit=>10, :conditions=>"created_at >= date('now')")
     end
     @yueyue_types = YueyueType.all
     respond_to do |format|
@@ -15,10 +16,22 @@ class YueyueObjectsController < ApplicationController
     end
   end
 
+  #GET /yueyue_objects/list
+  #GET /yueyue_objects/list.xml
+  def list
+    @yueyue_objects = YueyueObject.paginate(:page=>params[:page], :per_page=>20, :order=>params[:order], :conditions=>"created_at >= date('now')")
+  end
+
   # GET /yueyue_objects/1
   # GET /yueyue_objects/1.xml
   def show
     @yueyue_object = YueyueObject.find(params[:id])
+    if @yueyue_object.rate
+      @yueyue_object.rate += 1
+    else
+      @yueyue_object.rate = 1
+    end
+    @yueyue_object.save
     @yueyue_type = @yueyue_object.yueyue_type
     if (@yueyue_type)
       @yueyue_actions = @yueyue_type.yueyue_type_actions
@@ -70,8 +83,7 @@ class YueyueObjectsController < ApplicationController
   def create
     @yueyue_object = YueyueObject.new(params[:yueyue_object])
     @yueyue_object.owner = User.find(session[:user_id])
-    @yueyue_object.create_date = Time.now
-    @yueyue_year = "2011"
+    @yueyue_object.rate = 0
 
     #process the properties
     yueyue_object_properties = []

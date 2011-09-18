@@ -8,6 +8,8 @@ Yueyue::Application.routes.draw do
   get "city/index_by_letter"
 
   get "city/search"
+  
+  get "yueyue_objects/list"
 
   resources :yueyue_object_properties
 

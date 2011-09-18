@@ -1,0 +1,22 @@
+<div class="kk2">
+	<% form_tag '', :method=>'GET' do %>
+	<input type="text" size="12"  name="search_str" />
+	<%= submit_tag "搜约约" %>
+	<% end %>
+</div>
+
+<div class="zt">
+	约约列表
+</div>
+
+<% @yueyue_objects.each do |yueyue_object| %>
+<div class="kk2">
+	<div class="bt">
+		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %> 
+	</div>
+</div>
+<% end %>
+
+<div class="kk2">
+	<%= will_paginate @yueyue_objects %>
+</div>
