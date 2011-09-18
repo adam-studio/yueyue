@@ -59,6 +59,7 @@ class YueyueObjectsController < ApplicationController
   # GET /yueyue_objects/1/edit
   def edit
     @yueyue_object = YueyueObject.find(params[:id])
+    @yueyue_types = YueyueType.all
     @yueyue_type = @yueyue_object.yueyue_type
     @yueyue_properties = @yueyue_type.yueyue_type_properties
     @yueyue_object_properties = @yueyue_object.yueyue_object_properties
