@@ -2,8 +2,15 @@
 <%= form_for(@group) do |f| %>
 
 <div>
+账号类型<br/>
+<%= radio_button_tag(:account_type, "email") %>
+<%= label_tag(:account_type_email, "Email") %>
+<%= radio_button_tag(:account_type, "qq") %>
+<%= label_tag(:account_type_qq, "QQ") %>
+</div>
+<div>
 		   对方账号<br/>
-<%= text_field_tag :user_name, params[:user_name], :size => 30 %><br/>
+<%= text_field_tag :user_name, params[:account_name], :size => 30 %><br/>
   </div>
     <%= f.submit "添加" %>
 <% end %>

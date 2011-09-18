@@ -7,17 +7,17 @@ class GroupsController < ApplicationController
   
     user = User.find_by_id(session[:user_id])
     @groups = user.groups
-    if @groups == nil
+    if @groups.empty? 
       @group = Group.new
       @group.name = "未定义"
+      @group.owner = user
       @group.save
       user.groups << @group
       user.save
+      @groups = user.groups
     end
     @users = [ ]
     @groups.each do |group|
-    	puts "kkkk"
-    	puts group.id
     	if group.users != nil
     	  @users = @users + group.users
       end
@@ -77,15 +77,11 @@ class GroupsController < ApplicationController
   # PUT /groups/1.xml
   def update
     @group = Group.find(params[:id])
-    user = User.find_by_id("2")
+    user = User.get_by_account(params[:account_name], params[:account_type]) 
     @group.users << user
 
     respond_to do |format| 
       if @group.save
-        puts "haaaa"
-        p @group.users
-        p @group.id
-        puts "hbbb"
         format.html { redirect_to ({:controller => "groups", :action => "index"}) }
         format.xml  { head :ok }
       else

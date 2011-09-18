@@ -5,15 +5,12 @@
 	<% end %>
 </div>
 
-<% if @users != nil %>
 <% @users.each do |user| %>
 
 <div class="kk2">
 	<div class="bt">
-	<%= user.name %> 
-	<%= user.signature %>
+	<%= user.signature %> 
 		
 </div>
 	</div>
-	<% end %>
 <% end %>

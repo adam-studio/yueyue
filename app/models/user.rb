@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   	has_and_belongs_to_many :sanguoshas, :uniq => true
   	has_and_belongs_to_many :movies, :uniq => true
   	has_and_belongs_to_many :yueyue_objects, :uniq => true
-  	has_and_belongs_to_many :groups, :uniq => true
+  	has_many :groups
+  	belongs_to :group
+  	
   	
   validates_presence_of     :name
   validates_uniqueness_of   :name
@@ -15,6 +17,10 @@ class User < ActiveRecord::Base
 
   validate :password_non_blank
   
+  
+  def self.get_by_account(account_name, account_type)
+    User.find_by_id('1')
+  end
 
   
   def self.authenticate(name, password)
@@ -50,7 +56,7 @@ class User < ActiveRecord::Base
   
 
   
-  def after_destroy
+  def self.after_destroy
     if User.count.zero?
       raise "Can't delete last user"
     end

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   
   protected
     def remember_url
-      session[:original_url_before_change_city] = request.request_uri
+      session[:original_url_before_change_city] = request.fullpath
     end
   
     def authorize
