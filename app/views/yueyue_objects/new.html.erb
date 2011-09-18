@@ -1,19 +1,22 @@
-<select name="yueyue_type" onchange=window.location.href=this.options[selectedIndex].value>
-<%
-if (@yueyue_types)
-	@yueyue_types.each do |option_type|
-%>
-	<option value="/yueyue_objects/new/<%=option_type.id%>" <%
-	 if (@yueyue_type.id == option_type.id)
-		%> selected <%
-	end%>>
-	<%=option_type.name%></option>
-<%	
-	end
-end
-%>
-</select>
-
+<div class="kuang">
+	<div class=field>
+		<select name="yueyue_type" onchange=window.location.href=this.options[selectedIndex].value>
+		<%
+		if (@yueyue_types)
+			@yueyue_types.each do |option_type|
+				%>
+				<option value="/yueyue_objects/new/<%=option_type.id%>" <%
+				if (@yueyue_type.id == option_type.id)
+					%> selected <%
+				end%>>
+				<%=option_type.name%></option>
+				<%	
+			end
+		end
+		%>
+	</select>
+</div>
 <%= render 'form' %>
 
-<%= link_to 'Back', yueyue_objects_path %>
+<%= link_to '返回', yueyue_objects_path %>
+</div>

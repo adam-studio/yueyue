@@ -1,0 +1,29 @@
+<div class="kk2">
+	<% form_tag '', :method=>'GET' do %>
+	<input type="text" size="12"  name="search_str" />
+	<%= submit_tag "搜约约" %>
+	<% end %>
+</div>
+
+<div class="zt">
+	我的约约
+</div>
+
+<% @created_yueyue_objects.each do |yueyue_object| %>
+<div class="kk2">
+	<div class="bt">
+		[发起]:<%= link_to yueyue_object.title, yueyue_object %> 
+	</div>
+</div>
+<% end %>
+
+<% @joined_yueyue_objects.each do |yueyue_object| %>
+<div class="kk2">
+	<div class="bt">
+		[参加]:<%= link_to yueyue_object.title, yueyue_object %> 
+	</div>
+</div>
+<% end %>
+
+
+

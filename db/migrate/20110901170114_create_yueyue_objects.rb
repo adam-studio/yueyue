@@ -5,7 +5,6 @@ class CreateYueyueObjects < ActiveRecord::Migration
       t.string :title
       t.string :owner_id
       t.datetime :yueyue_date
-      t.datetime :create_date
       
       t.timestamps
     end

@@ -10,13 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110914133305) do
+ActiveRecord::Schema.define(:version => 20110918113737) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.string   "type"
     t.integer  "user_id"
-    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,40 +31,6 @@ ActiveRecord::Schema.define(:version => 20110914133305) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "movies", :force => true do |t|
-    t.string   "description"
-    t.datetime "yueyue_date"
-    t.string   "movie_name"
-    t.string   "place"
-    t.integer  "ticket_fee"
-    t.string   "yueyue_owner"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "movies_users", :id => false, :force => true do |t|
-    t.integer  "movie_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sanguoshas", :force => true do |t|
-    t.string   "description"
-    t.datetime "yueyue_date"
-    t.string   "place"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "yueyue_owner"
-  end
-
-  create_table "sanguoshas_users", :id => false, :force => true do |t|
-    t.integer  "sanguosha_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -101,15 +66,14 @@ ActiveRecord::Schema.define(:version => 20110914133305) do
     t.string   "title"
     t.string   "owner_id"
     t.datetime "yueyue_date"
-    t.datetime "create_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rate"
   end
 
   create_table "yueyue_type_actions", :force => true do |t|
     t.integer  "yueyue_type_id", :null => false
     t.string   "name"
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -117,10 +81,6 @@ ActiveRecord::Schema.define(:version => 20110914133305) do
   create_table "yueyue_type_properties", :force => true do |t|
     t.integer  "yueyue_type_id", :null => false
     t.string   "name"
-    t.string   "data_type"
-    t.integer  "max_size"
-    t.integer  "min_size"
-    t.boolean  "null_able"
     t.string   "default_value"
     t.datetime "created_at"
     t.datetime "updated_at"

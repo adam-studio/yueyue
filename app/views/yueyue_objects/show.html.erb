@@ -1,22 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-
-<p>
-  <b>约约名称:</b>
-  <%= @yueyue_object.title %>
-</p>
-
-<p>
-  <b>主任:</b>
-  <%= @yueyue_object.owner %>
-</p>
-
-<p>
-  <b>创建时间:</b>
-  <%= @yueyue_object.create_date %>
-</p>
+<div class="bt"><span class="t1">发&nbsp;起&nbsp;人：</span>&nbsp;<%= @yueyue_object.owner.name %></div> 
+<div class="bt"><span class="t1">约约名称&nbsp;：</span>&nbsp;<%= @yueyue_object.title %></div> 
+<div class="bt"><span class="t1">约约时间&nbsp;：</span>&nbsp;<%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %></div> 
 
 <%=render_yueyue_properties.html_safe%>
 <%=render_yueyue_actions.html_safe%>
-<%= link_to 'Edit', edit_yueyue_object_path(@yueyue_object) %> |
-<%= link_to 'Back', yueyue_objects_path %>
+<% if session[:user_id] == @yueyue_object.owner.id %>
+<%= link_to '修改', edit_yueyue_object_path(@yueyue_object) %> |
+<% end %>
+<%= link_to '返回', yueyue_objects_path %>

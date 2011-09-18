@@ -10,6 +10,10 @@ Yueyue::Application.routes.draw do
   get "city/index_by_letter"
 
   get "city/search"
+  
+  get "yueyue_objects/list"
+
+  get "yueyue_objects/home"
 
   resources :yueyue_object_properties
 
@@ -21,11 +25,7 @@ Yueyue::Application.routes.draw do
 
   resources :yueyue_types
 
-  resources :movies
-
   resources :users
-
-  resources :sanguoshas
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
