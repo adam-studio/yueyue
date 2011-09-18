@@ -6,7 +6,7 @@ class YueyueObjectsController < ApplicationController
     if params[:type]
       @yueyue_objects = YueyueType.find(params[:type]).yueyue_objects
     else
-      @yueyue_objects = YueyueObject.all
+      @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>10)
     end
     @yueyue_types = YueyueType.all
     respond_to do |format|
