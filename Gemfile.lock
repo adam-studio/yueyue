@@ -39,6 +39,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    oauth (0.4.5)
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -75,6 +76,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  oauth
   rails (= 3.0.9)
   sqlite3
   will_paginate (~> 3.0.0)
