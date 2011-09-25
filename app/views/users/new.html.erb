@@ -1,28 +1,24 @@
-
-     
-	 <div>
-		
-		<% form_for(@user) do |f| %>
-		  <%= f.error_messages %>
-
+    	 <div>
+		<% form_tag(:action => "create") do %>
 
 		  <div>
-			   手机|邮箱|用户名<br/>
-		    <%= f.text_field :name, :size => 30 %>
+			   邮箱<br/>
+			   <%= text_field_tag(:account_name) %>
 		  </div>
 
 		  <div>
 		     密码<br/>
-		    <%= f.password_field :password, :size => 30 %>
+		     <%= password_field_tag(:account_password) %>
 		  </div>
 
 		  <div>
 		     确认密码<br/>
-		    <%= f.password_field :password_confirmation, :size => 30 %>
+		     <%= password_field_tag(:account_password_confirmation) %>
 		  </div>
 
 		  <div>
-		    <%= f.submit "注册", :class => "submit" %>
+		  <%= submit_tag "注册" %>
+		 
 		  </div>
 		<% end %>
 		

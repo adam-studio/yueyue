@@ -32,50 +32,58 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.xml
-  def create
-    @user = User.new(params[:user])
+  def create    
+    @user = User.new
+    @account = Account.new
+    @account.name = params[:account_name]
+    @account.password = params[:account_password]
+    @account.account_type = "email"
+    @account.user = @user
+    
+    ActiveRecord::Base.transaction do
+      @user.save
+      @account.save
+    end
 
     respond_to do |format|
-      if @user.save
-        flash[:notice] = "User #{@user.name} was successfully created."
-        format.html { 
-        	          session[:user_id] = @user.id
-          redirect_to(:controller=>'yueyue_objects', :action => "index")
-           }
+      flash[:notice] = "用户注册成功"
+      format.html {
+      	session[:user_id] = @user.id
+        redirect_to(:controller=>'yueyue_objects', :action => "index") }
         format.xml  { render :xml => @user, :status => :created,
                              :location => @user }
-      else
+    end
+    
+    rescue Exception => ex
+      respond_to do |format|
         format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors,
+        format.xml  { render :xml => ex,
                              :status => :unprocessable_entity }
       end
-    end
   end
 
   # PUT /users/1
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-    p @user
     
-    result = true
-    if @user.check_input_password(params[:original_password]) == false
-      flash[:notice] = "原始密码输入不正确"
-      result = false
-    end 
-    if (result && params[:new_password] != params[:new_password_confirmation])
-      flash[:notice] = "确认密码与新密码不一致。"
-      result = false
-    end
+    @user.nick_name = params[:nick_name]
+    @user.sex = params[:sex]
+    @user.location = params[:location]
+    @user.status = params[:status]
+    @user.description = params[:description] 
+    uploaded_io = params[:picture]
+    if uploaded_io != nil && uploaded_io.original_filename != ""
+      filename = @user.id.to_s + "_" + "picture" + uploaded_io.original_filename.scan(/\.[^\.]+$/)[0]
+      File.open(Rails.root.join('public', 'uploads', filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
     
-    if result
-      @user.password = params[:new_password];
-      @user.signature = params[:signature];
-      result = @user.save
+      @user.picture_url = "/uploads/" + filename
     end
       
     respond_to do |format|
-      if result
+      if @user.save
         flash[:notice] = "用户信息修改成功。"
         format.html { render :action => "edit" }
         format.xml  { head :ok }
@@ -109,19 +117,22 @@ class UsersController < ApplicationController
   
   def login
       if request.post?
-        user = User.authenticate(params[:name], params[:password])
-        if user
-          session[:user_id] = user.id
+      account = Account.authenticate("email", params[:account_name], params[:account_password])
+        if account
+          session[:user_id] = account.user.id
+          puts "bbbb"
+          puts account.user.id
+          puts session[:user_id]
           redirect_to(:controller=>'yueyue_objects', :action => "index")
         else
-          flash.now[:notice] = "Invalid user/password combination"
+          flash.now[:notice] = "错误的用户名或者密码。"
         end
       end
     end
 
     def logout
       session[:user_id] = :logged_out
-      flash[:notice] = "Logged out"
+      flash[:notice] = "注销"
       redirect_to(:controller => "yueyue_objects", :action => "index")
     end
   

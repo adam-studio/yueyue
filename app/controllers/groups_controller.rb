@@ -10,7 +10,6 @@ class GroupsController < ApplicationController
     if @groups.empty? 
       @group = Group.new
       @group.name = "未定义"
-      @group.owner = user
       @group.save
       user.groups << @group
       user.save
@@ -18,9 +17,10 @@ class GroupsController < ApplicationController
     end
     @users = [ ]
     @groups.each do |group|
-    	if group.users != nil
-    	  @users = @users + group.users
-      end
+   	if group.users != nil
+   	  p group.id
+   	  @users = @users + group.users
+     end
     end
 
 

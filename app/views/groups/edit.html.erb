@@ -10,7 +10,7 @@
 </div>
 <div>
 		   对方账号<br/>
-<%= text_field_tag :user_name, params[:account_name], :size => 30 %><br/>
+<%= text_field_tag(:account_name) %><br/>
   </div>
     <%= f.submit "添加" %>
 <% end %>

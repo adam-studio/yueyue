@@ -1,36 +1,67 @@
-   <div>
-     <% if flash[:notice] != nil %>
-     <div>
-       <b><%= flash[:notice] %></b>
-     </div>
-     <% end %>
-     
-   <div>
-     用户名：<b><%= @user.name %></b>
-     </div>
+<%= form_tag({:action => 'update'}, :method => 'put', :multipart => true) do %>
+	<div class="kuang">
+		<div>
+			约约昵称：
+			 <%= text_field_tag(:nick_name, @user.nick_name) %>
 
-   <% form_tag("/users/#{@user.id}", :method => :put) do %>
-   <div>
-		  签名<br/>
-		  <%= text_field_tag :signature, params[:signature], :size=> 30 %> <br/>
-		  </div>
-           <div>
-           原始密码：<br/>
-          <%= text_field_tag :original_password, params[:original_password], :size => 30 %><br/>
-          </div>
 		</div>
-		   新密码<br/>
-          <%= password_field_tag :new_password, params[:new_password], :size => 30 %><br/>
-          </div>
-      
-          		  <div>
-		     确认密码<br/>
-		    <%= password_field_tag :new_password_confirmation, params[:new_password_confirmation], :size => 30 %><br/>
-		  </div>
-		  
-		  
-		  
-		  <%= submit_tag "修改" %>
-           </div>
-		 <% end %>
-   </div>
+			<hr />
+		<div>
+			用户性别：
+			<% 
+			sex_male_flag = false
+			sex_female_flag = false
+			if @user.sex == "male"
+			  @sex_male_flag = true
+			else
+			  @sex_female_flag = true
+			end %>
+			
+<%= radio_button_tag(:sex, "male", @sex_male_flag) %>
+<%= label_tag(:sex_male, "男") %>
+<%= radio_button_tag(:sex, "female", @sex_female_flag) %>
+<%= label_tag(:sex_female, "女") %>
+		</div>
+			<hr />
+		<div>
+ 			 生活城市：
+ 		<%= text_field_tag(:location, @user.location) %>
+
+ 
+    	</div>
+  <hr />
+  <div>
+		当前状态：
+		<% 
+		  @status_solo_flag = false
+		  if @user.status = "solo"
+		    @status_solo_flag = true
+		  end
+		 %>
+          <%= radio_button_tag(:status, "solo", @status_solo_flag) %>
+<%= label_tag(:status_solo, "单身") %>
+</div>
+		
+  
+</div>
+</div>
+	<div class="kuang">
+		 <div>
+
+			自我介绍：<br />
+			<%= text_area_tag(:description, @user.description) %>
+		</div>
+	</div>
+	
+	<div class="kuang">
+	<div>
+				当前头像:<br>
+				<% picture_url = @user.picture_url || "nopicture.png" %>
+				<%= image_tag(picture_url, :height => '50', :width => '50') %><br>
+				更换头像：
+				<%= file_field_tag 'picture', :value => '', :accept => 'image/png,image/gif,image/jpeg' %> 
+  		</div>
+  				</div>
+	<%= submit_tag("确定") %>
+	</div>
+	<% end %>

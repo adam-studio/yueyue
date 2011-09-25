@@ -1,11 +1,11 @@
    <div>
         <% form_tag do %>
            <div>
-		   手机|邮箱|用户名<br/>
-          <%= text_field_tag :name, params[:name], :size => 30 %><br/>
+		   邮箱<br/>
+         <%= text_field_tag(:account_name) %><br/>
 		
 		   密码<br/>
-          <%= password_field_tag :password, params[:password], :size => 30 %><br/>
+          <%= password_field_tag(:account_password) %><br/>
 		  <%= submit_tag "登录" %>
 		  <%= link_to '注册', new_user_path %>  
 		  

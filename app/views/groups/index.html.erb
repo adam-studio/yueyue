@@ -1,16 +1,28 @@
 <div class="kk2">
 	<% form_tag '', :method=>'GET' do %>
-		<input type="text" size="12"  name="search_str" />
+		<input type="text"  name="search_str" />
 		<%= submit_tag "搜好友" %><%= link_to "加好友", {:action => "edit", :id => '1'} %>
 	<% end %>
 </div>
 
 <% @users.each do |user| %>
-
-<div class="kk2">
-	<div class="bt">
-	<%= user.signature %> 
-		
-</div>
+	<div class="frend">
+    <table>
+					<tbody>
+						<tr>
+							<td>
+							<% picture_url = user.picture_url || "nopicture.png" %>
+				      <%= link_to image_tag(picture_url, :height => '50', :width => '50'), :controller => "users", :action => "index" %>
+				      </td>
+							<td valign="top" width="">
+								<%= user.nick_name %><br />
+								<span><%= user.signature %></span>
+							</td>
+							<td valign="top" width="55px">
+								删除好友
+							</td>
+						</tr>
+					</tbody>
+				</table>
 	</div>
 <% end %>
