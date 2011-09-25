@@ -13,7 +13,7 @@
 	<img src="/images/yueyue.gif" alt="约约" height="35" width="91" /> 
 <b><%= session[:city].name %></b><%= link_to '[切换城市]', {:controller=> 'city', :action=>'index' }%>
 <% unless user = User.find_by_id(session[:user_id]) %>
-        <%= link_to "登录", {:controller => "users", :action => "login", :id=>'1'}%>
+        <%= link_to "登录", {:controller => "users", :action => "login"}%>
   	 <% else %>
   	    <%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
     <% end %>

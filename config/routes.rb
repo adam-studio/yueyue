@@ -11,13 +11,18 @@ Yueyue::Application.routes.draw do
 
   get "city/search"
   
-  get "yueyue_objects/list"
+  #get "yueyue_objects/list"
 
-  get "yueyue_objects/home"
+  #get "yueyue_objects/home"
 
   resources :yueyue_object_properties
 
-  resources :yueyue_objects
+  resources :yueyue_objects do
+    collection do
+      get 'list'
+      get 'home'
+    end
+  end
 
   resources :yueyue_type_actions
 
@@ -25,7 +30,19 @@ Yueyue::Application.routes.draw do
 
   resources :yueyue_types
 
-  resources :users
+  resources :users do
+    collection do
+      get 'login'
+    end
+  end
+  
+  resources :weibo do
+    collection do
+      get 'request_token'
+      get 'access_token'
+      get 'send_message'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
