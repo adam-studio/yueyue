@@ -1,0 +1,6 @@
+<%= link_to("发一个微博",
+{ :controller => "weibo",
+:action => "write",
+:weibo_text=>"现在是成斌时间#{Time.now}",
+:after_url=>"/weibo/#{params[:type]}/test_it"})
+%>

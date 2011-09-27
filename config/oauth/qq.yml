@@ -1,0 +1,10 @@
+development: 
+   key:    "801000933" 
+   secret: "afe83416929de543e1d9a7f97a27c820" 
+   url:    "http://ec2-175-41-176-217.ap-southeast-1.compute.amazonaws.com/" 
+   callback: "http://localhost:3000/weibo/qq/callback" 
+production: 
+    key:    "801000933" 
+    secret: "afe83416929de543e1d9a7f97a27c820" 
+    url:    "http://ec2-175-41-176-217.ap-southeast-1.compute.amazonaws.com/" 
+    callback: "http://localhost:3000/weibo/qq/callback"

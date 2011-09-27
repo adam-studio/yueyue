@@ -1,0 +1,10 @@
+development: 
+   key:    "2170727488" 
+   secret: "2998adc7ce90863096ece093ff095f6b" 
+   url:    "http://ec2-175-41-176-217.ap-southeast-1.compute.amazonaws.com/" 
+   callback: "http://localhost:3000/weibo/sina/callback" 
+production: 
+    key:    "2170727488" 
+    secret: "2998adc7ce90863096ece093ff095f6b" 
+    url:    "http://ec2-175-41-176-217.ap-southeast-1.compute.amazonaws.com/" 
+    callback: "http://localhost:3000/weibo/sina/callback"

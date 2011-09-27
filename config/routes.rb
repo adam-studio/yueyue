@@ -36,13 +36,10 @@ Yueyue::Application.routes.draw do
     end
   end
   
-  resources :weibo do
-    collection do
-      get 'request_token'
-      get 'access_token'
-      get 'send_message'
-    end
-  end
+  match "weibo/:type/new" => "weibo#new", :as => :weibo_new
+  match "weibo/:type/callback" => "weibo#callback", :as => :weibo_callback
+  match "weibo/:type/write" => "weibo#write", :as => :weibo_write
+  match "weibo/:type/test_it" => "weibo#test_it", :as => :weibo_test_it
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,32 +1,66 @@
 class WeiboController < ApplicationController
-  def request_token
-
-    @request_token = consumer.get_request_token
-    session[:request_token] = @request_token.token
-    session[:request_token_secret] = @request_token.secret
-    redirect_to @request_token.authorize_url(:oauth_callback => 'http://localhost:3000/weibo/access_token') 
+  # 用户微博认证，登录或者用户后期绑定微博时使用
+  def new 
+    client = build_client_class(params[:type]).new
+    authorize_url = client.authorize_url  
+    Rails.cache.write(build_oauth_token_key(client.name, client.oauth_token), client.dump)  
+    redirect_to authorize_url
   end
 
-  def access_token
-    request_token = OAuth::RequestToken.new(
-    consumer,
-    session[:request_token],
-    session[:request_token_secret]
-    )
-    access_token = request_token.get_access_token(:oauth_verifier=>params["oauth_verifier"])
-    session[:access_token] = access_token.token
-    session[:access_token_secret] = access_token.secret
-  end
+  # 用户校验后页面，捆绑用户token
+  def callback
+    client = build_client_class(params[:type]).load(Rails.cache.read(build_oauth_token_key(params[:type], params[:oauth_token])))
+    client.authorize(:oauth_verifier => params[:oauth_verifier])  
 
-  def send_message
-    access_token = OAuth::AccessToken.new(consumer, session[:access_token],session[:access_token_secret])
-    url="http://api.t.sina.com.cn/statuses/update.xml"
-    message="should not see me"
-    response = access_token.request(:post, url, :status=>message)
+    results = client.dump  
+
+    if results[:access_token] && results[:access_token_secret]
+      session["access_token_#{params[:type]}"] = {:access_token=>results[:access_token], :access_token_secret=>results[:access_token_secret]}
+      #在这里把access token and access token secret存到db  
+      #下次使用的时候:  
+      #client = build_client_class(params[:type]).load(:access_token => "xx", :access_token_secret => "xxx")  
+      #client.add_status("同步到新浪微薄..")  
+      flash[:notice] = "success!"  
+    else  
+      flash[:notice] = "failed!"  
+    end  
+    #redirect_to account_syncs_path
   end
   
-  #private
-  def consumer
-    ::OAuth::Consumer.new("2170727488", "2998adc7ce90863096ece093ff095f6b", :site => "http://api.t.sina.com.cn")
+  # 发送内容到微博
+  # params:
+  # => type:微博类型（qq,sina）
+  # => weibo_text:微博内容
+  # => after_url:发送成功后返回的URL
+  def write
+    unless (session["access_token_#{params[:type]}"])
+      return
+    end
+    access_token = session["access_token_#{params[:type]}"][:access_token]
+    access_token_secret = session["access_token_#{params[:type]}"][:access_token_secret]
+    
+    unless (access_token || access_token_secret)
+      return
+    end
+    client = build_client_class(params[:type]).load(:access_token => access_token, :access_token_secret => access_token_secret) 
+    unless client
+      return
+    end
+    
+    client.add_status params[:weibo_text]
+    redirect_to params[:after_url]
+  end
+  
+  def test_it
+    
+  end
+
+  private
+  def build_oauth_token_key(name, oauth_token)  
+    [name, oauth_token].join("_")  
+  end
+  
+  def build_client_class(name)
+    eval("OauthChina::#{name.capitalize}")
   end
 end

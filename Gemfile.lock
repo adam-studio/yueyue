@@ -40,6 +40,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     oauth (0.4.5)
+    oauth_china (0.4.0)
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -77,6 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   oauth
+  oauth_china
   rails (= 3.0.9)
   sqlite3
   will_paginate (~> 3.0.0)
