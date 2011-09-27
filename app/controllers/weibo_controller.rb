@@ -16,15 +16,14 @@ class WeiboController < ApplicationController
 
     if results[:access_token] && results[:access_token_secret]
       session["access_token_#{params[:type]}"] = {:access_token=>results[:access_token], :access_token_secret=>results[:access_token_secret]}
-      #在这里把access token and access token secret存到db  
-      #下次使用的时候:  
-      #client = build_client_class(params[:type]).load(:access_token => "xx", :access_token_secret => "xxx")  
-      #client.add_status("同步到新浪微薄..")  
+      #to 林海：在这里把access token and access token secret存到db
+      #下次登录的时候:  
+      #session["access_token_#{params[:type]}"] = {:access_token=>results[:access_token], :access_token_secret=>results[:access_token_secret]}
       flash[:notice] = "success!"  
     else  
       flash[:notice] = "failed!"  
     end  
-    #redirect_to account_syncs_path
+    #redirect_to 登录后或者绑定页面，没想好
   end
   
   # 发送内容到微博
