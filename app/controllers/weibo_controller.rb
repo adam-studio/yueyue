@@ -35,13 +35,8 @@ class WeiboController < ApplicationController
     unless (session["access_token_#{params[:type]}"])
       return
     end
-    access_token = session["access_token_#{params[:type]}"][:access_token]
-    access_token_secret = session["access_token_#{params[:type]}"][:access_token_secret]
     
-    unless (access_token || access_token_secret)
-      return
-    end
-    client = build_client_class(params[:type]).load(:access_token => access_token, :access_token_secret => access_token_secret) 
+    client = build_client_class(params[:type]).load(session["access_token_#{params[:type]}"]) 
     unless client
       return
     end
