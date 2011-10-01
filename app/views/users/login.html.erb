@@ -6,6 +6,7 @@
 		
 		   密码<br/>
           <%= password_field_tag(:account_password) %><br/>
+		  <%= hidden_field_tag 'account_type', 'email'%>
 		  <%= submit_tag "登录" %>
 		  <%= link_to '注册', new_user_path %>  
 		  
@@ -13,6 +14,5 @@
 		 <% end %>
    </div>
 	<%= link_to(image_tag("sina_weibo.png"),
-	{ :controller => "weibo",
-	:action => "request_token"})
+	{ :action => "login", :account_type => "sina"})
 	%>

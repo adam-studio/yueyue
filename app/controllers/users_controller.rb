@@ -117,17 +117,18 @@ class UsersController < ApplicationController
   
   def login
       if request.post?
-      account = Account.authenticate("email", params[:account_name], params[:account_password])
+          account = Account.authenticate(params[:account_type], params[:account_name], params[:account_password])
         if account
           session[:user_id] = account.user.id
-          puts "bbbb"
-          puts account.user.id
-          puts session[:user_id]
           redirect_to(:controller=>'yueyue_objects', :action => "index")
         else
           flash.now[:notice] = "错误的用户名或者密码。"
         end
       end
+
+	  if request.get? and params[:account_type] != nil
+	    redirect_to(:controller => 'weibo', :action =>'authorize', :account_type => params[:account_type])
+	  end
     end
 
     def logout

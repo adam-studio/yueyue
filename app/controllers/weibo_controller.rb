@@ -1,29 +1,32 @@
+#encoding: UTF-8
+
 class WeiboController < ApplicationController
-  # 用户微博认证，登录或者用户后期绑定微博时使用
-  def new 
-    client = build_client_class(params[:type]).new
-    authorize_url = client.authorize_url  
-    Rails.cache.write(build_oauth_token_key(client.name, client.oauth_token), client.dump)  
-    redirect_to authorize_url
+  def authorize
+    if params[:account_type] != nil
+      client = build_client_class(params[:account_type]).new
+      Rails.cache.write(build_oauth_token_key(client.name, client.oauth_token), client.dump)  
+      redirect_to client.authorize_url 
+	end
   end
 
   # 用户校验后页面，捆绑用户token
   def callback
-    client = build_client_class(params[:type]).load(Rails.cache.read(build_oauth_token_key(params[:type], params[:oauth_token])))
+    client = build_client_class(params[:acount_type]).load(Rails.cache.read(build_oauth_token_key(params[:acount_type], params[:oauth_token])))
     client.authorize(:oauth_verifier => params[:oauth_verifier])  
 
     results = client.dump  
 
     if results[:access_token] && results[:access_token_secret]
-      session["access_token_#{params[:type]}"] = {:access_token=>results[:access_token], :access_token_secret=>results[:access_token_secret]}
-      #to 林海：在这里把access token and access token secret存到db
-      #下次登录的时候:  
-      #session["access_token_#{params[:type]}"] = {:access_token=>results[:access_token], :access_token_secret=>results[:access_token_secret]}
-      flash[:notice] = "success!"  
+      account Account.get_by_3rd_account(params[:account_type], results[:access_token], results[:access_token_secret])
+	  if account?
+	    session[:user_id] = account.user.id
+	    redirect_to(:controller=>'yueyue_objects', :action => "index")
+      else
+		# 新用户
+		redirect_to(:controller=>'users', :action => 'create', :method => 'post', :account_type => params[:account_type], :account_name =>    :access_token => results[:access_token], :access_token_secret => results[:access_token_secret])
     else  
-      flash[:notice] = "failed!"  
+      flash.now[:notice] = "错误的用户名或者密码。"
     end  
-    #redirect_to 登录后或者绑定页面，没想好
   end
   
   # 发送内容到微博
@@ -45,9 +48,6 @@ class WeiboController < ApplicationController
     redirect_to params[:after_url]
   end
   
-  def test_it
-    
-  end
 
   private
   def build_oauth_token_key(name, oauth_token)  
