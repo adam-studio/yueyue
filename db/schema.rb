@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(:version => 20110923115224) do
     t.string   "salt"
     t.string   "account_type"
     t.integer  "user_id"
+    t.string   "request_token"
+    t.string   "request_token_secret"
+    t.string   "access_token"
+    t.string   "access_token_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

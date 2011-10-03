@@ -33,17 +33,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create    
-    @user = User.new
-    @account = Account.new
-    @account.name = params[:account_name]
-    @account.password = params[:account_password]
-    @account.account_type = "email"
-    @account.user = @user
-    
-    ActiveRecord::Base.transaction do
-      @user.save
-      @account.save
-    end
+    @user = User.create_a_new_user(params)
 
     respond_to do |format|
       flash[:notice] = "用户注册成功"
