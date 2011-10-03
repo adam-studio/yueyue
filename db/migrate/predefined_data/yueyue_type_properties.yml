@@ -1,0 +1,183 @@
+--- 
+yueyue_type_properties_001: 
+  id: 1
+  yueyue_type_id: 5
+  name: "\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:22:54.909216
+  updated_at: 2011-10-03 21:22:54.909216
+yueyue_type_properties_002: 
+  id: 2
+  yueyue_type_id: 5
+  name: "\xE6\x97\xB6\xE9\x97\xB4"
+  default_value: ""
+  created_at: 2011-10-03 21:23:07.345889
+  updated_at: 2011-10-03 21:23:07.345889
+yueyue_type_properties_003: 
+  id: 3
+  yueyue_type_id: 5
+  name: "\xE7\x94\xB7\xE5\xA3\xAB\xE6\xB6\x88\xE8\xB4\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:23:21.731070
+  updated_at: 2011-10-03 21:23:21.731070
+yueyue_type_properties_004: 
+  id: 4
+  yueyue_type_id: 5
+  name: "\xE5\xA5\xB3\xE5\xA3\xAB\xE6\xB6\x88\xE8\xB4\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:23:31.053748
+  updated_at: 2011-10-03 21:23:31.053748
+yueyue_type_properties_005: 
+  id: 5
+  yueyue_type_id: 5
+  name: "\xE7\x94\xB7\xE5\xA3\xAB\xE8\xA6\x81\xE6\xB1\x82"
+  default_value: ""
+  created_at: 2011-10-03 21:31:09.684929
+  updated_at: 2011-10-03 21:31:09.684929
+yueyue_type_properties_006: 
+  id: 6
+  yueyue_type_id: 5
+  name: "\xE5\xA5\xB3\xE5\xA3\xAB\xE8\xA6\x81\xE6\xB1\x82"
+  default_value: ""
+  created_at: 2011-10-03 21:31:23.216516
+  updated_at: 2011-10-03 21:31:23.216516
+yueyue_type_properties_007: 
+  id: 7
+  yueyue_type_id: 5
+  name: "\xE7\x89\xB9\xE6\xAE\x8A\xE8\xAF\xB4\xE6\x98\x8E"
+  default_value: ""
+  created_at: 2011-10-03 21:31:37.547115
+  updated_at: 2011-10-03 21:31:37.547115
+yueyue_type_properties_008: 
+  id: 8
+  yueyue_type_id: 1
+  name: "\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:31:55.864110
+  updated_at: 2011-10-03 21:31:55.864110
+yueyue_type_properties_009: 
+  id: 9
+  yueyue_type_id: 1
+  name: "\xE6\x97\xB6\xE9\x97\xB4"
+  default_value: ""
+  created_at: 2011-10-03 21:32:05.121091
+  updated_at: 2011-10-03 21:32:05.121091
+yueyue_type_properties_010: 
+  id: 10
+  yueyue_type_id: 1
+  name: "\xE4\xBA\xBA\xE5\x9D\x87\xE6\xB6\x88\xE8\xB4\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:32:15.915593
+  updated_at: 2011-10-03 21:32:15.915593
+yueyue_type_properties_011: 
+  id: 11
+  yueyue_type_id: 1
+  name: "\xE8\x81\x94\xE7\xB3\xBB\xE7\x94\xB5\xE8\xAF\x9D"
+  default_value: ""
+  created_at: 2011-10-03 21:32:40.100521
+  updated_at: 2011-10-03 21:36:54.414919
+yueyue_type_properties_012: 
+  id: 12
+  yueyue_type_id: 2
+  name: "\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:32:58.069293
+  updated_at: 2011-10-03 21:32:58.069293
+yueyue_type_properties_013: 
+  id: 13
+  yueyue_type_id: 2
+  name: "\xE6\x97\xB6\xE9\x97\xB4"
+  default_value: ""
+  created_at: 2011-10-03 21:33:09.327206
+  updated_at: 2011-10-03 21:33:09.327206
+yueyue_type_properties_014: 
+  id: 14
+  yueyue_type_id: 3
+  name: "\xE5\xBD\xB1\xE7\x89\x87\xE5\x90\x8D\xE7\xA7\xB0"
+  default_value: ""
+  created_at: 2011-10-03 21:34:17.592950
+  updated_at: 2011-10-03 21:34:17.592950
+yueyue_type_properties_015: 
+  id: 15
+  yueyue_type_id: 3
+  name: "\xE5\xBD\xB1\xE9\x99\xA2"
+  default_value: ""
+  created_at: 2011-10-03 21:34:28.182301
+  updated_at: 2011-10-03 21:38:18.099867
+yueyue_type_properties_016: 
+  id: 16
+  yueyue_type_id: 3
+  name: "\xE9\x9B\x86\xE5\x90\x88\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:34:36.074647
+  updated_at: 2011-10-03 21:38:08.881171
+yueyue_type_properties_017: 
+  id: 17
+  yueyue_type_id: 3
+  name: "\xE6\x97\xB6\xE9\x97\xB4"
+  default_value: ""
+  created_at: 2011-10-03 21:35:09.179778
+  updated_at: 2011-10-03 21:38:35.463892
+yueyue_type_properties_018: 
+  id: 18
+  yueyue_type_id: 4
+  name: "\xE5\xB1\xB1\xE5\xA4\xB4\xE5\x90\x8D\xE7\xA7\xB0"
+  default_value: ""
+  created_at: 2011-10-03 21:35:30.615514
+  updated_at: 2011-10-03 21:41:21.517746
+yueyue_type_properties_019: 
+  id: 19
+  yueyue_type_id: 1
+  name: "\xE7\x89\xB9\xE6\xAE\x8A\xE8\xAF\xB4\xE6\x98\x8E"
+  default_value: ""
+  created_at: 2011-10-03 21:36:41.549063
+  updated_at: 2011-10-03 21:36:41.549063
+yueyue_type_properties_020: 
+  id: 20
+  yueyue_type_id: 2
+  name: "\xE8\x81\x94\xE7\xB3\xBB\xE7\x94\xB5\xE8\xAF\x9D"
+  default_value: ""
+  created_at: 2011-10-03 21:37:16.635611
+  updated_at: 2011-10-03 21:37:16.635611
+yueyue_type_properties_021: 
+  id: 21
+  yueyue_type_id: 3
+  name: "\xE4\xBA\xBA\xE5\x9D\x87\xE6\xB6\x88\xE8\xB4\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:37:31.494503
+  updated_at: 2011-10-03 21:38:46.928094
+yueyue_type_properties_022: 
+  id: 22
+  yueyue_type_id: 3
+  name: "\xE8\x81\x94\xE7\xB3\xBB\xE7\x94\xB5\xE8\xAF\x9D"
+  default_value: ""
+  created_at: 2011-10-03 21:39:06.255961
+  updated_at: 2011-10-03 21:39:06.255961
+yueyue_type_properties_023: 
+  id: 23
+  yueyue_type_id: 4
+  name: "\xE9\x9B\x86\xE5\x90\x88\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-10-03 21:41:33.434383
+  updated_at: 2011-10-03 21:41:33.434383
+yueyue_type_properties_024: 
+  id: 24
+  yueyue_type_id: 4
+  name: "\xE9\x9B\x86\xE5\x90\x88\xE6\x97\xB6\xE9\x97\xB4"
+  default_value: ""
+  created_at: 2011-10-03 21:41:42.566530
+  updated_at: 2011-10-03 21:41:42.566530
+yueyue_type_properties_025: 
+  id: 25
+  yueyue_type_id: 4
+  name: "\xE7\x89\xB9\xE6\xAE\x8A\xE8\xAF\xB4\xE6\x98\x8E"
+  default_value: ""
+  created_at: 2011-10-03 21:42:17.864481
+  updated_at: 2011-10-03 21:42:17.864481
+yueyue_type_properties_026: 
+  id: 26
+  yueyue_type_id: 4
+  name: "\xE8\x81\x94\xE7\xB3\xBB\xE7\x94\xB5\xE8\xAF\x9D"
+  default_value: ""
+  created_at: 2011-10-03 21:42:25.870241
+  updated_at: 2011-10-03 21:42:25.870241
