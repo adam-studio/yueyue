@@ -181,3 +181,10 @@ yueyue_type_properties_026:
   default_value: ""
   created_at: 2011-10-03 21:42:25.870241
   updated_at: 2011-10-03 21:42:25.870241
+yueyue_type_properties_027: 
+  id: 27
+  yueyue_type_id: 5
+  name: "\xE8\x81\x94\xE7\xB3\xBB\xE7\x94\xB5\xE8\xAF\x9D"
+  default_value: ""
+  created_at: 2011-10-03 22:43:59.045292
+  updated_at: 2011-10-03 22:43:59.045292
