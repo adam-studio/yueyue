@@ -1,4 +1,8 @@
-class weibo
+class Weibo
+  def self.weibo_types
+    %w[sina qq]
+  end
+  
   def self.write(account_type, text)
     unless (session["access_token_#{account_type}"])
       return
