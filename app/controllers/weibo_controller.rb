@@ -40,18 +40,14 @@ class WeiboController < ApplicationController
       session[:user_id] = account.user.id
       redirect_to(:controller=>'yueyue_objects', :action => "index")
     else
-      new_user_params = Hash.new
-      new_user_params[:account_type] = params[:account_type]
-      new_user_params[:account_name] = account_name
       client_dump = client.dump 
-      new_user_params[:request_token] = client_dump[:request_token]
-      new_user_params[:request_token_secret] = client_dump[:request_token_secret]
-      new_user_params[:access_token] = client_dump[:access_token]
-      new_user_params[:access_token_secret] = client_dump[:access_token_secret]
+      client_dump[:name] = account_name
+      client_dump[:account_type] = params[:account_type]
+      account = Account.new(client_dump)
+      account.user = User.new
+      account.save
       
-      user = User.create_a_new_user(new_user_params)
-      
-      session[:user_id] = user.id
+      session[:user_id] = account.user.id
       redirect_to(:controller=>'yueyue_objects', :action => "index") 
       
       end

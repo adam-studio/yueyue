@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :yueyue_objects, :uniq => true
   has_and_belongs_to_many :groups
+  has_many :accounts
 
   def self.create_a_new_user(params)
     ActiveRecord::Base.transaction do
