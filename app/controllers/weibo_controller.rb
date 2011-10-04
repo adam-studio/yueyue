@@ -36,21 +36,22 @@ class WeiboController < ApplicationController
     account = Account.get_by_name_and_type(account_name, params[:account_type])
     puts "abc"
     p account
-    if account != nil
-      session[:user_id] = account.user.id
-      redirect_to(:controller=>'yueyue_objects', :action => "index")
-    else
+    unless account
       client_dump = client.dump 
       client_dump[:name] = account_name
       client_dump[:account_type] = params[:account_type]
       account = Account.new(client_dump)
       account.user = User.new
       account.save
-      
-      session[:user_id] = account.user.id
-      redirect_to(:controller=>'yueyue_objects', :action => "index") 
-      
-      end
+    end
+    session[:user_id] = account.user.id
+    
+    # put users's all access token into session, for writing weibo
+    account.user.accounts.each do |user_account|
+      session["access_token_#{user_account.account_type}"] = user_account.access_token
+      session["access_token_secret_#{user_account.account_type}"] = user_account.access_token_secret
+    end
+    redirect_to(:controller=>'yueyue_objects', :action => "index") 
   end
 
   # 发送内容到微博
