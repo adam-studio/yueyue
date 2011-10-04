@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     return user
   end
   
+  def get_account_by_type(account_type)
+    accounts.find_by_account_type(account_type)
+  end
+  
   def unfinished_yueyue_objects
     unfinished_objects = []
     self.yueyue_objects.each do |yueyue_object|

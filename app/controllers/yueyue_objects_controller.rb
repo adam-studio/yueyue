@@ -90,8 +90,9 @@ class YueyueObjectsController < ApplicationController
   # POST /yueyue_objects
   # POST /yueyue_objects.xml
   def create
+    user = User.find(session[:user_id])
     @yueyue_object = YueyueObject.new(params[:yueyue_object])
-    @yueyue_object.owner = User.find(session[:user_id])
+    @yueyue_object.owner = user
     @yueyue_object.rate = 0
 
     #process the properties
@@ -110,6 +111,8 @@ class YueyueObjectsController < ApplicationController
 
     respond_to do |format|
       if @yueyue_object.save
+        # send weibo
+        send_weibo user, params[:weibo_types], @yueyue_object.title
         format.html { redirect_to(@yueyue_object, :notice => I18n.t('yueyue_objects.created')) }
         format.xml  { render :xml => @yueyue_object, :status => :created, :location => @yueyue_object }
       else
@@ -160,5 +163,20 @@ class YueyueObjectsController < ApplicationController
     action_class.send(process_method_name, :user_id=>session[:user_id], :yueyue_object_id=>yueyue_object_id)
 
     redirect_to(:action => "show", :id=>yueyue_object_id)
+  end
+  
+  private
+  def send_weibo(user, account_types, text)
+    unless account_types
+      return
+    end
+    account_types.each do |account_type|
+      account = user.get_account_by_type account_type
+      if (account)
+        Weibo.write account_type, text, session
+      else
+        # redirect to weibo authorize
+      end
+    end
   end
 end

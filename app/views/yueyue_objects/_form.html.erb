@@ -26,18 +26,8 @@
 
 <%Weibo.weibo_types.each do |weibo_type|%>
 <div class="field">
-	<%= f.check_box "weibo_types" %>
+	<%= check_box_tag "weibo_types[]", weibo_type %>
 	<%= f.label I18n.t("weibo.sendto") + I18n.t("weibo.#{weibo_type}") %><br />
-</div>
-
-<div class="field">
-	<%
-	p "==================="
-	p weibo_type
-	p I18n.t("weibo.#{weibo_type}")
-	%>
-	
-
 </div>
 <%end%>
 

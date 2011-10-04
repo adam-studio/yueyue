@@ -3,7 +3,8 @@ class Weibo
     %w[sina qq]
   end
   
-  def self.write(account_type, text)
+  def self.write(account_type, text, session)
+    
     unless (session["access_token_#{account_type}"])
       return
     end
