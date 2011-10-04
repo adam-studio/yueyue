@@ -112,7 +112,8 @@ class YueyueObjectsController < ApplicationController
     respond_to do |format|
       if @yueyue_object.save
         # send weibo
-        send_weibo user, params[:weibo_types], @yueyue_object.title
+        url = "#{request.protocol}#{request.host_with_port}/yueyue_objects/#{@yueyue_object.id}"
+        send_weibo user, params[:weibo_types], @yueyue_object.title, url
         format.html { redirect_to(@yueyue_object, :notice => I18n.t('yueyue_objects.created')) }
         format.xml  { render :xml => @yueyue_object, :status => :created, :location => @yueyue_object }
       else
@@ -166,14 +167,14 @@ class YueyueObjectsController < ApplicationController
   end
   
   private
-  def send_weibo(user, account_types, text)
+  def send_weibo(user, account_types, text, url)
     unless account_types
       return
     end
     account_types.each do |account_type|
       account = user.get_account_by_type account_type
       if (account)
-        Weibo.write account_type, text, session
+        Weibo.write account_type, text, session, url
       else
         # redirect to weibo authorize
       end

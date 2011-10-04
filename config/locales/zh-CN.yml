@@ -6,6 +6,8 @@ zh-CN:
     sendto: "发送到"
     sina: "新浪微博"
     qq: "腾讯微博"
+    join: "欢迎参加->"
+    comefrom: "来自约约网"
   yueyue_objects:
     created: "约约新增成功"
     updated: "约约更新成功"
