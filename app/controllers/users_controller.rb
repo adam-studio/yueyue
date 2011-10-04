@@ -33,23 +33,22 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create    
-    @user = User.create_a_new_user(params)
+    @user = User.new
+    account = Account.new(:name=>params[:name], :password=>params[:password], :account_type=>'email')
+    @user.accounts << account
 
     respond_to do |format|
+      if @user.save
       flash[:notice] = "用户注册成功"
       format.html {
       	session[:user_id] = @user.id
         redirect_to(:controller=>'yueyue_objects', :action => "index") }
         format.xml  { render :xml => @user, :status => :created,
                              :location => @user }
+       end
     end
     
-    rescue Exception => ex
-      respond_to do |format|
-        format.html { render :action => "new" }
-        format.xml  { render :xml => ex,
-                             :status => :unprocessable_entity }
-      end
+   
   end
 
   # PUT /users/1
