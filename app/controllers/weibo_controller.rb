@@ -34,8 +34,6 @@ class WeiboController < ApplicationController
     client.authorize(:oauth_verifier => params[:oauth_verifier]) 
     account_name = client.get_account_name
     account = Account.get_by_name_and_type(account_name, params[:account_type])
-    puts "abc"
-    p account
     unless account
       client_dump = client.dump 
       client_dump[:name] = account_name
@@ -46,7 +44,7 @@ class WeiboController < ApplicationController
     end
     session[:user_id] = account.user.id
     
-    # put users's all access token into session, for writing weibo
+    # 将access token等存入session,在发送微博的时候需要用到
     account.user.accounts.each do |user_account|
       session["access_token_#{user_account.account_type}"] = user_account.access_token
       session["access_token_secret_#{user_account.account_type}"] = user_account.access_token_secret
