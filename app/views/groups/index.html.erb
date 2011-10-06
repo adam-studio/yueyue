@@ -1,28 +1,40 @@
 <div class="kk2">
 	<% form_tag '', :method=>'GET' do %>
-		<input type="text"  name="search_str" />
-		<%= submit_tag "搜好友" %><%= link_to "加好友", {:action => "edit", :id => '1'} %>
+	<input type="text"  name="search_str" />
+	<%= submit_tag "搜好友" %><%= link_to "加好友", {:action => "edit", :id => @groups[0].id} %>
 	<% end %>
 </div>
 
-<% @users.each do |user| %>
+<% current_user = User.find_by_id(session[:user_id]) %>
+
+<% if !@groups.blank? %>
+  <% for group in @groups %>
+    <% group.users.each do |user| %>
+      <% if user != current_user %>
 	<div class="frend">
-    <table>
-					<tbody>
-						<tr>
-							<td>
-							<% picture_url = user.picture_url || "nopicture.png" %>
-				      <%= link_to image_tag(picture_url, :height => '50', :width => '50'), :controller => "users", :action => "index" %>
-				      </td>
-							<td valign="top" width="">
-								<%= user.nick_name %><br />
-								<span><%= user.signature %></span>
-							</td>
-							<td valign="top" width="55px">
-								删除好友
-							</td>
-						</tr>
-					</tbody>
-				</table>
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<% picture_url = user.profile_image_url || "nopicture.png" %>
+						<%= link_to image_tag(picture_url, :height => '50', :width => '50'), :controller => "users", :action => "show", :id => user %>
+					</td>
+					<td valign="top" width="">
+						<%= user.nick_name || "蓝精灵"%><br />
+						<span><%= user.signature %></span>
+					</td>
+					<td valign="top" width="55px">
+						<%= form_for(group) do |f| %>
+						<input name="update_users_method" type="hidden" value="delete" />
+						<input name="user_id" type="hidden" value=<%= user.id%> /> 
+						<%= f.submit "删除好友"  %>
+						<% end %>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

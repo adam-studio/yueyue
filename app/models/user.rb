@@ -1,10 +1,19 @@
+#encoding: UTF-8
+
 class User < ActiveRecord::Base
   has_and_belongs_to_many :yueyue_objects, :uniq => true
-  has_and_belongs_to_many :groups
+  has_and_belongs_to_many :groups, :uniq => true
 
   def self.create_a_new_user(params)
     ActiveRecord::Base.transaction do
       user = User.new
+      user.nick_name = params[:nick_name]
+      user.profile_image_url = params[:profile_image_url]
+      user.gender = params[:gender]
+      user.city = params[:city]
+      
+      user.save
+      
       account = Account.new
       account.name = params[:account_name]
       account.password = params[:account_password]
@@ -14,12 +23,24 @@ class User < ActiveRecord::Base
       account.access_token = params[:access_token]
       account.access_token_secret = params[:access_token_secret]
       account.user = user
-
-      user.save
+      
       account.save
       
       return user
     end
+  end
+  
+  def get_groups
+    groups = self.groups
+    if groups.empty? 
+      group = Group.new
+      group.name = "未定义"
+      group.save
+      user.groups << group
+      user.save
+      groups = user.groups
+    end
+    return groups
   end
   
   def self.get_by_account(account_name, account_type)

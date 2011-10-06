@@ -4,26 +4,9 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.xml
   def index
-  
     user = User.find_by_id(session[:user_id])
-    @groups = user.groups
-    if @groups.empty? 
-      @group = Group.new
-      @group.name = "未定义"
-      @group.save
-      user.groups << @group
-      user.save
-      @groups = user.groups
-    end
-    @users = [ ]
-    @groups.each do |group|
-   	if group.users != nil
-   	  p group.id
-   	  @users = @users + group.users
-     end
-    end
-
-
+    @groups = user.get_groups
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @groups }
@@ -54,6 +37,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
+    @accounts = nil
     @group = Group.find(params[:id])
   end
 
@@ -77,17 +61,33 @@ class GroupsController < ApplicationController
   # PUT /groups/1.xml
   def update
     @group = Group.find(params[:id])
-    user = User.get_by_account(params[:account_name], params[:account_type]) 
-    @group.users << user
 
-    respond_to do |format| 
-      if @group.save
-        format.html { redirect_to ({:controller => "groups", :action => "index"}) }
-        format.xml  { head :ok }
-      else
+    if params[:search_users] != nil
+      @accounts = Account.find(:all, :conditions => ["name like ?", "%" + params[:search_account_name] + "%"], :limit => 5)
+
+      respond_to do |format|
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @users }
       end
+    else
+      user = User.find_by_id(params[:user_id])
+      if params[:update_users_method] != nil && params[:update_users_method] == "delete"
+        @group.users.delete(user)
+      else
+        if params[:update_users_method] != nil && params[:update_users_method] == "add"
+          @group.users << user
+        end
+      end
+
+      respond_to do |format| 
+        if @group.save
+          format.html { redirect_to ({:controller => "groups", :action => "index"}) }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
+        end
+      end       
     end
   end
 

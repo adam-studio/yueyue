@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(:version => 20110923115224) do
 
   create_table "users", :force => true do |t|
     t.string   "nick_name"
-    t.string   "picture_url"
+    t.string   "profile_image_url"
     t.string   "description"
-    t.string   "sex"
-    t.string   "location"
+    t.string   "gender"
+    t.string   "city"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"

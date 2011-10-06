@@ -1,18 +1,78 @@
-<p>
-  <b>Name:</b>
-  <%=h @user.name %>
-</p>
+<div class="frend">
+	<div class="middle">
+	<%= @user.nick_name || "蓝精灵"%>
+</div><hr />
+<table>
+	<tbody>
+		<tr>
+			<td>
+				<% picture_url = @user.profile_image_url || "nopicture.png" %>
+				<%= image_tag(picture_url, :height => '50', :width => '50')%>
+			</td>
+			<td valign="top">
+				<%= @user.city || "未知城市"%><br />
+				<span><%= @user.description || "我很懒，什么都没有留下。"%></span><br/>
+				<% if session[:user_id] != nil %>
+				<div class="tblue">
+					<% groups = User.find_by_id(session[:user_id]).get_groups %>
+					<% group = groups.find(:first) %>
+					<%= form_for(group) do |f| %>
+					<input name="user_id" type="hidden" value=<%= @user.id%> /> 
+					<input name="update_users_method" type="hidden" value="add" />
+					<%= f.submit "加为好友"  %>
+					<% end %>
+				</div>
+				<% end %>
+			</td>
+		</tr>
 
-<p>
-  <b>Hashed password:</b>
-  <%=h @user.hashed_password %>
-</p>
+	</tbody>
+</table>
+<hr />
 
-<p>
-  <b>Salt:</b>
-  <%=h @user.salt %>
-</p>
+<div >
+	他的好友：<br />
+	<a href="">黄辰晶</a>
+	<a href="">果果</a>
+	<a href="">豆豆</a>
+	<a href="">爱谁</a>
+</div>
+</div>
 
+<div class="zt">他的约约    	</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="kk2">
+	<div class="bt">
+		[09.10]		
+		<a href="Yueyue-xingxi.html">看看电影</a>
+		<span>参加[10]</span>		
+	</div>
+	<div class="bt">
+		[09.18]
+		<a href="Yueyue-xingxi.html">今天晚上去吃火锅</a>
+
+		<span>参加[0]</span>		
+	</div>
+	<div class="bt">
+		[08.08]
+		<a href="Yueyue-xingxi.html">黑乎乎的夜，干什么？</a>
+		<span>参加[125]</span>		
+	</div>
+	<div class="bt">
+		[09.10]
+		<a href="Yueyue-xingxi.html">今晚打灰狼</a> 
+		<span>参加[25]</span>		
+	</div>
+
+	<div class="bt">
+		[08.15]
+		<a href="Yueyue-xingxi.html">今晚杀人！！！</a>
+		<span>参加[15]</span>		
+	</div>
+	<div class="bt">
+		[08.20]
+		<a href="Yueyue-xingxi.html">今天晚上接着搞网络</a>
+		<span>参加[8]</span>		
+	</div>
+
+</div>
