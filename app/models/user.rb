@@ -3,32 +3,7 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :yueyue_objects, :uniq => true
   has_and_belongs_to_many :groups, :uniq => true
-
-  def self.create_a_new_user(params)
-    ActiveRecord::Base.transaction do
-      user = User.new
-      user.nick_name = params[:nick_name]
-      user.profile_image_url = params[:profile_image_url]
-      user.gender = params[:gender]
-      user.city = params[:city]
-      
-      user.save
-      
-      account = Account.new
-      account.name = params[:account_name]
-      account.password = params[:account_password]
-      account.account_type = params[:account_type]
-      account.request_token = params[:request_token]
-      account.request_token_secret = params[:request_token_secret]
-      account.access_token = params[:access_token]
-      account.access_token_secret = params[:access_token_secret]
-      account.user = user
-      
-      account.save
-      
-      return user
-    end
-  end
+  has_many :accounts
   
   def get_groups
     groups = self.groups
@@ -51,6 +26,10 @@ class User < ActiveRecord::Base
       user = nil
     end
     return user
+  end
+  
+  def get_account_by_type(account_type)
+    accounts.find_by_account_type(account_type)
   end
   
   def unfinished_yueyue_objects

@@ -31,12 +31,13 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.xml
-  def create
-    params[:account_type] = "email"    
-    @user = User.create_a_new_user(params)
+  def create    
+    @user = User.new
+    account = Account.new(:name=>params[:name], :password=>params[:password], :account_type=>'email')
+    @user.accounts << account
 
     respond_to do |format|
-      if @user
+      if @user.save
         session[:user_id] = @user.id
         format.html { redirect_to(:controller=>'yueyue_objects', :action => "index") }
         format.xml  { render :xml => @user, :status => :created, :location => @user }

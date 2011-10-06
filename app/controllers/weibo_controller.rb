@@ -53,30 +53,24 @@ class WeiboController < ApplicationController
   def callback
     client = build_client_class(params[:account_type]).load(Rails.cache.read(build_oauth_token_key(params[:account_type], params[:oauth_token])))
     client.authorize(:oauth_verifier => params[:oauth_verifier]) 
-    account_info = client.get_account_info
-    account = Account.get_by_name_and_type(account_info[:account_name], params[:account_type])
-    if account != nil
-      session[:user_id] = account.user.id
-      redirect_to(:controller=>'yueyue_objects', :action => "index")
-    else
-      new_user_params = Hash.new
-      new_user_params[:account_type] = params[:account_type]
-      new_user_params.merge(account_info)
-      p account_info
+    account_name = client.get_account_name
+    account = Account.get_by_name_and_type(account_name, params[:account_type])
+    unless account
       client_dump = client.dump 
-      new_user_params[:request_token] = client_dump[:request_token]
-      new_user_params[:request_token_secret] = client_dump[:request_token_secret]
-      new_user_params[:access_token] = client_dump[:access_token]
-      new_user_params[:access_token_secret] = client_dump[:access_token_secret]
-      
-      p new_user_params
-      
-      user = User.create_a_new_user(new_user_params)
-      
-      session[:user_id] = user.id
-      redirect_to(:controller=>'yueyue_objects', :action => "index") 
-      
-      end
+      client_dump[:name] = account_name
+      client_dump[:account_type] = params[:account_type]
+      account = Account.new(client_dump)
+      account.user = User.new
+      account.save
+    end
+    session[:user_id] = account.user.id
+    
+    # 将access token等存入session,在发送微博的时候需要用到
+    account.user.accounts.each do |user_account|
+      session["access_token_#{user_account.account_type}"] = user_account.access_token
+      session["access_token_secret_#{user_account.account_type}"] = user_account.access_token_secret
+    end
+    redirect_to(:controller=>'yueyue_objects', :action => "index") 
   end
 
   # 发送内容到微博

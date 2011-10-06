@@ -1,0 +1,26 @@
+--- 
+yueyue_types_001: 
+  id: 1
+  name: "K\xE6\xAD\x8C"
+  created_at: 2011-10-03 21:20:27.146334
+  updated_at: 2011-10-03 21:20:27.146334
+yueyue_types_002: 
+  id: 2
+  name: "\xE4\xB8\x89\xE5\x9B\xBD\xE6\x9D\x80"
+  created_at: 2011-10-03 21:20:41.524662
+  updated_at: 2011-10-03 21:20:41.524662
+yueyue_types_003: 
+  id: 3
+  name: "\xE7\x9C\x8B\xE7\x94\xB5\xE5\xBD\xB1"
+  created_at: 2011-10-03 21:20:56.754759
+  updated_at: 2011-10-03 21:20:56.754759
+yueyue_types_004: 
+  id: 4
+  name: "\xE7\x88\xAC\xE5\xB1\xB1"
+  created_at: 2011-10-03 21:21:05.534231
+  updated_at: 2011-10-03 21:21:05.534231
+yueyue_types_005: 
+  id: 5
+  name: "\xE6\xB3\xA1\xE5\x90\xA7"
+  created_at: 2011-10-03 21:22:39.981356
+  updated_at: 2011-10-03 21:22:39.981356

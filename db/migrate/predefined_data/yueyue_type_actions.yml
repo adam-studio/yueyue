@@ -1,0 +1,31 @@
+--- 
+yueyue_type_actions_001: 
+  id: 1
+  yueyue_type_id: 5
+  name: join@UserActions
+  created_at: 2011-10-03 21:29:07.270547
+  updated_at: 2011-10-03 21:29:07.270547
+yueyue_type_actions_002: 
+  id: 2
+  yueyue_type_id: 1
+  name: join@UserActions
+  created_at: 2011-10-03 21:32:29.192572
+  updated_at: 2011-10-03 21:32:29.192572
+yueyue_type_actions_003: 
+  id: 3
+  yueyue_type_id: 2
+  name: join@UserActions
+  created_at: 2011-10-03 21:33:43.516452
+  updated_at: 2011-10-03 21:33:43.516452
+yueyue_type_actions_004: 
+  id: 4
+  yueyue_type_id: 4
+  name: join@UserActions
+  created_at: 2011-10-03 21:42:35.621831
+  updated_at: 2011-10-03 21:42:35.621831
+yueyue_type_actions_005: 
+  id: 5
+  yueyue_type_id: 3
+  name: join@UserActions
+  created_at: 2011-10-03 21:42:49.109571
+  updated_at: 2011-10-03 21:42:49.109571
