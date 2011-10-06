@@ -26,7 +26,8 @@ module OauthChina
         account_info[:nick_name] = data["screen_name"]
         account_info[:profile_image_url] = data["profile_image_url"]
         account_info[:gender] = data["gender"]
-        account_info[:city] = get_city_name_by_province_id_and_city_id(data["province"], data["city"])
+        account_info[:city] = "深圳"
+        #get_city_name_by_province_id_and_city_id(data["province"], data["city"])
         return account_info
       else
         return nil
@@ -53,11 +54,11 @@ class WeiboController < ApplicationController
   def callback
     client = build_client_class(params[:account_type]).load(Rails.cache.read(build_oauth_token_key(params[:account_type], params[:oauth_token])))
     client.authorize(:oauth_verifier => params[:oauth_verifier]) 
-    account_name = client.get_account_name
-    account = Account.get_by_name_and_type(account_name, params[:account_type])
+    account_info = client.get_account_info
+    account = Account.get_by_name_and_type(account_info[:account_name], params[:account_type])
     unless account
       client_dump = client.dump 
-      client_dump[:name] = account_name
+      client_dump[:name] = account_info[:account_name]
       client_dump[:account_type] = params[:account_type]
       account = Account.new(client_dump)
       account.user = User.new

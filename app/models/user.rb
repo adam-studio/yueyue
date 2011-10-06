@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
       group = Group.new
       group.name = "未定义"
       group.save
-      user.groups << group
-      user.save
-      groups = user.groups
+      self.groups << group
+      self.save
+      groups = self.groups
     end
     return groups
   end
