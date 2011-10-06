@@ -38,14 +38,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        session[:user_id] = @user.id
-        format.html { redirect_to(:controller=>'yueyue_objects', :action => "index") }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-      else
-        flash[:notice] ||= "新建用户失败。"
-        format.html { render :action => "new" }
-        format.xml  { render :xml => flash[:notice], :status => :unprocessable_entity }
-      end
+      flash[:notice] = "用户注册成功"
+      format.html {
+      	session[:user_id] = @user.id
+        redirect_to(:controller=>'yueyue_objects', :action => "index") }
+        format.xml  { render :xml => @user, :status => :created,
+                             :location => @user }
+       end
     end
   end
 
