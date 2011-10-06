@@ -5,6 +5,18 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :groups, :uniq => true
   has_many :accounts
   
+  def get_groups
+    groups = self.groups
+    if groups.empty? 
+      group = Group.new
+      group.name = "未定义"
+      group.save
+      user.groups << group
+      user.save
+      groups = user.groups
+    end
+    return groups
+  end
   
   def self.get_by_account(account_name, account_type)
     account = Account.get_by_name_and_type(account_name, account_type)
