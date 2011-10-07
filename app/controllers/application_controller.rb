@@ -2,8 +2,10 @@ require 'net/http'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :authorize
   before_filter :select_city
   after_filter :remember_url 
+
 
   protected
   def remember_url

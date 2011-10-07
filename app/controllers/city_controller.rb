@@ -1,12 +1,14 @@
 #coding: utf-8
 
 class CityController < ApplicationController
-after_filter :remember_url, :only => []
+  after_filter :remember_url, :only => []
+  before_filter :authorize, :only => []
+  
   def index
     @cities = City.find(:all, :limit => 10, :order => "rate DESC")
-    
+
     @Alphabet = ('A'..'Z')
-    
+
     @return_url = session[:original_url_before_change_city] || {:controller => 'yueyue_objects', :action => 'index' }
 
     respond_to do |format|
@@ -14,7 +16,7 @@ after_filter :remember_url, :only => []
       format.xml  { render :xml => @cities }
     end
   end
-  
+
   def change_city
     city = City.find_by_id(params[:id])
     if city != nil
@@ -23,20 +25,20 @@ after_filter :remember_url, :only => []
       city.save
     end
     redirect_url = session[:original_url_before_change_city] || {:controller => 'yueyue_objects', :action => 'index' }
-  redirect_to redirect_url
+    redirect_to redirect_url
   end
-  
+
   def index_by_letter
     @cities = City.find(:all, :conditions => ["pinyin like ?", params[:id] + "%"], :order => "rate DESC")
-    
-      respond_to do |format|
+
+    respond_to do |format|
       format.html # index_by_letter.html.erb
       format.xml  { render :xml => @cities }
     end
   end
-  
+
   def search
-  city = City.find(:first, :conditions => ["name = ? or area_code = ?", params[:q], params[:q]])
+    city = City.find(:first, :conditions => ["name = ? or area_code = ?", params[:q], params[:q]])
     if city != nil
       redirect_to :action => "change_city", :id => city
     else
@@ -44,5 +46,5 @@ after_filter :remember_url, :only => []
       redirect_to :controller => "city", :action => "index"
     end
   end
-  
+
 end

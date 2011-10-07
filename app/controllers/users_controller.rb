@@ -1,9 +1,10 @@
 #encoding: UTF-8
 
 class UsersController < ApplicationController
+  before_filter :authorize, :except => [:login, :logout, :new, :create]
+    
   # GET /users
   # GET /users.xml
-
   def index
     @users = User.find(:all)
 
