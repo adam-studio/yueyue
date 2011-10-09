@@ -2,20 +2,6 @@
 
 module OauthChina
   class Sina < OauthChina::OAuth
-    @@provinces = {}
-    def get_city_name_by_province_id_and_city_id(province, city)
-      if @@provinces.empty?
-        response = self.get("/provinces.xml")
-        if response != nil && response.code == '200'
-          p response.body
-          @@provinces = ActiveSupport::JSON.decode response.body
-          p @@provinces
-        end
-      end
-      puts "bbbb"
-      @@provinces["provinces"].each {|key, value| puts "#{key} is #{value}" }
-      return @@provinces[province, city]
-    end
     
     def get_account_info
       response = self.get("/account/verify_credentials.json")
@@ -26,8 +12,6 @@ module OauthChina
         account_info[:nick_name] = data["screen_name"]
         account_info[:profile_image_url] = data["profile_image_url"]
         account_info[:gender] = data["gender"]
-        account_info[:city] = "深圳"
-        #get_city_name_by_province_id_and_city_id(data["province"], data["city"])
         return account_info
       else
         return nil
@@ -38,6 +22,8 @@ end
 
 
 class WeiboController < ApplicationController
+  before_filter :authorize, :except => [:authorize, :callback]
+
   def authorize
     if params[:account_type] != nil
       client = build_client_class(params[:account_type]).new
@@ -61,7 +47,7 @@ class WeiboController < ApplicationController
       client_dump[:name] = account_info[:account_name]
       client_dump[:account_type] = params[:account_type]
       account = Account.new(client_dump)
-      account.user = User.new
+      account.user = User.new(:nick_name => account_info[:nick_name], :profile_image_url => account_info[:profile_image_url], :gender => account_info[:gender])
       account.save
     end
     session[:user_id] = account.user.id
