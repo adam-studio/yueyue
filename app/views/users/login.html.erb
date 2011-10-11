@@ -1,9 +1,6 @@
 <div>
 	<% form_tag do %>
 	<div>
-		<% if flash[:notice] %>
-		<%= flash[:notice] %><br/>
-		<% end %>
 		邮箱<br/>
 		<%= text_field_tag(:account_name) %><br/>
 		密码<br/>
@@ -11,7 +8,6 @@
 		<%= hidden_field_tag 'account_type', 'email'%>
 		<%= submit_tag "登录" %>
 		<%= link_to '注册', new_user_path %>  
-
 	</div>
 	<% end %>
 </div>

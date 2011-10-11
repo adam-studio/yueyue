@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by_id(session[:user_id])
-      flash[:notice] = "Please log in"
+      session[:after_success_login] = request.fullpath
       redirect_to :controller=>'users',:action=>'login', :id=>'1'
     end
   end

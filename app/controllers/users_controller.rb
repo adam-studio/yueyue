@@ -106,7 +106,9 @@ class UsersController < ApplicationController
       account = Account.authenticate(params[:account_type], params[:account_name], params[:account_password])
       if account
         session[:user_id] = account.user.id
-        redirect_to(:controller=>'yueyue_objects', :action => "index")
+        redirect_url = session[:after_success_login] || url_for(:controller=>'yueyue_objects', :action => "index")
+        session[:after_success_login] = nil
+        redirect_to(redirect_url)
       else
         flash[:notice] = "错误的用户名或者密码。"
       end

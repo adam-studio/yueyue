@@ -57,7 +57,9 @@ class WeiboController < ApplicationController
       session["access_token_#{user_account.account_type}"] = user_account.access_token
       session["access_token_secret_#{user_account.account_type}"] = user_account.access_token_secret
     end
-    redirect_to(:controller=>'yueyue_objects', :action => "index") 
+    redirect_url = session[:after_success_login] || url_for(:controller=>'yueyue_objects', :action => "index")
+    session[:after_success_login] = nil
+    redirect_to(redirect_url)
   end
 
   # 发送内容到微博
