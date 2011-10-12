@@ -34,7 +34,8 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create    
     @user = User.new
-    account = Account.new(:name=>params[:name], :password=>params[:password], :account_type=>'email')
+    @user.nick_name = params[:nick_name]
+    account = Account.new(:name=>params[:account_name], :password=>params[:password], :account_type=>'email')
     @user.accounts << account
 
     respond_to do |format|
