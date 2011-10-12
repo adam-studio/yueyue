@@ -6,7 +6,7 @@
 	<tbody>
 		<tr>
 			<td>
-				<% picture_url = @user.profile_image_url || "nopicture.png" %>
+				<% picture_url = @user.profile_image_url || "/uploads/nopicture.png" %>
 				<%= image_tag(picture_url, :height => '50', :width => '50')%>
 			</td>
 			<td valign="top">
