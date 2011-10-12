@@ -8,8 +8,8 @@
 	if (type_count % 4 == 0)%>
 	<br />
 	<%
-	end
-	end
+end
+end
 %>
 </div>
 
@@ -27,7 +27,8 @@
 <% @yueyue_objects.each do |yueyue_object| %>
 <div class="kk2">
 	<div class="bt">
-		<%=yueyue_object.owner.nick_name%>:<%= link_to yueyue_object.title, yueyue_object %> 
+		<%= link_to yueyue_object.owner.nick_name, :controller => "users", :action => "show", :id => yueyue_object.owner.id %>
+		:<%= link_to yueyue_object.title, yueyue_object %> 
 
 	</div>
 </div>
@@ -41,7 +42,8 @@
 <% @hot_yueyue_objects.each do |yueyue_object| %>
 <div class="kk2">
 	<div class="bt">
-		<%=yueyue_object.owner.nick_name%>:<%= link_to yueyue_object.title, yueyue_object %> 
+				<%= link_to yueyue_object.owner.nick_name, :controller => "users", :action => "show", :id => yueyue_object.owner.id %>
+		:<%= link_to yueyue_object.title, yueyue_object %> 
 
 	</div>
 </div>
