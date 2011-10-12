@@ -32,47 +32,23 @@
 
 <div >
 	他的好友：<br />
-	<a href="">黄辰晶</a>
-	<a href="">果果</a>
-	<a href="">豆豆</a>
-	<a href="">爱谁</a>
+	<% if !@friends.blank? %>
+	  <% for friend in @friends %>
+	<%= link_to friend.nick_name, :controller => "users", :action => "show", :id => friend.id %>
+	  <% end %>
+	<% end %>
+
 </div>
 </div>
 
-<div class="zt">他的约约    	</div>
+<div class="zt">
+	<%= @user.nick_name%>的约约
+</div>
 
+<% @user.unfinished_yueyue_objects.each do |yueyue_object| %>
 <div class="kk2">
 	<div class="bt">
-		[09.10]		
-		<a href="Yueyue-xingxi.html">看看电影</a>
-		<span>参加[10]</span>		
+		[参加]:<%= link_to yueyue_object.title, yueyue_object %> 
 	</div>
-	<div class="bt">
-		[09.18]
-		<a href="Yueyue-xingxi.html">今天晚上去吃火锅</a>
-
-		<span>参加[0]</span>		
-	</div>
-	<div class="bt">
-		[08.08]
-		<a href="Yueyue-xingxi.html">黑乎乎的夜，干什么？</a>
-		<span>参加[125]</span>		
-	</div>
-	<div class="bt">
-		[09.10]
-		<a href="Yueyue-xingxi.html">今晚打灰狼</a> 
-		<span>参加[25]</span>		
-	</div>
-
-	<div class="bt">
-		[08.15]
-		<a href="Yueyue-xingxi.html">今晚杀人！！！</a>
-		<span>参加[15]</span>		
-	</div>
-	<div class="bt">
-		[08.20]
-		<a href="Yueyue-xingxi.html">今天晚上接着搞网络</a>
-		<span>参加[8]</span>		
-	</div>
-
 </div>
+<% end %>

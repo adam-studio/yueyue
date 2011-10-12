@@ -18,6 +18,19 @@ class User < ActiveRecord::Base
     return groups
   end
   
+  def get_friends
+    groups = self.get_groups
+    users = []
+    groups.each do |group|
+      group.users.each do |user|
+        if user != self
+          users << user
+        end
+      end
+    end
+    return users
+  end
+  
   def self.get_by_account(account_name, account_type)
     account = Account.get_by_name_and_type(account_name, account_type)
     if account
