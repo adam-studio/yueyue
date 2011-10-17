@@ -1,4 +1,6 @@
 Yueyue::Application.routes.draw do
+  resources :messages
+
   resources :accounts
 
   resources :groups
