@@ -7,3 +7,15 @@ accounts_001:
   user_id: 1
   created_at: '2011-09-18 13:27:03.912116'
   updated_at: '2011-09-18 13:27:03.912116'
+  
+accounts_002:
+  id: 2
+  name: 2389175650
+  account_type: sina
+  user_id: 1
+  request_token: c44d72969db6e775d47b6494f097b8fa
+  request_token_secret: b490161a343843d7c1466b095ccf2408
+  access_token: 7c9182693f39e970038eda3e6fb1a849
+  access_token_secret: 86f74ce2fc4132e022e5c37e140fa665
+  created_at: '2011-09-18 13:27:03.912116'
+  updated_at: '2011-09-18 13:27:03.912116'

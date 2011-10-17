@@ -40,7 +40,7 @@
 <div class="kuang">
 	<div>
 		当前头像:<br>
-		<% profile_image_url = @user.profile_image_url || "nopicture.png" %>
+		<% profile_image_url = @user.profile_image_url || "/uploads/nopicture.png" %>
 		<%= image_tag(profile_image_url, :height => '50', :width => '50') %><br>
 		更换头像：
 		<%= file_field_tag 'picture', :value => '', :accept => 'image/png,image/gif,image/jpeg' %> 

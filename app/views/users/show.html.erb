@@ -13,15 +13,16 @@
 				<%= @user.city || "未知城市"%><br />
 				<span><%= @user.description || "我很懒，什么都没有留下。"%></span><br/>
 				<% if session[:user_id] != nil %>
+				<% login_user = User.find_by_id(session[:user_id]) %>
+				<% if not (login_user.get_friends.include? @user) %>
 				<div class="tblue">
-					<% groups = User.find_by_id(session[:user_id]).get_groups %>
-					<% group = groups.find(:first) %>
-					<%= form_for(group) do |f| %>
+					<%= form_for(login_user.groups[0]) do |f| %>
 					<input name="user_id" type="hidden" value=<%= @user.id%> /> 
 					<input name="update_users_method" type="hidden" value="add" />
 					<%= f.submit "加为好友"  %>
 					<% end %>
 				</div>
+				<% end%>
 				<% end %>
 			</td>
 		</tr>

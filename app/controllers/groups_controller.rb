@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups.xml
   def index
     user = User.find_by_id(session[:user_id])
-    @groups = user.get_groups
+    @groups = user.groups
     
     respond_to do |format|
       format.html # index.html.erb
@@ -64,6 +64,8 @@ class GroupsController < ApplicationController
 
     if params[:search_users] != nil
       @accounts = Account.find(:all, :conditions => ["name like ?", "%" + params[:search_account_name] + "%"], :limit => 5)
+      @accounts = @accounts - @group.owner.accounts
+      @accounts = @accounts - @group.owner.get_accounts_of_friends
 
       respond_to do |format|
         format.html { render :action => "edit" }

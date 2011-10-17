@@ -32,11 +32,13 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.xml
-  def create    
+  def create
     @user = User.new
     @user.nick_name = params[:nick_name]
     account = Account.new(:name=>params[:account_name], :password=>params[:password], :account_type=>'email')
     @user.accounts << account
+    group = Group.new(:name => "未定义")
+    @user.groups << group
 
     respond_to do |format|
       if @user.save
@@ -44,7 +46,6 @@ class UsersController < ApplicationController
         format.html { redirect_to(:controller=>'yueyue_objects', :action => "index") }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
-        flash[:notice] ||= "新建用户失败。"
         format.html { render :action => "new" }
         format.xml  { render :xml => flash[:notice], :status => :unprocessable_entity }
       end
@@ -116,6 +117,7 @@ class UsersController < ApplicationController
     end
 
     if request.get? and params[:account_type] != nil
+      puts "aaaaaaa"
       redirect_to(:controller => 'weibo', :action =>'authorize', :account_type => params[:account_type])
     end
   end

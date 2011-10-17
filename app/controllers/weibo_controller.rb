@@ -43,11 +43,13 @@ class WeiboController < ApplicationController
     account_info = client.get_account_info
     account = Account.get_by_name_and_type(account_info[:account_name], params[:account_type])
     unless account
-      client_dump = client.dump 
+      client_dump = client.dump
       client_dump[:name] = account_info[:account_name]
       client_dump[:account_type] = params[:account_type]
       account = Account.new(client_dump)
       account.user = User.new(:nick_name => account_info[:nick_name], :profile_image_url => account_info[:profile_image_url], :gender => account_info[:gender])
+      group = Group.new(:name => "未定义")
+      account.user.groups << group
       account.save
     end
     session[:user_id] = account.user.id

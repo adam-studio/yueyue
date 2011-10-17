@@ -2,35 +2,35 @@
 
 class User < ActiveRecord::Base
   has_and_belongs_to_many :yueyue_objects, :uniq => true
-  has_and_belongs_to_many :groups, :uniq => true
   has_many :accounts
-  
-  def get_groups
-    groups = self.groups
-    if groups.empty? 
-      group = Group.new
-      group.name = "未定义"
-      group.save
-      self.groups << group
-      self.save
-      groups = self.groups
+
+  has_many :groups, :foreign_key => "owner_id"
+  has_many :groups_users, :class_name => "GroupsUsers"
+  has_many :in_groups, :class_name => "Group", :through => :groups_users, :source => :group
+
+  def validate 
+    if nick_name.empty?
+      errors.add_to_base("昵称不能为空")
     end
-    return groups
   end
   
   def get_friends
-    groups = self.get_groups
     users = []
-    groups.each do |group|
-      group.users.each do |user|
-        if user != self
-          users << user
-        end
-      end
+    self.groups.each do |group|
+      users = users + group.users
     end
     return users
   end
   
+  def get_accounts_of_friends
+    accounts_of_friends = []
+    friends = self.get_friends
+    friends.each do |friend|
+      accounts_of_friends = accounts_of_friends + friend.accounts
+    end
+    return accounts_of_friends
+  end
+
   def self.get_by_account(account_name, account_type)
     account = Account.get_by_name_and_type(account_name, account_type)
     if account
@@ -40,11 +40,11 @@ class User < ActiveRecord::Base
     end
     return user
   end
-  
+
   def get_account_by_type(account_type)
     accounts.find_by_account_type(account_type)
   end
-  
+
   def unfinished_yueyue_objects
     unfinished_objects = []
     self.yueyue_objects.each do |yueyue_object|

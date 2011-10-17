@@ -13,6 +13,7 @@ class Weibo
       return
     end
     weibo_content = "#{text} #{I18n.t "weibo.join"}#{url} #{I18n.t "weibo.comefrom"}"
+    puts weibo_content
     client.add_status weibo_content
   end
   
