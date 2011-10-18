@@ -2,16 +2,33 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
   def index
-    @messages = Message.find_all_by_user_id(session[:user_id]).group_by{|message| message.message_type}
-    #todo 重构这段重复代码！
-    @system_messages = Message.find(:all, :user_id=>session[:user_id], :limit=>10, :conditions=>"status = 0 and message_type = 0")
-    @friends_requests = Message.find(:all, :user_id=>session[:user_id], :limit=>10, :conditions=>"status = 0 and message_type = 1")
-    @user_messages = Message.find(:all, :user_id=>session[:user_id], :limit=>10, :conditions=>"status = 0 and message_type = 2")
+    @system_messages_count = count_unread_messages_by_type Message::SYSTEM_MESSAGES
+    @friends_requests_count = count_unread_messages_by_type Message::FRIEND_REQUEST
+    @user_messages_count = count_unread_messages_by_type Message::USER_RECEIVED
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @messages }
     end
+  end
+
+  def list
+    @messages = Message.find(:all, :order=>:created_at, :limit=>20, 
+    :conditions=>"user_id=#{session[:user_id]} and message_type=#{params[:message_type]}")
+    @message_type = params[:message_type]
+    
+    @messages.each do |message|
+      if @message_type == Message::SYSTEM_MESSAGES
+        message.other_user_name = I18n.t "messages.system"
+      else
+        message.other_user_name = message.other_user.nick_name
+      end
+      
+      if @message_type == Message::FRIEND_REQUEST
+        message.content = I18n.t "messages.friends_request"
+      end
+    end
+    
   end
 
   # GET /messages/1
@@ -84,5 +101,13 @@ class MessagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
+  private
+  def count_unread_messages_by_type(message_type)
+    Message.count(:conditions=>"user_id = #{session[:user_id]} and status = 0 and message_type = #{message_type}")
+  end
+
+  def find_unread_messages_by_type(message_type)
+    Message.find(:all, :user_id=>session[:user_id], :limit=>10, :conditions=>"status = 0 and message_type = #{message_type}")
+  end
 end

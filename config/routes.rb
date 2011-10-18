@@ -1,5 +1,9 @@
 Yueyue::Application.routes.draw do
-  resources :messages
+  resources :messages do
+    collection do
+      get 'list'
+    end
+  end
 
   resources :accounts
 
