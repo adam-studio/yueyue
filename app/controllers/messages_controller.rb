@@ -13,9 +13,9 @@ class MessagesController < ApplicationController
   end
 
   def list
-    @messages = Message.find(:all, :order=>:created_at, :limit=>20, 
+    @messages = Message.find(:all, :order=>"created_at desc", :limit=>20, 
     :conditions=>"user_id=#{session[:user_id]} and message_type=#{params[:message_type]}")
-    @message_type = params[:message_type]
+    @message_type = params[:message_type].to_i
     
     @messages.each do |message|
       if @message_type == Message::SYSTEM_MESSAGES
@@ -27,8 +27,7 @@ class MessagesController < ApplicationController
       if @message_type == Message::FRIEND_REQUEST
         message.content = I18n.t "messages.friends_request"
       end
-    end
-    
+    end    
   end
 
   # GET /messages/1
