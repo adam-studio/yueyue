@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017080224) do
+ActiveRecord::Schema.define(:version => 20111018163524) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20111017080224) do
     t.string   "access_token_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "security_account_id"
   end
 
   create_table "cities", :force => true do |t|

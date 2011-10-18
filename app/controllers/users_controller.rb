@@ -117,7 +117,6 @@ class UsersController < ApplicationController
     end
 
     if request.get? and params[:account_type] != nil
-      puts "aaaaaaa"
       redirect_to(:controller => 'weibo', :action =>'authorize', :account_type => params[:account_type])
     end
   end
@@ -138,4 +137,5 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
+  
 end

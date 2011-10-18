@@ -1,5 +1,11 @@
 Yueyue::Application.routes.draw do
-  resources :accounts
+  resources :accounts do
+    collection do
+      get 'forgot_password'
+      get 'reset_password'
+      post 'update_password'
+    end
+  end
 
   resources :groups
 

@@ -1,4 +1,8 @@
+#encoding: UTF-8
+
 class AccountsController < ApplicationController
+  before_filter :authorize, :except => [:forgot_password, :reset_password, :update_password]
+  
   # GET /accounts
   # GET /accounts.xml
   def index
@@ -80,5 +84,45 @@ class AccountsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+ 
+  def forgot_password
+    if request.post?
+      account = Account.find(:first, :conditions => ["name = ? and account_type = 'email'", params[:account_name]])
+      if account
+        account.security_account_id = "33333"
+        account.save
+      #set security_account_id
+      #send email
+        @message = "已把链接发送到你的邮箱。"
+      else
+        @message = "账号不存在"
+      end
+    end
+  end
+   
+  def reset_password
+    if (params[:security_account_id])
+      @account = Account.find(:first, :conditions => ["security_account_id = ?", params[:security_account_id]])
+    end
+    if session[:user_id] && @account == nil
+      @account = User.find_by_id(session[:user_id]).get_account_by_type("email")
+    end
+  end
   
+  def update_password
+    @account = Account.find(params[:id])
+    @account.password = params[:password]
+    @account.security_account_id = ""
+    
+    respond_to do |format| 
+      if @account.save
+        session[:user_id] = @account.user.id
+        format.html { redirect_to ({:controller => "yueyue_objects", :action => "index"}) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "reset_password" }
+        format.xml  { render :xml => @account.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 end

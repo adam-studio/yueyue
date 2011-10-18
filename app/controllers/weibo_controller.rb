@@ -2,7 +2,6 @@
 
 module OauthChina
   class Sina < OauthChina::OAuth
-    
     def get_account_info
       response = self.get("/account/verify_credentials.json")
       if response != nil && response.code == '200'
@@ -18,6 +17,24 @@ module OauthChina
       end
     end
   end
+  
+  class Qq < OauthChina::OAuth
+    def get_account_info
+      # QQ的访问失败
+      account_info = Hash.new
+      account_info[:account_name] = "abc"
+      account_info[:nick_name] = "qq用户"
+      return account_info
+            
+      response = self.post("http://113.108.86.20/t/user/info")
+      if response != nil && response.code == '200'
+        data = ActiveSupport::JSON.decode response.body
+        return account_info
+      else
+        return nil
+      end
+    end
+  end 
 end
 
 
