@@ -25,6 +25,7 @@
 		<%= link_to "我的首页", {:controller => "yueyue_objects", :action => "home"}%>
 		<%= link_to "好友", {:controller => "groups", :action => "index"}%>
 		<%= link_to "设置", { :controller => "users", :action => "edit", :id => session[:user_id] } %>
+		<%= link_to "消息", { :controller => "messages" } %>
 		<br/>
 		<% end %>
 		<%= link_to '发起约约', new_yueyue_object_path %>

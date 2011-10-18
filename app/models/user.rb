@@ -3,6 +3,7 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :yueyue_objects, :uniq => true
   has_many :accounts
+  has_many :messages
 
   has_many :groups, :foreign_key => "owner_id"
   has_many :groups_users, :class_name => "GroupsUsers"

@@ -14,6 +14,13 @@ zh-CN:
   yueyue_type_actions:
     join : "参加约约"
     quit_join: "退出约约"
+  messages:
+    message_type_0: "系统消息"
+    message_type_1: "好友请求"
+    message_type_2: "用户消息"
+    message_type_3: "已发消息"
+    system: "约约网"
+    friends_request: "请求加您为好友"
   date:
     formats:
       default: "%Y-%m-%d"

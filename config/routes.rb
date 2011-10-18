@@ -7,6 +7,12 @@ Yueyue::Application.routes.draw do
     end
   end
 
+  resources :messages do
+    collection do
+      get 'list'
+    end
+  end
+
   resources :groups
 
   get "city/index"

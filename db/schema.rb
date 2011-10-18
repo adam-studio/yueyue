@@ -11,7 +11,6 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20111018163524) do
-
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.string   "hashed_password"
@@ -46,6 +45,16 @@ ActiveRecord::Schema.define(:version => 20111018163524) do
   create_table "groups_users", :id => false, :force => true do |t|
     t.integer  "group_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "other_user_id"
+    t.integer  "message_type"
+    t.text     "content"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

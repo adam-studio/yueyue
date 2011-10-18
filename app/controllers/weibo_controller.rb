@@ -37,7 +37,6 @@ module OauthChina
   end 
 end
 
-
 class WeiboController < ApplicationController
   before_filter :authorize, :except => [:authorize, :callback]
 
