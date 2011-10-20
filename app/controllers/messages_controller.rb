@@ -66,6 +66,7 @@ class MessagesController < ApplicationController
   # POST /messages.xml
   def create
     @message = Message.new(params[:message])
+    message.status = 0
 
     respond_to do |format|
       if @message.save
