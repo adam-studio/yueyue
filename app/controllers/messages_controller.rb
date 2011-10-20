@@ -13,22 +13,26 @@ class MessagesController < ApplicationController
   end
 
   def list
-    #@messages = Message.find(:all, :order=>"created_at desc", :limit=>20, 
-    #:conditions=>"user_id=#{session[:user_id]} and message_type=#{params[:message_type]}")
     @messages = Message.paginate(:page=>params[:page], :per_page=>20, :order=>"created_at desc", 
     :conditions=>"user_id=#{session[:user_id]} and message_type=#{params[:message_type]}")
     @message_type = params[:message_type].to_i
     @messages.each do |message|
       if @message_type == Message::SYSTEM_MESSAGES
-        message.other_user_name = I18n.t "messages.system"
+        other_user_name = I18n.t "messages.system"
       else
-        message.other_user_name = message.other_user.nick_name
+        other_user_name = message.other_user.nick_name
       end
+      
+      if @message_type != Message::USER_SENT && message.status == 1
+        other_user_name += "(#{I18n.t("messages.readed")})"
+      end
+      message.other_user_name = other_user_name
       
       if @message_type == Message::FRIEND_REQUEST
         message.content = I18n.t "messages.friends_request"
       end
-    end    
+      message.update_attributes(:status=>1)
+    end
   end
 
   # GET /messages/1
