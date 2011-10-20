@@ -13,10 +13,11 @@ class MessagesController < ApplicationController
   end
 
   def list
-    @messages = Message.find(:all, :order=>"created_at desc", :limit=>20, 
+    #@messages = Message.find(:all, :order=>"created_at desc", :limit=>20, 
+    #:conditions=>"user_id=#{session[:user_id]} and message_type=#{params[:message_type]}")
+    @messages = Message.paginate(:page=>params[:page], :per_page=>20, :order=>"created_at desc", 
     :conditions=>"user_id=#{session[:user_id]} and message_type=#{params[:message_type]}")
     @message_type = params[:message_type].to_i
-    
     @messages.each do |message|
       if @message_type == Message::SYSTEM_MESSAGES
         message.other_user_name = I18n.t "messages.system"
@@ -104,9 +105,5 @@ class MessagesController < ApplicationController
   private
   def count_unread_messages_by_type(message_type)
     Message.count(:conditions=>"user_id = #{session[:user_id]} and status = 0 and message_type = #{message_type}")
-  end
-
-  def find_unread_messages_by_type(message_type)
-    Message.find(:all, :user_id=>session[:user_id], :limit=>10, :conditions=>"status = 0 and message_type = #{message_type}")
   end
 end
