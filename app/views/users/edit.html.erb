@@ -17,7 +17,6 @@
 		生活城市：
 		<%= text_field_tag(:city, @user.city) %>
 
-
 	</div>
 	<hr />
 	<div>
@@ -25,19 +24,13 @@
 		<%= radio_button_tag(:status, "solo", @user.status == "solo") %>
 		<%= label_tag(:status_solo, "单身") %>
 	</div>
-
-
-</div>
-</div>
-<div class="kuang">
+	<hr />
 	<div>
 
 		自我介绍：<br />
 		<%= text_area_tag(:description, @user.description) %>
 	</div>
-</div>
-
-<div class="kuang">
+	<hr />
 	<div>
 		当前头像:<br>
 		<% profile_image_url = @user.profile_image_url || "/uploads/nopicture.png" %>
@@ -45,7 +38,16 @@
 		更换头像：
 		<%= file_field_tag 'picture', :value => '', :accept => 'image/png,image/gif,image/jpeg' %> 
 	</div>
-</div>
+<hr />
 <%= submit_tag("确定") %>
+<%= link_to("重置密码", :controller => 'accounts', :action => "reset_password")%>
+
+</div>
+<div class="kuang">
+绑定微博、社区：<br/>
+<%= link_to(image_tag("sina_weibo.png"),
+{ :action => "login", :account_type => "sina"}) %><br/>
+<%= link_to(image_tag("qq_weibo.png"),
+{ :action => "login", :account_type => "qq"}) %>
 </div>
 <% end %>

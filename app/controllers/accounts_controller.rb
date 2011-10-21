@@ -1,5 +1,7 @@
 #encoding: UTF-8
 
+
+
 class AccountsController < ApplicationController
   before_filter :authorize, :except => [:forgot_password, :reset_password, :update_password]
   
@@ -89,10 +91,11 @@ class AccountsController < ApplicationController
     if request.post?
       account = Account.find(:first, :conditions => ["name = ? and account_type = 'email'", params[:account_name]])
       if account
-        account.security_account_id = "33333"
+        account.security_account_id = UUIDTools::UUID.random_create.to_s
         account.save
-      #set security_account_id
-      #send email
+        reset_password_url = request.protocol + request.host_with_port + url_for(:only_path => 'true', :action => 'reset_password', :security_account_id => account.security_account_id)
+        puts reset_password_url
+        email = ResetPasswordMailer.confirm.deliver
         @message = "已把链接发送到你的邮箱。"
       else
         @message = "账号不存在"
