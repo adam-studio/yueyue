@@ -21,6 +21,7 @@ zh-CN:
     message_type_3: "已发消息"
     system: "约约网"
     friends_request: "请求加您为好友"
+    readed: "已阅读"
   date:
     formats:
       default: "%Y-%m-%d"

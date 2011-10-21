@@ -3,13 +3,16 @@
 </div>
 <div class="kk2">
 	<div class="bt">
-		系统消息: <%= link_to @system_messages_count, {:action => "list", :message_type => Message::SYSTEM_MESSAGES}%>
+		<%= link_to "系统消息(#{@system_messages_count})", {:action => "list", :message_type => Message::SYSTEM_MESSAGES}%>
 	</div>
 	<div class="bt">
-		好友请求: <%= link_to @friends_requests_count, {:action => "list", :message_type => Message::FRIEND_REQUEST}%>
+		<%= link_to "好友请求(#{@friends_requests_count})", {:action => "list", :message_type => Message::FRIEND_REQUEST}%>
 	</div>
 	<div class="bt">
-		用户消息: <%= link_to @user_messages_count, {:action => "list", :message_type => Message::USER_RECEIVED}%>
+		<%= link_to "用户消息(#{@user_messages_count})", {:action => "list", :message_type => Message::USER_RECEIVED}%>
+	</div>
+	<div class="bt">
+		<%= link_to "发件箱", {:action => "list", :message_type => Message::USER_SENT}%>
 	</div>
 </div>
 <br />

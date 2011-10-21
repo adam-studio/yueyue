@@ -21,6 +21,9 @@
 					<input name="update_users_method" type="hidden" value="add" />
 					<%= f.submit "加为好友"  %>
 					<% end %>
+					<%= form_tag(new_message_path) do %>
+					<%= submit_tag "发送消息"  %>
+					<% end %>
 				</div>
 				<% end%>
 				<% end %>
