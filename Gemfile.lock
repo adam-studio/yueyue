@@ -70,6 +70,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    uuidtools (2.1.2)
     will_paginate (3.0.1)
 
 PLATFORMS
@@ -81,4 +82,5 @@ DEPENDENCIES
   oauth_china
   rails (= 3.0.9)
   sqlite3
+  uuidtools
   will_paginate (~> 3.0.0)
