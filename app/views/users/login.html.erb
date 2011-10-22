@@ -1,4 +1,7 @@
 <div>
+	<%= flash[:notice]%>
+</div>
+<div>
 	<% form_tag do %>
 	<div>
 		邮箱<br/>
@@ -13,6 +16,6 @@
 	<% end %>
 </div>
 <%= link_to(image_tag("sina_weibo.png"),
-{ :action => "login", :account_type => "sina"}) %><br/>
+{ :controller => 'weibo', :action =>'authorize', :account_type => "sina"}) %><br/>
 <%= link_to(image_tag("qq_weibo.png"),
-{ :action => "login", :account_type => "qq"}) %>
+{ :controller => 'weibo', :action =>'authorize', :account_type => "qq"}) %>

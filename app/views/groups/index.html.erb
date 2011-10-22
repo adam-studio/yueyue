@@ -30,6 +30,11 @@
 						<%= f.submit "删除好友"  %>
 						<% end %>
 					</td>
+					<td valign="top" width="">
+						<% if not user.get_friends.include? User.find_by_id(session[:user_id]) %>  
+					发信邀请
+					<% end %>
+					</td>
 				</tr>
 			</tbody>
 		</table>

@@ -45,9 +45,18 @@
 </div>
 <div class="kuang">
 绑定微博、社区：<br/>
+<% if @user.get_account_by_type("sina") %>
+已绑定新浪微博
+<% else %>
 <%= link_to(image_tag("sina_weibo.png"),
-{ :action => "login", :account_type => "sina"}) %><br/>
+{ :controller => 'weibo', :action =>'authorize', :account_type => "sina"}) %>
+<% end %>
+<br/>
+<% if @user.get_account_by_type("qq") %>
+已绑定QQ微博
+<% else %>
 <%= link_to(image_tag("qq_weibo.png"),
-{ :action => "login", :account_type => "qq"}) %>
+{ :controller => 'weibo', :action =>'authorize', :account_type => "qq"}) %>
+<% end %>
 </div>
 <% end %>

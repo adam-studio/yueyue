@@ -113,10 +113,6 @@ class UsersController < ApplicationController
         flash[:notice] = "错误的用户名或者密码。"
       end
     end
-
-    if request.get? and params[:account_type] != nil
-      redirect_to(:controller => 'weibo', :action =>'authorize', :account_type => params[:account_type])
-    end
   end
 
   def logout
