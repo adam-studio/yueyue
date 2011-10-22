@@ -8,10 +8,22 @@ class User < ActiveRecord::Base
   has_many :groups, :foreign_key => "owner_id"
   has_many :groups_users, :class_name => "GroupsUsers"
   has_many :in_groups, :class_name => "Group", :through => :groups_users, :source => :group
+  
+  validate :defined_validate
+  
+  after_create :add_default_group
+  after_update :add_default_group
+  
+  def add_default_group
+    if self.groups.blank?
+      group = Group.new
+      self.groups << group
+    end
+  end
 
-  def validate 
-    if nick_name.empty?
-      errors.add_to_base("昵称不能为空")
+  def defined_validate
+    if nick_name.blank?
+      errors.add(:base, "昵称不能为空")
     end
   end
   

@@ -1,7 +1,7 @@
 #encoding: UTF-8
 
 class AccountsController < ApplicationController
-  before_filter :authorize, :except => [:forgot_password, :reset_password, :update_password]
+  before_filter :authorize, :except => [:forgot_password, :reset_password, :update_password, :new, :create]
   
   # GET /accounts
   # GET /accounts.xml
@@ -44,11 +44,15 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.xml
   def create
-    @account = Account.new(params[:account])
+    @account = Account.new(:name=>params[:account_name], :password=>params[:password], :password_confirmation =>params[:password_confirmation], :account_type=>params[:account_type])
+    user = User.new
+    user.nick_name = params[:nick_name]
+    @account.user = user
 
     respond_to do |format|
       if @account.save
-        format.html { redirect_to(@account, :notice => 'Account was successfully created.') }
+        session[:user_id] = @account.user.id
+        format.html { redirect_to(:controller=>'yueyue_objects', :action => "index") }
         format.xml  { render :xml => @account, :status => :created, :location => @account }
       else
         format.html { render :action => "new" }

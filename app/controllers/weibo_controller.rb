@@ -68,8 +68,6 @@ class WeiboController < ApplicationController
       else
         account.user = User.new(:nick_name => account_info[:nick_name], :profile_image_url => account_info[:profile_image_url], :gender => account_info[:gender])
       end
-      group = Group.new(:name => "未定义")
-      account.user.groups << group
       account.save
     end
     session[:user_id] = account.user.id

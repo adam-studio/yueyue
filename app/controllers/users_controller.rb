@@ -1,7 +1,7 @@
 #encoding: UTF-8
 
 class UsersController < ApplicationController
-  before_filter :authorize, :except => [:login, :logout, :new, :create]
+  before_filter :authorize, :except => [:login, :logout]
     
   # GET /users
   # GET /users.xml
@@ -35,10 +35,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user.nick_name = params[:nick_name]
-    account = Account.new(:name=>params[:account_name], :password=>params[:password], :account_type=>'email')
+    account = Account.new(:name=>params[:account_name], :password=>params[:password], :password_confirmation =>params[:password_confirmation], :account_type=>'email')
     @user.accounts << account
-    group = Group.new(:name => "未定义")
-    @user.groups << group
 
     respond_to do |format|
       if @user.save

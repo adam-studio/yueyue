@@ -1,7 +1,37 @@
+#encoding: UTF-8
+
 require 'digest/sha1'
 
 class Account < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, :validate => 'true'
+  
+  attr_accessor :password_confirmation
+  
+  validate :defined_validate
+  
+  def defined_validate
+    if name.blank?
+      errors.add(:base, "帐号不能为空")
+    end
+    
+    if Account.get_by_name_and_type(name, account_type)
+      errors.add(:base, "帐号重复")
+    end
+    
+    if account_type == "email" && @password.blank?
+      errors.add(:base, "密码不能为空")
+    end
+    
+    if @password != @password_confirmation
+      errors.add(:base, "密码不一样")
+    end
+    
+    if errors[:user].any?
+      user.errors[:base].each do |msg|
+          errors[:base] << msg
+      end
+    end
+  end
   
   def self.get_by_name_and_type(name, type)
     account = self.find(:first, :conditions => ["name = ? and account_type = ?", name, type])

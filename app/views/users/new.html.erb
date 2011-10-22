@@ -1,5 +1,13 @@
+<% if @user.errors.any? %>
+  <div>
+    <% @user.errors[:base].each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
+
 <div>
-	<% form_tag(:action => "create") do %>
+	<%= form_tag(:action => "create") do %>
 
 	<div>
 		邮箱<br/>

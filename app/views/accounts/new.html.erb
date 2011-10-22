@@ -1,5 +1,39 @@
-<h1>New account</h1>
+<% if @account.errors.any? %>
+  <div>
+    <% @account.errors[:base].each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
 
-<%= render 'form' %>
+<div>
+	<%= form_tag(:action => "create") do %>
 
-<%= link_to 'Back', accounts_path %>
+	<div>
+		邮箱<br/>
+		<%= text_field_tag(:account_name) %>
+	</div>
+	
+	<div>
+		昵称<br/>
+		<%= text_field_tag(:nick_name) %>
+	</div>
+
+	<div>
+		密码<br/>
+		<%= password_field_tag(:password) %>
+	</div>
+
+	<div>
+		确认密码<br/>
+		<%= password_field_tag(:password_confirmation) %>
+	</div>
+
+		<%= hidden_field_tag(:account_type, 'email') %>
+	<div>
+		<%= submit_tag "注册" %>
+
+	</div>
+	<% end %>
+</div>
+
