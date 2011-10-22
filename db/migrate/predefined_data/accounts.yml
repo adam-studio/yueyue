@@ -1,6 +1,6 @@
 accounts_001:
   id: 1
-  name: adam@yueyue001.com
+  name: adamstudio.cn@gmail.com
   hashed_password: '0a5fa64d64cbc25d7af4a548829e6cf3e87b2745'
   salt: '161420000.7336060236968973'
   account_type: email
