@@ -76,10 +76,12 @@ class MessagesController < ApplicationController
     receive_message.message_type = Message::USER_RECEIVED
     receive_message.user_id = params[:to_user]
     
+    goto_url = session[:after_send_message_url]
+    session[:after_send_message_url] = nil
+    
     respond_to do |format|
       if send_message.save && receive_message.save
-        format.html { redirect_to(receive_message, :notice => 'Message was successfully created.') }
-        format.xml  { render :xml => receive_message, :status => :created, :location => @message }
+        format.html { redirect_to(goto_url) }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => receive_message.errors, :status => :unprocessable_entity }

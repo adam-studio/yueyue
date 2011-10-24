@@ -25,6 +25,7 @@
 				</div>
 				<% end%>
 				<%= form_tag("/send_msg/#{@user.id}") do %>
+				<% session[:after_send_message_url] = request.fullpath %>
 				<%= submit_tag "发送消息"  %>
 				<% end %>
 				<% end%>
