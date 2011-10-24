@@ -1,5 +1,25 @@
-<h1>New message</h1>
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+	<%= f.label :消息 %><br />
+	<%= hidden_field_tag('to_user', params[:other_user_id]) %>
+	<%= f.text_area :content %>
+</div>
+  <div class="actions">
+    <%= f.submit(value='发送') %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Back', messages_path %>

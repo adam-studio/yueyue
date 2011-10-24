@@ -50,7 +50,6 @@ class MessagesController < ApplicationController
   # GET /messages/new.xml
   def new
     @message = Message.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @message }
@@ -65,16 +64,25 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.xml
   def create
-    @message = Message.new(params[:message])
-    message.status = 0
-
+    send_message = Message.new(params[:message])
+    send_message.status = 1
+    send_message.other_user_id = params[:to_user]
+    send_message.message_type = Message::USER_SENT
+    send_message.user_id = session[:user_id]
+    
+    receive_message = Message.new(params[:message])
+    receive_message.status = 0
+    receive_message.other_user_id = session[:user_id]
+    receive_message.message_type = Message::USER_RECEIVED
+    receive_message.user_id = params[:to_user]
+    
     respond_to do |format|
-      if @message.save
-        format.html { redirect_to(@message, :notice => 'Message was successfully created.') }
-        format.xml  { render :xml => @message, :status => :created, :location => @message }
+      if send_message.save && receive_message.save
+        format.html { redirect_to(receive_message, :notice => 'Message was successfully created.') }
+        format.xml  { render :xml => receive_message, :status => :created, :location => @message }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => receive_message.errors, :status => :unprocessable_entity }
       end
     end
   end

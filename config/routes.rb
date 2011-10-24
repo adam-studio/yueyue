@@ -12,6 +12,8 @@ Yueyue::Application.routes.draw do
       get 'list'
     end
   end
+  
+  match 'send_msg/:other_user_id' => 'messages#new'
 
   resources :groups
 
