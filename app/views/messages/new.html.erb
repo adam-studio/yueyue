@@ -14,7 +14,7 @@
 <div class="field">
 	<%= f.label :消息 %><br />
 	<%= hidden_field_tag('to_user', params[:other_user_id]) %>
-	<%= f.text_area :content %>
+	<%= f.text_area :content, "cols" => 25, "rows" => 8 %>
 </div>
   <div class="actions">
     <%= f.submit(value='发送') %>
@@ -22,4 +22,4 @@
 <% end %>
 
 
-<%= link_to 'Back', messages_path %>
+<%= link_to '返回', messages_path %>
