@@ -1,11 +1,11 @@
-<div class="kk1">
+<div>
 	<% 
 	type_count = 0
 	@yueyue_types.each do |yueyue_type| %>
 	<%= link_to yueyue_type.name, {:action => "index", :type=>yueyue_type}%>.
 	<%
 	type_count += 1
-	if (type_count % 4 == 0)%>
+	if (type_count % 5 == 0)%>
 	<br />
 	<%
 end
@@ -13,38 +13,51 @@ end
 %>
 </div>
 
-<div class="kk2">
+<div>
 	<% form_tag '', :method=>'GET' do %>
-	<input type="text" size="12"  name="search_str" />
+	<div class="item">
+	<input class="wrap" type="text" size="12"  name="search_str" />
+	</div>
+	<div class="submit-item">
 	<%= submit_tag "搜约约" %>
+	</div>
 	<% end %>
 </div>
 
-<div class="zt">
+<h3>
 	<%= link_to "最新约约", {:controller => "yueyue_objects", :action => "list", :order => 'created_at', :page=>1}%>
-</div>
+</h3>
 
-<% @yueyue_objects.each do |yueyue_object| %>
-<div class="kk2">
-	<div class="bt">
+<% length = @yueyue_objects.count - 1 %>
+<% @yueyue_objects.each_index do |i| %>
+<div class="list">
+	<% yueyue_object = @yueyue_objects[i] %>
+	<% if i != length%>
+	  <div class="item">
+	<% else %>
+	  <div class="item_last">
+	<% end %>
 		<%= link_to yueyue_object.owner.nick_name, :controller => "users", :action => "show", :id => yueyue_object.owner.id %>
-		:<%= link_to yueyue_object.title, yueyue_object %> 
-
+		:<%= link_to yueyue_object.title, yueyue_object %>
 	</div>
 </div>
 <% end %>
-
+	
 <% if @hot_yueyue_objects %>
-<div class="zt">
+<h3>
 	<%= link_to "热门约约", {:controller => "yueyue_objects", :action => "list", :order=>'rate desc', :page=>1}%>
-</div>
-
-<% @hot_yueyue_objects.each do |yueyue_object| %>
-<div class="kk2">
-	<div class="bt">
-				<%= link_to yueyue_object.owner.nick_name, :controller => "users", :action => "show", :id => yueyue_object.owner.id %>
+</h3>
+<% length = @hot_yueyue_objects.count - 1 %>
+<% @hot_yueyue_objects.each_index do |i| %>
+<div class="list">
+	<% yueyue_object = @hot_yueyue_objects[i] %>
+	<% if i != length%>
+	  <div class="item">
+	<% else %>
+	  <div class="item_last">
+	<% end %>
+    <%= link_to yueyue_object.owner.nick_name, :controller => "users", :action => "show", :id => yueyue_object.owner.id %>
 		:<%= link_to yueyue_object.title, yueyue_object %> 
-
 	</div>
 </div>
 <% end %>

@@ -1,247 +1,264 @@
+body, form, p, h1, h2, h3, ul {
+    margin: 0;
+    padding: 0;
+}
+em {
+    font-style: normal;
+}
+input, textarea, button {
+    font-size: 14px;
+}
+h1 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+h2, h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+h3 {
+    color: #006600;
+    font-weight: 400;
+    padding-top: 5px;
+}
+h1 span, h2 span, h3 span {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+}
+img {
+    border: 0 none;
+}
+p {
+    margin-bottom: 10px;
+}
+td {
+    vertical-align: top;
+}
+a:link {
+    color: #336699;
+    text-decoration: none;
+}
+a:visited {
+    color: #666699;
+    text-decoration: none;
+}
+a:hover {
+    background: none repeat scroll 0 0 #003399;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+a:active {
+    background: none repeat scroll 0 0 #FF9933;
+    color: #FFFFFF;
+    text-decoration: none;
+}
 body {
-	background-color: #fff;
-	color: #333333;
-	font-family: "宋体";
-	font-size: 12px;
-	word-wrap: break-word;
-	width:98%;
-	font-family: verdana, arial, helvetica, sans-serif;		
+    font: 14px/1.4 arial,sans-serif;
 }
-
-a {
-	color: #000099;
-	text-decoration: none;
-	
+.ft form {
+    margin: 0;
 }
-.top a,.bt a {
-	color: #333333;
-	text-decoration: none;
-	
+.input_basic, .textarea_basic {
+    width: 280px;
 }
-.t1 {
-	font-family: "新宋体";
-	color: #3300CC;
+#bd {
+    border-bottom: 1px solid #CCCCCC;
+    padding: 3px 3px 5px;
 }
-.tblue {
-	font-family: "新宋体";
-	color: #0033FF;
+#ft {
+    color: #999999;
+    margin: 5px 0;
+    padding: 1px 3px;
 }
-
-
-a:hover{
-	color: #FF0000;
-	text-decoration: none;
+.wrapper {
+    padding: 5px;
 }
-.bt a:visited {
-	color: #3300CC;
-	
-	
+.error {
+    color: #FF0000;
+    margin-bottom: 10px;
 }
-.top,.zt {
-	background-color: #AFC2EB;
-	text-align: left;
-	vertical-align: middle;
-	padding-left: 3px;
-	font-weight: bold;
-	font-family: "新宋体";
-	border-top-width: 2px;
-	border-right-width: 0px;
-	border-bottom-width: 0px;
-	border-left-width: 0px;
-	border-top-style: solid;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
-	border-top-color: #FF0000;
-	border-right-color: #FF0000;
-	border-bottom-color: #FF0000;
-	border-left-color: #FF0000;
-	padding-right: 3px;
-	font-size: 12px;
-	line-height: 18px;
-	margin-top: 3px;
-
+.tip p {
+    color: #999999;
+    margin-bottom: 5px;
 }
-
-.kk1 {
-	
-	border: 0px solid #CAA56C;
-	margin-top: 1px;
-	margin-right: 0px;
-	margin-bottom: 1px;
-	margin-left: 0px;
-	padding-right: 2px;
-	padding-left: 2px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	background-color: #DFDFE1;
-	height: auto;
-	
+.mod li {
+    list-style: none outside none;
 }
-
-
-
-.foot {
-    background: none repeat scroll 0 0 #DFDFE1;
-	text-align: center;
-	margin-top: 10px;
-	clear: both;
-	
+.ft {
+    border-top: 1px solid #CCCCCC;
+    color: #999999;
+    padding-top: 5px;
 }
-
-
-div.field, div.actions {
-  margin-bottom: 10px;
+.forbidden {
+    color: #999999;
 }
-span {
-	color: #666666;
-	font-size: 12px;
-	font-family: "新宋体";
-	
+.list td {
+    line-height: 1.2;
+    padding: 5px;
+    text-align: center;
 }
-.bt {
-	text-align: left;
-	margin-top: 1px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	background-color: #DFDFE1;
-	padding-right: 5px;
-	padding-left: 5px;
-	font-size: 12px;
-	line-height: 1.5em;
+.list td span {
+    color: #333333;
 }
-.friend {
-	text-align: left;
-	background-color: #DFDFE1;
-	line-height: 1.5em;
-	border-top-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-	border-left-width: 2px;
-	border-top-style: solid;
-	color: #000000;
-	border-top-color: #FFFFFF;
-	border-right-color: #FFFFFF;
-	border-bottom-color: #FFFFFF;
-	border-left-color: #FFFFFF;
-	padding-top: 2px;
-	padding-right: 5px;
-	padding-bottom: 2px;
-	padding-left: 5px;
+.list span {
+    color: #999999;
 }
-.encity .bt {
-	text-align: left;
-	margin-top: 2px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	background-color: #DFDFE1;
-	padding-right: 2px;
-	padding-left: 2px;
-	font-size: 12px;
-	padding-top: 1px;
-	padding-bottom: 1px;
+.item p {
+    color: #333333;
+    margin: 0;
+    word-wrap: break-word;
 }
-.c2 {
-	text-decoration: underline;
-	color: #F73D00;
+.list .item {
+    border-bottom: 1px solid #DEDEDE;
+    color: #333333;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    word-wrap: break-word;
 }
-.right {
-	float: none;
-	text-align: right;
+.links {
+    color: #999999;
+    padding-top: 5px;
 }
-
-
-.logo {
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
+.board, .comment, .reply {
+    border-top: 1px solid #CCCCCC;
 }
-
-#notice {
-  color: green;
+.board .say {
+    margin: 0;
 }
-#form1 {
-	margin: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	border-top-width: 0px;
-	border-right-width: 0px;
-	border-bottom-width: 0px;
-	border-left-width: 0px;
+.reply, .reply .say {
+    margin-bottom: 5px;
 }
-
-
-
-
-
-.kuang {
-	border: 1px solid #C9C9CD;
-	margin-top: 10px;
-	margin-right: 0px;
-	margin-bottom: 10px;
-	margin-left: 0px;
-	padding-top: 5px;
-	padding-right: 10px;
-	padding-bottom: 5px;
-	padding-left: 10px;
-	background-color: #DFDFE1;
+.say {
+    margin-bottom: 10px;
 }
-.kuang2 {
-	margin: 0px;
-	padding: 0px;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-top-color: #FFFFFF;
-	border-right-color: #FFFFFF;
-	border-bottom-color: #FFFFFF;
-	border-left-color: #FFFFFF;
-	
+input.wrap {
+    width: 95%;
 }
-.kuang3 {
-	border: 1px solid #999999;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	margin-top: 3px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	
+.entry {
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
-switchCity {
-	font-family: "宋体";
-	font-size: 12px;
-	color: #000000;
+.entry .content {
+    margin: 10px 0 30px;
 }
-.redtext {
-	font-family: "新宋体";
-	font-size: 12px;
-	font-weight: bold;
-	color: #FF0000;
+.info {
+    color: #999999;
+    margin-bottom: 10px;
 }
-#cityen {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-	color: #FF0000;
-	line-height: 15px;
-	width: 30px;
-	
+.info td em {
+    color: #999999;
 }
-.shez {
-	width: 100%;
-	border: 1px solid #3399FF;
-	margin-top: 5px;
+.info td span {
+    color: #333333;
 }
-.middle {
-	text-align: center;
+.intro {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 5px 0;
+}
+.entry p {
+    color: #333333;
+    margin-bottom: 5px;
+}
+.nav {
+    background-color: #E9F4E9;
+    color: #999999;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding: 1px 3px;
+}
+.nav a {
+    color: #0C7823;
+    font-size: 14px;
+}
+.rel {
+    color: #999999;
+}
+.tabs {
+    padding-bottom: 10px;
+}
+.tabs em {
+    color: #999999;
+}
+.date {
+    color: #999999;
+}
+.nav a:hover {
+    background-color: #0C7823;
+    color: #FFFFFF;
+}
+.paginator {
+    padding-bottom: 5px;
+}
+.paginator span {
+    color: #333333;
+}
+.followers {
+    color: #999999;
+}
+a.lnk-srh {
+    float: right;
+    padding: 0 5px;
+}
+a.founder {
+    white-space: nowrap;
+}
+.new {
+    color: #FF3300;
+    font-size: 14px;
+}
+.notification {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    padding: 5px 0;
+}
+.list .last, .last {
+    border: 0 none;
+}
+.members td span {
+    color: #999999;
+}
+#md-group-subject-search .list em, #md-srh .list em, .list .new {
+    color: #FF3300;
+}
+#md-srh .paginator {
+    margin-bottom: 10px;
+}
+#md-album td span, #md-album td {
+    color: #999999;
+    text-align: left;
+}
+#md-connect form, #md-connect .item {
+    margin-bottom: 10px;
+}
+#md-msg span, #md-msg p {
+    display: block;
+    text-align: center;
+}
+#md-group-intro .info, #md-biz .info, #md-events .info, #md-userinfo .info {
+    color: #333333;
+}
+#md-userinfo .intro {
+    border: 0 none;
+}
+#md-rec .item .info, #md-say .item .info, #md-biz .item .info, #md-profile .item .info {
+    border-bottom: 1px solid #DEDEDE;
+    color: #999999;
+}
+#bd .list .item .info {
+    border: 0 none;
+}
+#md-profile .info {
+    border-bottom: 1px solid #CCCCCC;
+}
+#md-group h3 {
+    border-top: 1px solid #CCCCCC;
+}
+#md-biz .links {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    padding-bottom: 5px;
+}
+#md-profile .links {
+    border-top: 1px solid #CCCCCC;
 }

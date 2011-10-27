@@ -5,44 +5,54 @@
 <head>
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 	<link href="/stylesheets/yueyue.css" media="all" rel="stylesheet" type="text/css" />
-	<title>约约</title>
+	<title>约约365</title>
 	<%= csrf_meta_tag %>
 </head>
 
 <body>
-	<div class="logo"> 
-		<img src="/images/yueyue.gif" alt="约约" height="35" width="91" /> 
-		<b><%= session[:city].name %></b><%= link_to '[切换城市]', {:controller=> 'city', :action=>'index' }%>
-		<% unless user = User.find_by_id(session[:user_id]) %>
-		<%= link_to "登录", {:controller => "users", :action => "login"}%>
-		<% else %>
-		<%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
-		<% end %>
-	</div>
+	<div class="wrapper">
+		<div id="hd">
+			<div class="logo"> 
+				<%= image_tag "yueyue.png"%>
+				<%= session[:city].name %> <%= link_to '[切换城市]', {:controller=> 'city', :action=>'index' }%> | 
+				<% unless user = User.find_by_id(session[:user_id]) %>
+				<%= link_to "登录", {:controller => "users", :action => "login"}%>
+				<% else %>
+				<%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
+				<% end %>
+			</div>
+			<div class="nav">
+				<% if User.find_by_id(session[:user_id]) != nil%>
+				<%= link_to "我的首页", {:controller => "yueyue_objects", :action => "home"}%>    | 
+				<%= link_to "关注他人", {:controller => "groups", :action => "index"}%>    | 
+				<%= link_to "消息(#{count_unread_message})", { :controller => "messages" } %>    | 
+				<%= link_to "设置", { :controller => "users", :action => "edit", :id => session[:user_id] } %>
+				
+				<br/>
+				<% end %>
+				<%= link_to '发起约约', new_yueyue_object_path %>    | 
+				<%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%>
+				<% if (user = User.find_by_id(session[:user_id])) != nil%>
+				<% if user.role == "DEV"%>
+				    | 
+				<%= link_to "约约主题定制", {:controller => "yueyue_types"}%>
+				<% end %>
+				<% end %>
 
-	<div class="top">
-		<% if User.find_by_id(session[:user_id]) != nil%>
-		<%= link_to "我的首页", {:controller => "yueyue_objects", :action => "home"}%>
-		<%= link_to "好友", {:controller => "groups", :action => "index"}%>
-		<%= link_to "设置", { :controller => "users", :action => "edit", :id => session[:user_id] } %>
-		<%= link_to "消息(#{count_unread_message})", { :controller => "messages" } %>
-		<br/>
-		<% end %>
-		<%= link_to '发起约约', new_yueyue_object_path %>
-		<%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%> 
-		<% if User.find_by_id(session[:user_id]) != nil%>
-		<% if user.role == "DEV"%>
-		<%= link_to "约约主题定制", {:controller => "yueyue_types"}%>
-		<% end %>
-		<% end %>
+			</div>
+		</div>
 
-	</div>
+		<div id="bd">
+		<%= yield %>
+		</div>
 
-	<%= yield %>
-
-	<div class="foot">
-		<a href="mailto:adamstudio.cn@gmail.com ">联系我们</a>
-		<br/>亚当工作室
+		<div id="ft">
+			<div>
+				<a href="#hd">回顶部</a> | 
+			</div>
+			<a href="mailto:adamstudio.cn@gmail.com ">联系我们</a>
+			<div class="copyright">&copy; 2011 亚当工作室</div>
+		</div>
 	</div>
 </body>
 </html>
