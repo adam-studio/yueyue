@@ -1,6 +1,6 @@
 <div class="kk2">
-	<% form_tag '', :method=>'GET' do %>
-	<input type="text" size="12"  name="search_str" />
+	<% form_tag do %>
+	<%= text_field_tag :search_str, @search_str, :size => 12 %>
 	<%= submit_tag "搜约约" %>
 	<% end %>
 </div>
@@ -12,7 +12,7 @@
 <% @yueyue_objects.each do |yueyue_object| %>
 <div class="kk2">
 	<div class="bt">
-		<%=yueyue_object.owner.name%>:<%= link_to yueyue_object.title, yueyue_object %> 
+		<%=yueyue_object.owner.nick_name%>:<%= link_to yueyue_object.title, yueyue_object %> 
 	</div>
 </div>
 <% end %>

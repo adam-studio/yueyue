@@ -3,11 +3,19 @@ class YueyueObjectsController < ApplicationController
   # GET /yueyue_objects.xml
   before_filter :authorize, :except => [:index, :show]
   def index
-    if params[:type]
-      @yueyue_objects = YueyueObject.find(:all, :order=>:yueyue_date, :limit=>20, :conditions=>"created_at >= date('now')")
+    condition_fixed = "yueyue_date >= date('now')"
+    if params[:search_str]
+      conditions = [condition_fixed + " and title like ?", "%" + params[:search_str] + "%"]
+      @search_str = params[:search_str]
     else
-      @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>10, :conditions=>"created_at >= date('now')")
-      @hot_yueyue_objects = YueyueObject.find(:all, :order=>"rate desc", :limit=>10, :conditions=>"created_at >= date('now')")
+      conditions = condition_fixed
+    end
+    
+    if params[:type]
+      @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>20, :conditions=>conditions)
+    else
+      @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>10, :conditions=>conditions)
+      @hot_yueyue_objects = YueyueObject.find(:all, :order=>"rate desc", :limit=>10, :conditions=>conditions)
     end
     @yueyue_types = YueyueType.all
     respond_to do |format|
@@ -19,14 +27,28 @@ class YueyueObjectsController < ApplicationController
   #GET /yueyue_objects/list
   #GET /yueyue_objects/list.xml
   def list
-    @yueyue_objects = YueyueObject.paginate(:page=>params[:page], :per_page=>20, :order=>params[:order], :conditions=>"created_at >= date('now')")
+    condition_fixed = "yueyue_date >= date('now')"
+    if params[:search_str]
+      conditions = [condition_fixed + " and title like ?", "%" + params[:search_str] + "%"]
+      @search_str = params[:search_str]
+    else
+      conditions = condition_fixed
+    end
+    @yueyue_objects = YueyueObject.paginate(:page=>params[:page], :per_page=>20, :order=>params[:order], :conditions=>conditions)
   end
 
   #GET /yueyue_objects/home
   #GET /yueyue_objects/home.xml
   def home
+    condition_fixed = "yueyue_date >= date('now') and owner_id = ?"
+    if params[:search_str]
+      conditions = [condition_fixed + " and title like ?", session[:user_id], "%" + params[:search_str] + "%"]
+      @search_str = params[:search_str]
+    else
+      conditions = [condition_fixed, session[:user_id]]
+    end
     @created_yueyue_objects = YueyueObject.find(:all, :order=>:created_at, 
-      :limit=>10, :conditions=>["created_at >= date('now') and owner_id = ?", session[:user_id]])
+      :limit=>10, :conditions=>conditions)
     
     user = User.find(session[:user_id])
     @joined_yueyue_objects = user.unfinished_yueyue_objects
