@@ -1,21 +1,26 @@
-<div>
+<% if (flash[:notice]) %>
+<div class="error">
 	<%= flash[:notice]%>
 </div>
+<% end %>
+
+<% form_tag do %>
 <div>
-	<% form_tag do %>
-	<div>
-		邮箱<br/>
-		<%= text_field_tag(:account_name) %><br/>
-		密码<br/>
-		<%= password_field_tag(:account_password) %><br/>
-		<%= hidden_field_tag 'account_type', 'email'%>
+	<label>你的邮箱地址</label>
+	<div class="item">
+		<%= text_field_tag(:account_name) %>
+	</div>
+	<label>你在约约的密码</label>
+	<div class="item">
+		<%= password_field_tag(:account_password) %>
+	</div>
+	<%= hidden_field_tag 'account_type', 'email'%>
+	<div class="submit-item">
 		<%= submit_tag "登录" %>
 		<%= link_to '注册', :controller => "accounts", :action => "new" %>  
 		<%= link_to '忘记密码', :controller => "accounts", :action => "forgot_password"%>
 	</div>
-	<% end %>
 </div>
+<% end %>
 <%= link_to(image_tag("sina_weibo.png"),
-{ :controller => 'weibo', :action =>'authorize', :account_type => "sina"}) %><br/>
-<%= link_to(image_tag("qq_weibo.png"),
-{ :controller => 'weibo', :action =>'authorize', :account_type => "qq"}) %>
+{ :controller => 'weibo', :action =>'authorize', :account_type => "sina"}) %>”
