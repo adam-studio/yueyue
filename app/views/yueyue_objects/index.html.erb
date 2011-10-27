@@ -20,9 +20,9 @@ end
 	<% end %>
 </div>
 
-<h3>
+<div class="nav">
 	<%= link_to "最新约约", {:controller => "yueyue_objects", :action => "list", :order => 'created_at', :page=>1}%>
-</h3>
+</div>
 
 <% length = @yueyue_objects.count - 1 %>
 <% @yueyue_objects.each_index do |i| %>
@@ -40,9 +40,9 @@ end
 	<% end %>
 
 	<% if @hot_yueyue_objects %>
-	<h3>
+	<div class="nav">
 		<%= link_to "热门约约", {:controller => "yueyue_objects", :action => "list", :order=>'rate desc', :page=>1}%>
-	</h3>
+	</div>
 	<% length = @hot_yueyue_objects.count - 1 %>
 	<% @hot_yueyue_objects.each_index do |i| %>
 	<div class="list">
