@@ -14,7 +14,7 @@
 		<div id="hd">
 			<div class="logo"> 
 				<%= image_tag "yueyue.png"%>
-				<%= session[:city].name %> <%= link_to '[切换城市]', {:controller=> 'city', :action=>'index' }%> | 
+				<%= link_to(session[:city].name, {:controller=> 'city', :action=>'index' }) %> | 
 				<% unless user = User.find_by_id(session[:user_id]) %>
 				<%= link_to "登录", {:controller => "users", :action => "login"}%>
 				<% else %>
