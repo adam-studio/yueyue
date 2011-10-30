@@ -1,5 +1,5 @@
 <% form_tag(:action => "update") do %>
-<label>对方账号</label>
+<label>对方在约约的昵称或者账号</label>
 <div class="item">
 	<%= text_field_tag(:search_account_name) %>
 </div>
@@ -10,9 +10,11 @@
 <% end -%>
 
 <% if !@users.blank? %>
-<% for user in @users %> 
+<% for user in @users %>
+<div>
 [<%= link_to('加为好友', url_for(:controller => 'groups', :action => 'add_user', :user_id => user.id))%>]
 <%= user.nick_name %> 
+</div>
 <% end %>
 <% end %>
 
