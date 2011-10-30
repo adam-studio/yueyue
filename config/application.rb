@@ -40,6 +40,6 @@ module Yueyue
     config.filter_parameters += [:password]
     
     config.time_zone = 'Beijing'
-    config.active_record.default_timezone = :Beijing
+    config.active_record.default_timezone = :local
   end
 end

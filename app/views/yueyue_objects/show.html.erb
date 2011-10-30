@@ -1,9 +1,11 @@
-<%=render_nav.html_safe%>
 <p id="notice"><%= notice %></p>
-
-<div class="bt"><span class="t1">发&nbsp;起&nbsp;人：</span>&nbsp;<%= @yueyue_object.owner.nick_name %></div> 
-<div class="bt"><span class="t1">约约标题&nbsp;：</span>&nbsp;<%= @yueyue_object.title %></div> 
-<div class="bt"><span class="t1">约约时间&nbsp;：</span>&nbsp;<%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %></div> 
-
-<%=render_yueyue_properties.html_safe%>
-<%=render_nav.html_safe%>
+<div class="bt"><%=render_nav.html_safe%></div> 
+<div class="bt">发&nbsp;起&nbsp;人：</span>&nbsp;<%= @yueyue_object.owner.nick_name %></div> 
+<div class="bt">约约标题&nbsp;：</span>&nbsp;<%= @yueyue_object.title %></div> 
+<div class="bt">约约时间&nbsp;：</span>&nbsp;<%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %></div> 
+<div class="bt"><%=render_yueyue_properties.html_safe%></div> 
+<div class="bt"><%=render_nav.html_safe%></div> 
+<div class="nav">他/她们参加(<%=@participants.count%>)</div>
+<% @participants.each do |participant| %>
+	<div class="bt"><%= link_to participant.nick_name, participant %></div> 
+<% end %>

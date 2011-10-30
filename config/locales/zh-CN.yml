@@ -12,8 +12,8 @@ zh-CN:
     created: "约约新增成功"
     updated: "约约更新成功"
   yueyue_type_actions:
-    join : "参加约约"
-    quit_join: "退出约约"
+    join : "参加此约约"
+    quit_join: "退出此约约"
   messages:
     message_type_0: "系统消息"
     message_type_1: "好友请求"

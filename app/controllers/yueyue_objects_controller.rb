@@ -16,7 +16,7 @@ class YueyueObjectsController < ApplicationController
     else
       @yueyue_objects = YueyueObject.find(:all, :order=>:created_at, :limit=>10, :conditions=>conditions)
       @hot_yueyue_objects = YueyueObject.find(:all, :order=>"rate desc", :limit=>10, :conditions=>conditions)
-    end
+    end    
     @yueyue_types = YueyueType.all
     respond_to do |format|
       format.html # index.html.erb
@@ -65,6 +65,8 @@ class YueyueObjectsController < ApplicationController
     end
     @yueyue_object.save
     @yueyue_properties = @yueyue_object.yueyue_object_properties
+    
+    @participants = @yueyue_object.users
 
     respond_to do |format|
       format.html # show.html.erb
