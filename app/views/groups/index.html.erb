@@ -30,7 +30,7 @@
 					</td>
 					<td>
 						<% if not user.get_friends.include? User.find_by_id(session[:user_id]) %>  
-					发信邀请
+						<%= link_to('发送邀请', url_for(:controller => 'groups', :action => 'invite_someone', :user_id => user.id))%>
 					<% end %>
 					</td>
 				</tr>

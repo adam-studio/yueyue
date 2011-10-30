@@ -117,6 +117,25 @@ class GroupsController < ApplicationController
       end
     end
   end
+  
+  def invite_someone
+    message = Message.new
+    message.user = User.find_by_id(params[:user_id])
+    message.other_user = User.find_by_id(session[:user_id])
+    message.message_type = Message::FRIEND_REQUEST
+    
+    respond_to do |format| 
+      if message.save
+        format.html { redirect_to ({:controller => "groups", :action => "index"}) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
+      end
+    end
+    
+  end
+  
 
   # DELETE /groups/1
   # DELETE /groups/1.xml

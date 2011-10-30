@@ -94,7 +94,7 @@ class AccountsController < ApplicationController
       account = Account.find(:first, :conditions => ["name = ? and account_type = 'email'", params[:account_name]])
       if account
         account.security_account_id = UUIDTools::UUID.random_create.to_s
-        account.save
+        rlt = account.save
         reset_password_url = request.protocol + request.host_with_port + url_for(:only_path => 'true', :action => 'reset_password', :security_account_id => account.security_account_id)
         ResetPasswordMailer.confirm(account.name, reset_password_url).deliver
         @message = "已把链接发送到你的邮箱。"

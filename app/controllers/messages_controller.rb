@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
       message.other_user_name = other_user_name
       
       if @message_type == Message::FRIEND_REQUEST
-        message.content = I18n.t "messages.friends_request"
+        #message.content = I18n.t "messages.friends_request"
       end
       message.update_attributes(:status=>1)
     end

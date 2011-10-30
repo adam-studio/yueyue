@@ -4,8 +4,12 @@
 <div class="kk2">
 	<%@messages.each do |message|%>
 	<div class="bt">
+		<% if @message_type == Message::FRIEND_REQUEST %>
+		<%=message.other_user_name%>: <%= link_to('加为好友', url_for(:controller => 'groups', :action => 'add_user', :user_id => message.other_user.id))%>
+		<% else %>
 		<%=message.other_user_name%>:
 		<%=simple_format message.content%>
+		<% end %>
 	</div>
 	<%end%>
 </div>
