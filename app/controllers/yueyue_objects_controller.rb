@@ -65,9 +65,7 @@ class YueyueObjectsController < ApplicationController
     end
     @yueyue_object.save
     @yueyue_properties = @yueyue_object.yueyue_object_properties
-    
     @participants = @yueyue_object.users
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @yueyue_object }
