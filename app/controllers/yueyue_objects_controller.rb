@@ -64,12 +64,6 @@ class YueyueObjectsController < ApplicationController
       @yueyue_object.rate = 1
     end
     @yueyue_object.save
-    @yueyue_type = @yueyue_object.yueyue_type
-    if (@yueyue_type)
-      @yueyue_actions = @yueyue_type.yueyue_type_actions
-      #TODO 增加对找不到约约type的异常处理
-    end
-
     @yueyue_properties = @yueyue_object.yueyue_object_properties
 
     respond_to do |format|
@@ -91,7 +85,6 @@ class YueyueObjectsController < ApplicationController
         @yueyue_type = @yueyue_types[0]
       end
       @yueyue_properties = @yueyue_type.yueyue_type_properties
-      @yueyue_actions = @yueyue_type.yueyue_type_actions
     end
 
     respond_to do |format|
@@ -172,20 +165,17 @@ class YueyueObjectsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-  # GET /yueyue_objects/action/yueyue_object_id&action_id
-  def action
-    yueyue_object_id, yueyue_action_id = params[:id].split('&')
-    @yueyue_object = YueyueObject.find(yueyue_object_id)
-    yueyue_action = YueyueTypeAction.find(yueyue_action_id)
-
-    # 调用action方法
-    action_method_name, action_class_name = yueyue_action.name.split('@')
-    process_method_name = "process_#{action_method_name}"
-    action_class = Object.const_get(action_class_name)
-    action_class.send(process_method_name, :user_id=>session[:user_id], :yueyue_object_id=>yueyue_object_id)
-
-    redirect_to(:action => "show", :id=>yueyue_object_id)
+  
+  def join
+    user = User.find(session[:user_id])
+  	yueyue_object = YueyueObject.find(params[:id])
+  	if yueyue_object.users.exists?(params[:user_id])	
+  	  yueyue_object.users.delete user
+	  else
+  	  yueyue_object.users << user
+	  end
+  	yueyue_object.save
+  	redirect_to yueyue_object
   end
   
   private

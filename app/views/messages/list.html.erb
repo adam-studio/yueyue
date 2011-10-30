@@ -1,10 +1,11 @@
-<div class="zt">
+<div class="nav">
 	<%=I18n.t("messages.message_type_#{@message_type}")%>
 </div>
 <div class="kk2">
 	<%@messages.each do |message|%>
 	<div class="bt">
-		<%=message.other_user_name%>:<%=message.content%>
+		<%=message.other_user_name%>:
+		<%=simple_format message.content%>
 	</div>
 	<%end%>
 </div>

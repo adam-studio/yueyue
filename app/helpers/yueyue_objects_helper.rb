@@ -1,5 +1,3 @@
-require 'actions/user_actions'
-
 module YueyueObjectsHelper
   def edit_yueyue_properties
     html_str = ""
@@ -37,17 +35,19 @@ HTML
     end
     html_str
   end
-
-  # TODO get to post
-  def render_yueyue_actions
-    html_str = ""
-    @yueyue_actions.each do |action|
-      # action class and method
-      action_method_name, action_class_name = action.name.split('@')
-      render_method_name = "render_#{action_method_name}"
-      action_class = Object.const_get(action_class_name)
-      html_str += action_class.send(render_method_name, @yueyue_object.id, action.id, session[:user_id])
+  
+  def render_nav
+    if @yueyue_object.users.exists?(session[:user_id])
+    	join_title = I18n.t 'yueyue_type_actions.quit_join'
+  	else
+  	  join_title = I18n.t 'yueyue_type_actions.join'
     end
-    html_str
+    html_str = "<a href='/yueyue_objects/join/#{@yueyue_object.id}'>#{join_title}</a> |"
+    
+    if session[:user_id] == @yueyue_object.owner.id
+      html_str += " <a href='/yueyue_objects/#{@yueyue_object.id}/edit'>#{I18n.t 'helpers.submit.update'}</a> |"
+    end
+    
+    html_str + " <a href='/yueyue_objects'>#{I18n.t 'helpers.quit'}</a>"
   end
 end

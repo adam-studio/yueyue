@@ -31,6 +31,7 @@ Yueyue::Application.routes.draw do
 
   resources :yueyue_object_properties
 
+  match 'yueyue_objects/join/:id' => 'yueyue_objects#join'
   resources :yueyue_objects do
     collection do
       get 'list'
