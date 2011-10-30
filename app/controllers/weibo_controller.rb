@@ -70,7 +70,7 @@ class WeiboController < ApplicationController
       end
       account.save
     end
-    session[:user_id] = account.user.id
+    session[:user_id] = account.user_id
     
     # 将access token等存入session,在发送微博的时候需要用到
     account.user.accounts.each do |user_account|
