@@ -77,6 +77,7 @@ class YueyueObjectsController < ApplicationController
   def new
     @yueyue_object = YueyueObject.new
     @yueyue_types = YueyueType.all
+    @errors = params[:errors]
 
     if @yueyue_types && @yueyue_types.size > 0
       if params[:id]
@@ -132,7 +133,7 @@ class YueyueObjectsController < ApplicationController
         format.html { redirect_to(@yueyue_object, :notice => I18n.t('yueyue_objects.created')) }
         format.xml  { render :xml => @yueyue_object, :status => :created, :location => @yueyue_object }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to :action => "new", :errors=>@yueyue_object.errors }
         format.xml  { render :xml => @yueyue_object.errors, :status => :unprocessable_entity }
       end
     end

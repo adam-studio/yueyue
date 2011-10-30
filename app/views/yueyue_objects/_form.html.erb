@@ -1,19 +1,19 @@
 <%require "weibo"%>
 <%= form_for(@yueyue_object) do |f| %>
-<% if @yueyue_object.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@yueyue_object.errors.count, "error") %> prohibited this yueyue_object from being saved:</h2>
+<% if @errors %>
+<div class="error">
+	<h2> 出错了！</h2>
 
 	<ul>
-		<% @yueyue_object.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
+		<% @errors.each do |msg| %>
+		<li><%= msg[1] %></li>
 		<% end %>
 	</ul>
 </div>
 <% end %>
 
 <div class="field">
-	<%= f.label :约约标题 %><br />
+	<%= f.label :约约内容 %><br />
 	<%= f.text_field :title %>
 </div>
 

@@ -1,4 +1,8 @@
+#encoding: UTF-8
 class YueyueObject < ActiveRecord::Base
+  validates_presence_of :title, :message=>'约约内容不能为空'
+  validates_presence_of :yueyue_date, :message=>'约约时间不能为空'
+  
   belongs_to :yueyue_type
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
   has_many :yueyue_object_properties
