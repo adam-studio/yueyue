@@ -15,7 +15,13 @@ Yueyue::Application.routes.draw do
   
   match 'send_msg/:other_user_id' => 'messages#new'
 
-  resources :groups
+  resources :groups do
+    collection do
+      get 'add_user'
+      get 'delete_user'
+      get 'invite_someone'
+    end
+  end
 
   get "city/index"
 

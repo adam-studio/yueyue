@@ -63,33 +63,58 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     if params[:search_users] != nil
-      @accounts = Account.find(:all, :conditions => ["name like ?", "%" + params[:search_account_name] + "%"], :limit => 5)
-      @accounts = @accounts - @group.owner.accounts
-      @accounts = @accounts - @group.owner.get_accounts_of_friends
+      @users = []
+      accounts = Account.find(:all, :conditions => ["name like ?", "%" + params[:search_account_name] + "%"], :limit => 5)
+      if (accounts)
+        for account in accounts
+          @users.push(account.user)
+        end
+      end
+      @users.concat(User.find(:all, :conditions => ["nick_name like ?", "%" + params[:search_account_name] + "%"], :limit => 5))
+      @users.uniq!
+      @users.delete(User.find_by_id(session[:user_id]))
+      @users = @users - User.find_by_id(session[:user_id]).get_friends
 
       respond_to do |format|
         format.html { render :action => "edit" }
         format.xml { render :xml => @users }
-      end
+      end   
+    end
+  end
+  
+  def add_user
+    if (params[:id])
+      @group = Group.find(params[:id])
     else
-      user = User.find_by_id(params[:user_id])
-      if params[:update_users_method] != nil && params[:update_users_method] == "delete"
-        @group.users.delete(user)
+      @group = User.find_by_id(session[:user_id]).groups[0]
+    end
+    user = User.find_by_id(params[:user_id])
+    @group.users << user
+    
+    respond_to do |format| 
+      if @group.save
+        format.html { redirect_to ({:controller => "groups", :action => "index"}) }
+        format.xml  { head :ok }
       else
-        if params[:update_users_method] != nil && params[:update_users_method] == "add"
-          @group.users << user
-        end
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
       end
-
-      respond_to do |format| 
-        if @group.save
-          format.html { redirect_to ({:controller => "groups", :action => "index"}) }
-          format.xml  { head :ok }
-        else
-          format.html { render :action => "edit" }
-          format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
-        end
-      end       
+    end
+  end
+  
+  def delete_user
+    @group = Group.find(params[:id])
+    user = User.find_by_id(params[:user_id])
+    @group.users.delete(user)
+    
+    respond_to do |format| 
+      if @group.save
+        format.html { redirect_to ({:controller => "groups", :action => "index"}) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

@@ -9,14 +9,10 @@
 </div>
 <% end -%>
 
-<% if !@accounts.blank? %>
-<% for account in @accounts %> 
-<%= form_for(@group) do |f| %>
-<input name="user_id" type="hidden" value=<%= account.user.id%> /> 
-<input name="update_users_method" type="hidden" value="add" />
-<%= f.submit "加为好友"  %>
-<% end %>
-<%= account.account_type %> :<%= account.name %> 
+<% if !@users.blank? %>
+<% for user in @users %> 
+[<%= link_to('加为好友', url_for(:controller => 'groups', :action => 'add_user', :user_id => user.id))%>]
+<%= user.nick_name %> 
 <% end %>
 <% end %>
 
