@@ -268,7 +268,7 @@ zh-CN:
       create: "新增"
       update: "更新"
       submit: "储存"
-    quit: "退出"
+    quit: "返回"
       
   reset_password_mailer:
       confirm:
