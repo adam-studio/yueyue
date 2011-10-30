@@ -1,21 +1,23 @@
-<div>
-	<% form_tag(:action => "update") do %>
-	对方账号<br/>
-	<%= text_field_tag(:search_account_name) %><br/>
-	<input name="_method" type="hidden" value="put" />
-	<%= submit_tag "搜约人", :id => "search_users", :name => "search_users", :disabled => false, :disable_with => "请稍候..." %>
-	<% end -%>
+<% form_tag(:action => "update") do %>
+<label>对方账号</label>
+<div class="item">
+	<%= text_field_tag(:search_account_name) %>
 </div>
+<input name="_method" type="hidden" value="put" />
+<div class="submit-item">
+<%= submit_tag "搜约人", :id => "search_users", :name => "search_users", :disabled => false, :disable_with => "请稍候..." %>
+</div>
+<% end -%>
 
 <% if !@accounts.blank? %>
-  <% for account in @accounts %> 
-	<%= form_for(@group) do |f| %>
-	  <input name="user_id" type="hidden" value=<%= account.user.id%> /> 
-	  <input name="update_users_method" type="hidden" value="add" />
-  	  <%= f.submit "加为好友"  %>
-	<% end %>
-	<%= account.account_type %> :<%= account.name %> 
-  <% end %>
+<% for account in @accounts %> 
+<%= form_for(@group) do |f| %>
+<input name="user_id" type="hidden" value=<%= account.user.id%> /> 
+<input name="update_users_method" type="hidden" value="add" />
+<%= f.submit "加为好友"  %>
+<% end %>
+<%= account.account_type %> :<%= account.name %> 
+<% end %>
 <% end %>
 
 

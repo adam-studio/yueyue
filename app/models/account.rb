@@ -7,7 +7,7 @@ class Account < ActiveRecord::Base
   
   attr_accessor :password_confirmation
   
-  validate :defined_validate
+  validate :defined_validate, :on => :create
   
   def defined_validate
     if name.blank?
