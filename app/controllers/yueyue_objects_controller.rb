@@ -127,6 +127,8 @@ class YueyueObjectsController < ApplicationController
         @yueyue_object.yueyue_object_properties = yueyue_object_properties
       end
     end
+  	
+  	@yueyue_object.users << user
 
     respond_to do |format|
       if @yueyue_object.save
