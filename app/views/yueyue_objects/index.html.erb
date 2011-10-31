@@ -16,6 +16,7 @@ end
 <div>
 	<% form_tag("/yueyue_objects/index") do %>
 	<%= text_field_tag :search_str, @search_str, :size => 12 %>
+	<%= hidden_field_tag('type', params[:type]) %>
 	<%= submit_tag "搜约约" %>
 	<% end %>
 </div>

@@ -4,8 +4,11 @@ class YueyueObjectsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
   def index
     condition_fixed = "yueyue_date >= date('now')"
+    unless params[:type].blank?
+      condition_fixed += " and yueyue_type_id = #{params[:type]}"
+    end
     if params[:search_str]
-      conditions = [condition_fixed + " and title like ?", "%" + params[:search_str] + "%"]
+      conditions = [condition_fixed + " and title like ?", "%" + params[:search_str].lstrip().rstrip() + "%"]
       @search_str = params[:search_str]
     else
       conditions = condition_fixed
