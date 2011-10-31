@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="bt"><%=render_nav.html_safe%></div> 
-<div class="bt">发&nbsp;起&nbsp;人：&nbsp;<%= @yueyue_object.owner.nick_name %></div> 
-<div class="bt">约约标题&nbsp;：&nbsp;<%= @yueyue_object.title %></div> 
-<div class="bt">约约时间&nbsp;：&nbsp;<%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %></div> 
+<br>
+
+<div class="bt"><%= simple_format @yueyue_object.title %></div> 
+
+<br>
+<div class="bt">发起人：<%= @yueyue_object.owner.nick_name %></div>  
+<div class="bt">约约时间：<%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %></div> 
 <%=render_yueyue_properties.html_safe%>
 <div class="bt"><%=render_nav.html_safe%></div> 
 <div class="nav">他/她们参加(<%=@participants.count%>)</div>

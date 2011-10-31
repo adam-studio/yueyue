@@ -170,7 +170,7 @@ class YueyueObjectsController < ApplicationController
   def join
     user = User.find(session[:user_id])
   	yueyue_object = YueyueObject.find(params[:id])
-  	if yueyue_object.users.exists?(params[:user_id])	
+  	if yueyue_object.users.exists?(user)	
   	  yueyue_object.users.delete user
 	  else
   	  yueyue_object.users << user
