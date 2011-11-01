@@ -93,10 +93,10 @@ yueyue_type_properties_013:
 yueyue_type_properties_014: 
   id: 18
   yueyue_type_id: 4
-  name: "\xE5\xB1\xB1\xE5\xA4\xB4\xE5\x90\x8D\xE7\xA7\xB0"
+  name: "\xE6\xB8\xB8\xE7\x8E\xA9\xE5\x9C\xB0\xE7\x82\xB9"
   default_value: ""
   created_at: 2011-10-03 21:35:30.615514
-  updated_at: 2011-10-03 21:41:21.517746
+  updated_at: 2011-11-01 19:58:17.223357
 yueyue_type_properties_015: 
   id: 19
   yueyue_type_id: 1
@@ -153,3 +153,31 @@ yueyue_type_properties_022:
   default_value: ""
   created_at: 2011-10-03 22:43:59.045292
   updated_at: 2011-10-03 22:43:59.045292
+yueyue_type_properties_023: 
+  id: 28
+  yueyue_type_id: 6
+  name: "\xE7\x89\x8C\xE7\xA7\x8D\xEF\xBC\x88\xE5\xB9\xBF\xE4\xB8\x9C\xE3\x80\x81\xE9\x95\xBF\xE6\xB2\x99\xE3\x80\x81\xE6\xAD\xA6\xE6\xB1\x89\xE3\x80\x81\xE4\xB8\x9C\xE5\x8C\x97\xE7\xAD\x89\xEF\xBC\x89"
+  default_value: ""
+  created_at: 2011-11-01 19:35:59.636695
+  updated_at: 2011-11-01 19:41:43.902784
+yueyue_type_properties_024: 
+  id: 29
+  yueyue_type_id: 6
+  name: "\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-11-01 19:40:28.506746
+  updated_at: 2011-11-01 19:40:28.506746
+yueyue_type_properties_025: 
+  id: 30
+  yueyue_type_id: 7
+  name: "\xE5\x9C\xB0\xE7\x82\xB9"
+  default_value: ""
+  created_at: 2011-11-01 19:44:14.509868
+  updated_at: 2011-11-01 19:44:14.509868
+yueyue_type_properties_026: 
+  id: 31
+  yueyue_type_id: 7
+  name: "\xE8\x8F\x9C\xE7\xB3\xBB"
+  default_value: ""
+  created_at: 2011-11-01 19:44:39.729512
+  updated_at: 2011-11-01 19:44:39.729512

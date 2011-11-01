@@ -1,9 +1,9 @@
 --- 
 yueyue_types_001: 
   id: 1
-  name: "K\xE6\xAD\x8C"
+  name: "K  \xE6\xAD\x8C "
   created_at: 2011-10-03 21:20:27.146334
-  updated_at: 2011-10-03 21:20:27.146334
+  updated_at: 2011-11-01 20:00:21.674707
 yueyue_types_002: 
   id: 2
   name: "\xE4\xB8\x89\xE5\x9B\xBD\xE6\x9D\x80"
@@ -16,11 +16,21 @@ yueyue_types_003:
   updated_at: 2011-10-03 21:20:56.754759
 yueyue_types_004: 
   id: 4
-  name: "\xE7\x88\xAC\xE5\xB1\xB1"
+  name: "\xE6\x88\xB7\xE5\xA4\x96\xE4\xBC\x91\xE9\x97\xB2"
   created_at: 2011-10-03 21:21:05.534231
-  updated_at: 2011-10-03 21:21:05.534231
+  updated_at: 2011-11-01 19:57:57.812955
 yueyue_types_005: 
   id: 5
   name: "\xE6\xB3\xA1\xE5\x90\xA7"
   created_at: 2011-10-03 21:22:39.981356
   updated_at: 2011-10-03 21:22:39.981356
+yueyue_types_006: 
+  id: 6
+  name: "\xE9\xBA\xBB\xE9\x9B\x80"
+  created_at: 2011-11-01 19:34:56.788148
+  updated_at: 2011-11-01 19:34:56.788148
+yueyue_types_007: 
+  id: 7
+  name: "\xE7\xBE\x8E\xE9\xA3\x9F\xE8\x81\x9A\xE9\xA4\x90"
+  created_at: 2011-11-01 19:43:49.804175
+  updated_at: 2011-11-01 19:47:12.015699

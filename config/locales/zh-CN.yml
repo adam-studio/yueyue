@@ -14,8 +14,8 @@ zh-CN:
     title: "约约内容"
     yueyue_date: "约约时间"
   yueyue_type_actions:
-    join : "参加此约约"
-    quit_join: "退出此约约"
+    join : "报名参加"
+    quit_join: "取消报名"
   messages:
     message_type_0: "系统消息"
     message_type_1: "好友请求"
