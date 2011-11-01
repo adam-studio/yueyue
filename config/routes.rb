@@ -13,7 +13,7 @@ Yueyue::Application.routes.draw do
     end
   end
   
-  match 'send_msg/:other_user_id' => 'messages#new'
+  match 'send_msg/:type/:id' => 'messages#new'
 
   resources :groups do
     collection do

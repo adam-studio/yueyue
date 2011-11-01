@@ -6,6 +6,9 @@
 		<%= link_to "系统消息(#{@system_messages_count})", {:action => "list", :message_type => Message::SYSTEM_MESSAGES}%>
 	</div>
 	<div class="bt">
+		<%= link_to "约约消息(#{@yueyue_messages_count})", {:action => "list", :message_type => Message::YUEYUE_MESSAGES}%>
+	</div>
+	<div class="bt">
 		<%= link_to "好友请求(#{@friends_requests_count})", {:action => "list", :message_type => Message::FRIEND_REQUEST}%>
 	</div>
 	<div class="bt">

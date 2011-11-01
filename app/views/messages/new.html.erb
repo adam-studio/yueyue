@@ -13,8 +13,9 @@
 
 <div class="field">
 	<%= f.label :消息 %><br />
-	<%= hidden_field_tag('to_user', params[:other_user_id]) %>
-	<%= f.text_area :content, "cols" => 25, "rows" => 8 %>
+	<%= hidden_field_tag('id', params[:id]) %>
+	<%= hidden_field_tag('type', params[:type]) %>
+	<%= f.text_area :content, "cols" => 25, "rows" => 4 %>
 </div>
   <div class="actions">
     <%= f.submit(value='发送') %>

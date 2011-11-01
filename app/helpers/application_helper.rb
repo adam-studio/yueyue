@@ -4,6 +4,6 @@ module ApplicationHelper
   end
   
   def count_unread_message
-    Message.count(:conditions=>"user_id = #{session[:user_id]} and status = 0")
+    Message.count(:conditions=>"user_id = #{session[:user_id]} and status = #{Message::UNREAD}")
   end
 end

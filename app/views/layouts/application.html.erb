@@ -15,10 +15,11 @@
 			<div class="logo"> 
 				<%= image_tag "yueyue.png"%>
 				<%= link_to(session[:city].name, {:controller=> 'city', :action=>'index' }) %> | 
-				<% unless user = User.find_by_id(session[:user_id]) %>
-				<%= link_to "登录", {:controller => "users", :action => "login"}%>
-				<% else %>
+				<% if !session[:user_id].blank? && user = User.find(session[:user_id]) %>
+				[<%= link_to user.nick_name, user %>]
 				<%= link_to "退出", {:controller => "users", :action => "logout", :id=>'1'}%>
+				<% else %>
+				<%= link_to "登录", {:controller => "users", :action => "login"}%>
 				<% end %>
 			</div>
 			<div class="nav">
@@ -27,14 +28,14 @@
 				<%= link_to "关注他人", {:controller => "groups", :action => "index"}%>    | 
 				<%= link_to "消息(#{count_unread_message})", { :controller => "messages" } %>    | 
 				<%= link_to "设置", { :controller => "users", :action => "edit", :id => session[:user_id] } %>
-				
+
 				<br/>
 				<% end %>
 				<%= link_to '发起约约', new_yueyue_object_path %>    | 
 				<%= link_to "约约广场", {:controller => "yueyue_objects", :action => "index"}%>
 				<% if (user = User.find_by_id(session[:user_id])) != nil%>
 				<% if user.role == "DEV"%>
-				    | 
+				| 
 				<%= link_to "约约主题定制", {:controller => "yueyue_types"}%>
 				<% end %>
 				<% end %>
@@ -43,7 +44,7 @@
 		</div>
 
 		<div id="bd">
-		<%= yield %>
+			<%= yield %>
 		</div>
 
 		<div id="ft">

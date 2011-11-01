@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @system_messages_count = count_unread_messages_by_type Message::SYSTEM_MESSAGES
     @friends_requests_count = count_unread_messages_by_type Message::FRIEND_REQUEST
     @user_messages_count = count_unread_messages_by_type Message::USER_RECEIVED
+    @yueyue_messages_count = count_unread_messages_by_type Message::YUEYUE_MESSAGES
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,16 +23,16 @@ class MessagesController < ApplicationController
       else
         other_user_name = message.other_user.nick_name
       end
-      
-      if @message_type != Message::USER_SENT && message.status == 1
+
+      if @message_type != Message::USER_SENT && message.status == Message::READED
         other_user_name += "(#{I18n.t("messages.readed")})"
       end
       message.other_user_name = other_user_name
-      
+
       if @message_type == Message::FRIEND_REQUEST
         #message.content = I18n.t "messages.friends_request"
       end
-      message.update_attributes(:status=>1)
+      message.update_attributes(:status=>Message::READED)
     end
   end
 
@@ -64,28 +65,31 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.xml
   def create
-    send_message = Message.new(params[:message])
-    send_message.status = 1
-    send_message.other_user_id = params[:to_user]
-    send_message.message_type = Message::USER_SENT
-    send_message.user_id = session[:user_id]
-    
-    receive_message = Message.new(params[:message])
-    receive_message.status = 0
-    receive_message.other_user_id = session[:user_id]
-    receive_message.message_type = Message::USER_RECEIVED
-    receive_message.user_id = params[:to_user]
-    
-    goto_url = session[:after_send_message_url]
-    session[:after_send_message_url] = nil
-    
-    respond_to do |format|
-      if send_message.save && receive_message.save
-        format.html { redirect_to(goto_url) }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => receive_message.errors, :status => :unprocessable_entity }
+    receive_messages = []
+    p Message::YUEYUE_MESSAGES
+    if params[:type] == Message::YUEYUE_MESSAGES.to_s
+      yueyue_object = YueyueObject.find(params[:id])
+      yueyue_object.users.each do |user|
+        receive_messages <<  Message.new(params[:message].merge(:message_type=>Message::YUEYUE_MESSAGES, 
+        :user_id=>user.id, :status=>Message::UNREAD, :other_user_id=>session[:user_id]))
       end
+    else
+      receive_messages << Message.new(params[:message].merge(:message_type=>Message::USER_RECEIVED, 
+      :user_id=>params[:id], :status=>Message::UNREAD, :other_user_id=>session[:user_id]))
+      send_message = Message.new(params[:message])
+      send_message.status = Message::READED
+      send_message.other_user_id = params[:id]
+      send_message.message_type = Message::USER_SENT
+      send_message.user_id = session[:user_id]
+    end
+
+    respond_to do |format|
+      receive_messages.each {|message| message.save}
+      send_message.save if send_message
+      goto_url = session[:after_send_message_url]
+      session[:after_send_message_url] = nil
+      
+      format.html { redirect_to(goto_url) }
     end
   end
 
@@ -119,6 +123,6 @@ class MessagesController < ApplicationController
 
   private
   def count_unread_messages_by_type(message_type)
-    Message.count(:conditions=>"user_id = #{session[:user_id]} and status = 0 and message_type = #{message_type}")
+    Message.count(:conditions=>"user_id = #{session[:user_id]} and status = #{Message::UNREAD} and message_type = #{message_type}")
   end
 end
