@@ -9,10 +9,7 @@
 		<% else %>
 		<%=link_to message.other_user_name, message.other_user%>
 		<% if @message_type == Message::YUEYUE_MESSAGES %>
-		<%=link_to(I18n.t('messages.goto_yueyue'), @yueyue_object)%>
-		<% p "================"
-		p @yueyue_object
-		%>
+		=><%=link_to(I18n.t('messages.goto_yueyue'), message.yueyue_object)%>
 		<% end %>
 		<%=simple_format message.content%>
 		<% end %>

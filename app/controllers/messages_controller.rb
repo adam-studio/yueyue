@@ -70,8 +70,10 @@ class MessagesController < ApplicationController
     if params[:type] == Message::YUEYUE_MESSAGES.to_s
       yueyue_object = YueyueObject.find(params[:id])
       yueyue_object.users.each do |user|
-        receive_messages <<  Message.new(params[:message].merge(:message_type=>Message::YUEYUE_MESSAGES, 
+        message = Message.new(params[:message].merge(:message_type=>Message::YUEYUE_MESSAGES, 
         :user_id=>user.id, :status=>Message::UNREAD, :other_user_id=>session[:user_id]))
+        message.yueyue_object = yueyue_object
+        receive_messages << message
       end
     else
       receive_messages << Message.new(params[:message].merge(:message_type=>Message::USER_RECEIVED, 
