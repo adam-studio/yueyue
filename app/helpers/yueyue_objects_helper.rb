@@ -39,14 +39,17 @@ HTML
   def render_nav
     if @yueyue_object.users.exists?(session[:user_id])
     	join_title = I18n.t 'yueyue_type_actions.quit_join'
+    	group_send = " <a href='/send_msg/#{Message::YUEYUE_MESSAGES}/#{@yueyue_object.id}'>#{I18n.t 'yueyue_objects.group_send'}</a> |"
   	else
   	  join_title = I18n.t 'yueyue_type_actions.join'
     end
-    html_str = "<a href='/yueyue_objects/join/#{@yueyue_object.id}'>#{join_title}</a> |"
-    
+
     if session[:user_id] == @yueyue_object.owner.id
-      html_str += " <a href='/yueyue_objects/#{@yueyue_object.id}/edit'>#{I18n.t 'helpers.submit.update'}</a> |"
+      html_str = "<a href='/yueyue_objects/#{@yueyue_object.id}/edit'>#{I18n.t 'helpers.submit.update'}</a> |"
+    else
+      html_str = "<a href='/yueyue_objects/join/#{@yueyue_object.id}'>#{join_title}</a> |"
     end
+    html_str += group_send if group_send
     
     html_str + " <a href='/yueyue_objects'>#{I18n.t 'helpers.quit'}</a>"
   end

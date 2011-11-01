@@ -9,7 +9,7 @@
 <div class="bt">约约时间：<%= @yueyue_object.yueyue_date.strftime("%Y-%m-%d") %></div> 
 <%=render_yueyue_properties.html_safe%>
 <div class="bt"><%=render_nav.html_safe%></div> 
-<div class="nav">他/她们参加(<%=@participants.count%>) <%=link_to "群发消息", "/send_msg/#{Message::YUEYUE_MESSAGES}/#{@yueyue_object.id}" %></div>
+<div class="nav">他/她们参加(<%=@participants.count%>)</div>
 <% @participants.each do |participant| %>
 	<div class="bt">
 	<% gender = participant.gender=='m' ? 'GG':'MM'%>

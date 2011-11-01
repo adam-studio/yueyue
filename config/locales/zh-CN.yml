@@ -13,6 +13,7 @@ zh-CN:
     updated: "约约更新成功"
     title: "约约内容"
     yueyue_date: "约约时间"
+    group_send: "群发消息"
   yueyue_type_actions:
     join : "报名参加"
     quit_join: "取消报名"
@@ -25,6 +26,7 @@ zh-CN:
     system: "约约网"
     friends_request: "请求加您为好友"
     readed: "已阅读"
+    goto_yueyue: "进入约约"
   date:
     formats:
       default: "%Y-%m-%d"

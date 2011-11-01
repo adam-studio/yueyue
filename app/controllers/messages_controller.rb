@@ -76,11 +76,8 @@ class MessagesController < ApplicationController
     else
       receive_messages << Message.new(params[:message].merge(:message_type=>Message::USER_RECEIVED, 
       :user_id=>params[:id], :status=>Message::UNREAD, :other_user_id=>session[:user_id]))
-      send_message = Message.new(params[:message])
-      send_message.status = Message::READED
-      send_message.other_user_id = params[:id]
-      send_message.message_type = Message::USER_SENT
-      send_message.user_id = session[:user_id]
+      send_message = Message.new(params[:message].merge(:status=>Message::READED, :other_user_id=>params[:id], 
+      :message_type=>Message::USER_SENT, :user_id=>session[:user_id]))
     end
 
     respond_to do |format|

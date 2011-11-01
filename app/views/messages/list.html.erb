@@ -8,6 +8,12 @@
 		<%=link_to message.other_user_name, message.other_user%>: <%= link_to('加为好友', url_for(:controller => 'groups', :action => 'add_user', :user_id => message.other_user.id))%>
 		<% else %>
 		<%=link_to message.other_user_name, message.other_user%>
+		<% if @message_type == Message::YUEYUE_MESSAGES %>
+		<%=link_to(I18n.t('messages.goto_yueyue'), @yueyue_object)%>
+		<% p "================"
+		p @yueyue_object
+		%>
+		<% end %>
 		<%=simple_format message.content%>
 		<% end %>
 	</div>
