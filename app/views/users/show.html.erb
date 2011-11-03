@@ -9,20 +9,14 @@
 				<% picture_url = @user.profile_image_url || "/uploads/nopicture.png" %>
 				<%= image_tag(picture_url, :height => '50', :width => '50')%>
 			</td>
-			<td valign="top">
+			<td>
 				<%= @user.city || "未知城市"%><br />
 				<span><%= @user.description || "我很懒，什么都没有留下。"%></span><br/>
 				<% if session[:user_id] != nil %>
 				<% login_user = User.find_by_id(session[:user_id]) %>
 				<% if login_user != @user %>
 				<% unless (login_user.get_friends.include? @user) %>
-				<div class="tblue">
-					<%= form_for(login_user.groups[0]) do |f| %>
-					<input name="user_id" type="hidden" value=<%= @user.id%> /> 
-					<input name="update_users_method" type="hidden" value="add" />
-					<%= f.submit "加为好友"  %>
-					<% end %>
-				</div>
+				  <%= link_to('加为好友', url_for(:controller => 'groups', :action => 'add_user', :user_id => @user.id))%>
 				<% end%>
 				<%= form_tag("/send_msg/#{Message::USER_SENT}/#{@user.id}") do %>
 				<% session[:after_send_message_url] = request.fullpath %>
@@ -32,7 +26,6 @@
 				<% end %>
 			</td>
 		</tr>
-
 	</tbody>
 </table>
 <hr />

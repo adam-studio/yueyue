@@ -35,6 +35,17 @@ class User < ActiveRecord::Base
     return users
   end
   
+  def which_group(user)
+    self.groups.each do |group|
+      group.users.each do |user_in_group|
+        if user == user_in_group
+          return group
+        end
+      end
+    end 
+    return nil
+  end
+  
   def get_accounts_of_friends
     accounts_of_friends = []
     friends = self.get_friends

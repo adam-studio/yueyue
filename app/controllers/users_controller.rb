@@ -103,7 +103,7 @@ class UsersController < ApplicationController
 
   def login
     if request.post?
-      account = Account.authenticate(params[:account_type], params[:account_name], params[:account_password])
+      account = Account.authenticate(params[:account_type], params[:account_name].downcase, params[:account_password])
       if account
         session[:user_id] = account.user.id
         redirect_url = session[:after_success_login] || url_for(:controller=>'yueyue_objects', :action => "index")

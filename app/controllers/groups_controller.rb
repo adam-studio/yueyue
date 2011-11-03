@@ -6,6 +6,14 @@ class GroupsController < ApplicationController
   def index
     user = User.find_by_id(session[:user_id])
     @groups = user.groups
+    @users = user.get_friends
+    if @users && params[:search_str] != nil && params[:search_str] != ""
+      search_users = []
+      @users.each do |user|
+        #user.name.
+      end
+      @users = @users - search_users
+    end
     
     respond_to do |format|
       format.html # index.html.erb
@@ -103,12 +111,14 @@ class GroupsController < ApplicationController
   end
   
   def delete_user
-    @group = Group.find(params[:id])
     user = User.find_by_id(params[:user_id])
-    @group.users.delete(user)
+    group = User.find_by_id(session[:user_id]).which_group(user)
+    if group
+      group.users.delete(user)
+    end
     
     respond_to do |format| 
-      if @group.save
+      if group && group.save
         format.html { redirect_to ({:controller => "groups", :action => "index"}) }
         format.xml  { head :ok }
       else

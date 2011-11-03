@@ -44,7 +44,7 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.xml
   def create
-    @account = Account.new(:name=>params[:account_name], :password=>params[:password], :password_confirmation =>params[:password_confirmation], :account_type=>params[:account_type])
+    @account = Account.new(:name=>params[:account_name].downcase, :password=>params[:password], :password_confirmation =>params[:password_confirmation], :account_type=>params[:account_type])
     user = User.new
     user.nick_name = params[:nick_name]
     @account.user = user
@@ -91,7 +91,7 @@ class AccountsController < ApplicationController
  
   def forgot_password
     if request.post?
-      account = Account.find(:first, :conditions => ["name = ? and account_type = 'email'", params[:account_name]])
+      account = Account.find(:first, :conditions => ["name = ? and account_type = 'email'", params[:account_name].downcase])
       if account
         account.security_account_id = UUIDTools::UUID.random_create.to_s
         rlt = account.save

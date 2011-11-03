@@ -1,4 +1,4 @@
-<% form_tag '', :method=>'GET' do %>
+<%= form_tag '', :method=>'GET' do %>
 <div class="item">
 	<input type="text"  name="search_str" />
 </div>
@@ -9,35 +9,31 @@
 
 <% current_user = User.find_by_id(session[:user_id]) %>
 
-<% if !@groups.blank? %>
-  <% for group in @groups %>
-    <% group.users.each do |user| %>
-      <% if user != current_user %>
-	<div>
-		<table>
-			<tbody>
-				<tr>
-					<td>
-						<% picture_url = user.profile_image_url || "/uploads/nopicture.png" %>
-						<%= link_to image_tag(picture_url, :height => '50', :width => '50'), :controller => "users", :action => "show", :id => user %>
-					</td>
-					<td>
-						<%= user.nick_name || "蓝精灵"%><br />
-						<span><%= user.signature %></span>
-					</td>
-					<td>
-						<%= link_to('删除联系人', url_for(:controller => 'groups', :action => 'delete_user', :id => group.id, :user_id => user.id))%>
-					</td>
-					<td>
-						<% if not user.get_friends.include? User.find_by_id(session[:user_id]) %>  
-						<%= link_to('发送邀请', url_for(:controller => 'groups', :action => 'invite_someone', :user_id => user.id))%>
+<% if @users != nil %>
+<% @users.each do |user| %>
+<div>
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<% picture_url = user.profile_image_url || "/uploads/nopicture.png" %>
+					<%= link_to image_tag(picture_url, :height => '50', :width => '50'), :controller => "users", :action => "show", :id => user %>
+				</td>
+				<td>
+					<%= user.nick_name || "蓝精灵"%><br />
+					<span><%= user.signature %></span>
+				</td>
+				<td>
+					<%= link_to('删除联系人', url_for(:controller => 'groups', :action => 'delete_user', :user_id => user.id))%>
+				</td>
+				<td>
+					<% if not user.get_friends.include? User.find_by_id(session[:user_id]) %>  
+					<%= link_to('发送邀请', url_for(:controller => 'groups', :action => 'invite_someone', :user_id => user.id))%>
 					<% end %>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-      <% end %>
-    <% end %>
-  <% end %>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<% end %>
 <% end %>

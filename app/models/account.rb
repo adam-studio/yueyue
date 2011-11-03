@@ -10,6 +10,12 @@ class Account < ActiveRecord::Base
   validate :defined_validate, :on => :create
   
   def defined_validate
+    if account_type=="email"
+      if (/^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/.match(name)) == nil
+        errors.add(:base, "邮箱格式不对")
+      end
+    end
+    
     if name.blank?
       errors.add(:base, "帐号不能为空")
     end
