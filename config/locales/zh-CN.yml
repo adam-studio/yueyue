@@ -11,9 +11,22 @@ zh-CN:
   yueyue_objects:
     created: "约约新增成功"
     updated: "约约更新成功"
-    title: "约约内容"
-    yueyue_date: "约约时间"
+    title: "约约标题"
+    yueyue_date: "时间"
+    address: "地点"
     group_send: "群发消息"
+  yueyue_types:
+    add: "新增约约主题"
+    rename: "改名"
+  yueyue_type_properties:
+    yueyue_type_properties_management: "约约属性管理"
+    add: "新增约约属性"
+    name: "属性名称"
+    default_value: "默认值"
+    builder: "页面编辑器类型"
+    BUILDER_TEXT_FIELD: "文本框"
+    BUILDER_TEXT_AREA: "多行文本"
+    BUILDER_CHECK_BOX: "复选框"
   yueyue_type_actions:
     join : "报名参加"
     quit_join: "取消报名"
@@ -267,6 +280,9 @@ zh-CN:
       even: "必须为双数"
 
   helpers:
+    view: "查看"
+    delete: "删除"
+    edit: "修改"
     select:
       prompt: "请选择"
     submit:

@@ -45,8 +45,6 @@ Yueyue::Application.routes.draw do
     end
   end
 
-  resources :yueyue_type_actions
-
   resources :yueyue_type_properties
 
   resources :yueyue_types

@@ -1,33 +1,16 @@
-<h1>Listing yueyue_type_properties</h1>
+<h1><%= I18n.t('yueyue_type_properties.yueyue_type_properties_management')%></h1>
 
 <table>
-  <tr>
-	<th>Name</th>
-	<th>Data type</th>
-	<th>Max size</th>
-	<th>Min size</th>
-	<th>Null able</th>
-	<th>Default value</th>
-	<th></th>
-	<th></th>
-	<th></th>
-  </tr>
+
 
 <% @yueyue_type_properties.each do |yueyue_type_property| %>
   <tr>
-	<td><%= yueyue_type_property.name %></td>
-	<td><%= yueyue_type_property.data_type %></td>
-	<td><%= yueyue_type_property.max_size %></td>
-	<td><%= yueyue_type_property.min_size %></td>
-	<td><%= yueyue_type_property.null_able %></td>
-	<td><%= yueyue_type_property.default_value %></td>
-    <td><%= link_to '查看', yueyue_type_property %></td>
-    <td><%= link_to '修改', edit_yueyue_type_property_path(yueyue_type_property) %></td>
-    <td><%= link_to '删除', yueyue_type_property, :method => :delete %></td>
+    <td><%= link_to yueyue_type_property.name, edit_yueyue_type_property_path(yueyue_type_property) %></td>
+    <td><%= link_to I18n.t('helpers.delete'), yueyue_type_property, :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to '新增约约属性', new_yueyue_type_property_path %>
+<%= link_to I18n.t('yueyue_type_properties.add'), new_yueyue_type_property_path %>

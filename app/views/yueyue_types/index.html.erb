@@ -4,15 +4,13 @@
 
 <% @yueyue_types.each do |yueyue_type| %>
   <tr>
-    <td><%= yueyue_type.name %>
-	</td>
-    <td><%= link_to '查看', yueyue_type %></td>
-    <td><%= link_to '修改', edit_yueyue_type_path(yueyue_type) %></td>
-    <td><%= link_to '删除', yueyue_type, :method => :delete %></td>
+    <td><%= link_to yueyue_type.name, yueyue_type %></td>
+    <td><%= link_to I18n.t('yueyue_types.rename'), edit_yueyue_type_path(yueyue_type) %></td>
+    <td><%= link_to I18n.t('helpers.delete'), yueyue_type, :method=>:delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to '新增约约主题', new_yueyue_type_path %>
+<%= link_to I18n.t('yueyue_types.add'), new_yueyue_type_path %>

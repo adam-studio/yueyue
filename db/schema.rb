@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111101153109) do
+ActiveRecord::Schema.define(:version => 20111105142057) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20111101153109) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rate"
+    t.string   "address"
   end
 
   create_table "yueyue_type_actions", :force => true do |t|
@@ -107,9 +108,16 @@ ActiveRecord::Schema.define(:version => 20111101153109) do
   end
 
   create_table "yueyue_type_properties", :force => true do |t|
-    t.integer  "yueyue_type_id", :null => false
     t.string   "name"
     t.string   "default_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "builder"
+  end
+
+  create_table "yueyue_type_properties_yueyue_types", :id => false, :force => true do |t|
+    t.integer  "yueyue_type_id"
+    t.integer  "yueyue_type_property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

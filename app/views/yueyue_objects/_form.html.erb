@@ -13,13 +13,18 @@
 <% end %>
 
 <div class="field">
-	<%= f.label :约约内容 %><br />
-	<%= f.text_area :title, 'cols'=>25, 'rows'=>4%>
+	<%= f.label I18n.t('yueyue_objects.title') %><br />
+	<%= f.text_field :title %>
 </div>
 
 <div class="field">
-	<%= f.label :约约时间 %><br />
-	<%= f.date_select(:yueyue_date)%>
+	<%= f.label I18n.t('yueyue_objects.yueyue_date') %><br />
+	<%= f.date_select :yueyue_date %>
+</div>
+
+<div class="field">
+	<%= f.label I18n.t('yueyue_objects.address') %><br />
+	<%= f.text_field :address %>
 </div>
 
 <%=edit_yueyue_properties.html_safe%>

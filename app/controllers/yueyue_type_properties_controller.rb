@@ -25,7 +25,6 @@ class YueyueTypePropertiesController < ApplicationController
   # GET /yueyue_type_properties/new.xml
   def new
     @yueyue_type_property = YueyueTypeProperty.new
-    @yueyue_type = YueyueType.find(params[:yueyue_type])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,13 +42,9 @@ class YueyueTypePropertiesController < ApplicationController
   # POST /yueyue_type_properties.xml
   def create
     @yueyue_type_property = YueyueTypeProperty.new(params[:yueyue_type_property])
-
-    yueyue_type = YueyueType.find(params[:yueyue_type])
-    @yueyue_type_property.yueyue_type = yueyue_type
-
     respond_to do |format|
       if @yueyue_type_property.save
-        format.html { redirect_to(@yueyue_type_property, :notice => 'Yueyue type property was successfully created.') }
+        format.html { redirect_to(yueyue_type_properties_path, :notice => 'Yueyue type property was successfully created.') }
         format.xml  { render :xml => @yueyue_type_property, :status => :created, :location => @yueyue_type_property }
       else
         format.html { render :action => "new" }
