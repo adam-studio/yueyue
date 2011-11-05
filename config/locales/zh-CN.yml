@@ -16,10 +16,12 @@ zh-CN:
     address: "地点"
     group_send: "群发消息"
   yueyue_types:
+    type: "约约主题"
     add: "新增约约主题"
     rename: "改名"
+    properties: "主题属性"
   yueyue_type_properties:
-    yueyue_type_properties_management: "约约属性管理"
+    property: "约约属性"
     add: "新增约约属性"
     name: "属性名称"
     default_value: "默认值"
@@ -283,6 +285,7 @@ zh-CN:
     view: "查看"
     delete: "删除"
     edit: "修改"
+    add: "增加"
     select:
       prompt: "请选择"
     submit:

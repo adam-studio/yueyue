@@ -47,7 +47,12 @@ Yueyue::Application.routes.draw do
 
   resources :yueyue_type_properties
 
-  resources :yueyue_types
+  resources :yueyue_types do
+    collection do
+      get 'show_properties'
+      post 'update_properties'
+    end
+  end
 
   resources :users do
     collection do

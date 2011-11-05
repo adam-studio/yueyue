@@ -1,0 +1,27 @@
+<h1><%= I18n.t('yueyue_types.properties') %></h1>
+
+<table>
+
+<%= form_tag('/yueyue_types/update_properties') %>
+<% @using_properties.each do |property| %>
+<tr>
+	<td><%= check_box_tag "prop_ids[]", property.id, true %></td>
+	<td><%= link_to property.name, show_yueyue_type_property_path(property) %></td>
+</tr>
+<% end %>
+
+<%@unusing_properties.each do |property| %>
+<tr>
+	<td><%= check_box_tag "prop_ids[]", property.id %></td>
+	<td><%= link_to property.name, edit_yueyue_type_property_path(property) %></td>
+</tr>
+<%end%>
+
+<tr>
+	<td><%= submit_tag I18n.t('helpers.submit.update') %></td>
+</tr>
+</table>
+
+<br />
+
+<%= link_to I18n.t('yueyue_type_properties.add'), new_yueyue_type_property_path %>

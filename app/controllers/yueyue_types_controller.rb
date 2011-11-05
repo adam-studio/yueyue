@@ -82,4 +82,30 @@ class YueyueTypesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def show_properties
+    @yueyue_type = YueyueType.find(params[:id])
+    @using_properties = @yueyue_type.yueyue_type_properties
+    @unusing_properties = YueyueTypeProperty.all - @using_properties
+    
+    respond_to do |format|
+      format.html # show_properties.html.erb
+      format.xml  { render :xml => @properties }
+    end
+  end
+  
+  def update_properties
+    p "==========="
+    p params[prop_ids]
+    
+    respond_to do |format|
+     # if @yueyue_type.save
+        format.html { redirect_to(@yueyue_type, :notice => 'Yueyue type was successfully created.') }
+   #     format.xml  { render :xml => @yueyue_type, :status => :created, :location => @yueyue_type }
+   #   else
+   #     format.html { render :action => "new" }
+    #    format.xml  { render :xml => @yueyue_type.errors, :status => :unprocessable_entity }
+   #   end
+    end
+  end
 end
