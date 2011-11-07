@@ -62,7 +62,7 @@ class YueyueTypesController < ApplicationController
 
     respond_to do |format|
       if @yueyue_type.update_attributes(params[:yueyue_type])
-        format.html { redirect_to(@yueyue_type, :notice => 'Yueyue type was successfully updated.') }
+        format.html { redirect_to(@yueyue_type, :notice => I18n.t('yueyue_types.update_success')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,30 +82,36 @@ class YueyueTypesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def show_properties
     @yueyue_type = YueyueType.find(params[:id])
     @using_properties = @yueyue_type.yueyue_type_properties
     @unusing_properties = YueyueTypeProperty.all - @using_properties
-    
+
     respond_to do |format|
       format.html # show_properties.html.erb
       format.xml  { render :xml => @properties }
     end
   end
-  
+
   def update_properties
-    p "==========="
-    p params[prop_ids]
-    
+    @yueyue_type = YueyueType.find(params[:id])
+
+    @yueyue_type.yueyue_type_properties = []
+    if params[:prop_ids]
+      params[:prop_ids].each do |prop_id|
+        @yueyue_type.yueyue_type_properties << YueyueTypeProperty.find(prop_id)
+      end
+    end
+
     respond_to do |format|
-     # if @yueyue_type.save
-        format.html { redirect_to(@yueyue_type, :notice => 'Yueyue type was successfully created.') }
-   #     format.xml  { render :xml => @yueyue_type, :status => :created, :location => @yueyue_type }
-   #   else
-   #     format.html { render :action => "new" }
-    #    format.xml  { render :xml => @yueyue_type.errors, :status => :unprocessable_entity }
-   #   end
+      if @yueyue_type.save
+        format.html { redirect_to(@yueyue_type, :notice => I18n.t('yueyue_types.update_success')) }
+        format.xml  { render :xml => @yueyue_type, :status => :created, :location => @yueyue_type }
+      else
+        format.html { render :action => "show_properties" }
+        format.xml  { render :xml => @yueyue_type.errors, :status => :unprocessable_entity }
+      end
     end
   end
 end

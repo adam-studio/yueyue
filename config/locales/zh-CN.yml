@@ -20,6 +20,7 @@ zh-CN:
     add: "新增约约主题"
     rename: "改名"
     properties: "主题属性"
+    update_success: "约约主题更新成功"
   yueyue_type_properties:
     property: "约约属性"
     add: "新增约约属性"
