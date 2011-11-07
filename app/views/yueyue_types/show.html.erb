@@ -1,22 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>约约主题:</b>
+  <b><%=I18n.t 'yueyue_types.type'%>:</b>
   <%= @yueyue_type.name %>
 </p>
 
 <table>
   <tr>
-	<th>约约主题属性</th>
-	<th></th>
-	<th></th>
+	<th><%=I18n.t 'yueyue_types.properties'%></th>
   </tr>
 
 <% @yueyue_type_properties.each do |yueyue_type_property| %>
   <tr>
 	<td><%= yueyue_type_property.name %></td>
-    <td><%= link_to '修改属性', edit_yueyue_type_property_path(yueyue_type_property) %></td>
-    <td><%= link_to '删除属性', yueyue_type_property, :confirm => 'Are you sure?', :method => :delete %></td>
+
   </tr>
 <% end %>
 </table>
