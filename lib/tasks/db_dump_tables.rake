@@ -3,7 +3,8 @@ namespace :db do
 
   task :dump_tables => :environment do  
     sql = "SELECT * FROM %s"  
-    dump_tables = ["yueyue_types","yueyue_type_actions","yueyue_type_properties"] # 需要导入的表们
+    #dump_tables = ["yueyue_types","yueyue_type_actions","yueyue_type_properties"] # 需要导入的表们
+    dump_tables = ["cities"]
     ActiveRecord::Base.establish_connection(:development)   
     dump_tables.each do |table_name|   
       i = "000"  # 表中每条数据的编号
