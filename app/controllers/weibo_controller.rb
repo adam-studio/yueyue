@@ -47,8 +47,9 @@ class WeiboController < ApplicationController
       callback_url = url + url_for(:only_path => 'true', :action => 'callback', :account_type => params[:account_type])
       client.config["url"] = url
       client.config["callback"] = callback_url
-      Rails.cache.write(build_oauth_token_key(client.name, client.oauth_token), client.dump)  
-      redirect_to client.authorize_url
+      Rails.cache.write(build_oauth_token_key(client.name, client.oauth_token), client.dump)
+      wap_authorize_url = client.authorize_url + "&display=wap2.0"
+      redirect_to wap_authorize_url
     end
   end
 
