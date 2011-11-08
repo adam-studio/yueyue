@@ -4,8 +4,8 @@ development:
     database: development_yueyue
     pool: 5
     timeout: 5000
-    username: root
-    password: go2chifan
+    username: development
+    password: development
  
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,14 +15,12 @@ test:
   database: test_yueyue
   pool: 5
   timeout: 5000
-  username: root
-  password: go2chifan
+  username: test
 
 production:
   adapter: mysql
   database: production_yueyue
   pool: 5
   timeout: 5000
-  username: root
-  password: go2chifan
+  username: production
 
