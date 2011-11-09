@@ -16,4 +16,10 @@ class YueyueTypeProperty < ActiveRecord::Base
       end
       builders
     end
+    
+    def self.get_builder(value)
+      YueyueTypeProperty.constants.each do |const|
+        return const if YueyueTypeProperty.const_get(const) == value
+      end
+    end
 end

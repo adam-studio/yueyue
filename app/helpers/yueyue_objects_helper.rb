@@ -10,12 +10,27 @@ module YueyueObjectsHelper
             break
           end
         end
-
+      else
+        if property.default_value && property.default_value.length > 0
+          next
+        end
       end
+      
+      builder_str = case property.builder
+                        when YueyueTypeProperty::BUILDER_TEXT_FIELD
+                          build_text(property.id, property_value)
+                        when YueyueTypeProperty::BUILDER_TEXT_AREA
+                          build_text_area(property.id, property_value)
+                        when YueyueTypeProperty::BUILDER_CHECK_BOX
+                          build_check_box(property.id, property_value)
+                        else
+                          ""
+      end
+      
       html_str += <<HTML
       <div class="field">
       <label for="yueyue_property_#{property.id}">#{property.name}</label><br /> 
-      <input id="yueyue_property_#{property.id}" name="yueyue_property_#{property.id}" value="#{property_value}" size="30" type="text" />
+      #{builder_str}
       </div>
 HTML
     end
@@ -52,5 +67,18 @@ HTML
     html_str += group_send if group_send
     
     html_str + " <a href='/yueyue_objects'>#{I18n.t 'helpers.quit'}</a>"
+  end
+  
+  private
+  def build_text(id, value)
+    "<input id='#{id}' name='#{id}' value='#{value}' size='30' type='text' value='#{value}' />"
+  end
+  
+  def build_text_area(id, value)
+    "<textarea cols='25' id='#{id}' name='#{id}' rows='4'>#{value}</textarea>"
+  end
+  
+  def build_check_box(id, value)
+    "<input checked='#{value}' id='#{id}' name='#{id}' type='checkbox' />"
   end
 end

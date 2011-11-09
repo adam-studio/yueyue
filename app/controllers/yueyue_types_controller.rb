@@ -74,6 +74,8 @@ class YueyueTypesController < ApplicationController
   # DELETE /yueyue_types/1
   # DELETE /yueyue_types/1.xml
   def destroy
+    p "================="
+    p "here"
     @yueyue_type = YueyueType.find(params[:id])
     @yueyue_type.destroy
 
