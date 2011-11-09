@@ -1,11 +1,11 @@
 development:
     adapter: mysql2
     encoding: utf8
-    database: development_yueyue
+    database: yueyue_dev
     pool: 5
     timeout: 5000
-    username: development
-    password: development
+    username: dev
+    password: dev
  
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
